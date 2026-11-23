@@ -400,7 +400,7 @@ A(imagen(DIA / "arbol.png", "Organización de paquetes y ficheros"))
 for t in [
     "**HTML:** index.html y 404.html en la raíz; las demás páginas en paginas/. Las fuentes están en src/html: parciales/ (head, cabecera, pie y el horario semanal) y paginas/ (el cuerpo de cada página). El script tools/ensamblar.mjs une ambas partes para que las 18 páginas compartan exactamente el mismo encabezado, menú y pie.",
     "**CSS:** assets/css/base.css (CSS puro), altura-less.css y altura-sass.css (compilados) y la carpeta framework/ con layout.css, responsive.css y animaciones.css, que trabajan sobre las clases de Material Design.",
-    "**Contenido multimedia:** assets/img (logo, íconos SVG, fotos WebP por sección, ilustraciones de productos y entrenadores), assets/video (MP4, WebM, pósteres y subtítulos .vtt) y assets/audio (MP3 originales).",
+    "**Contenido multimedia:** assets/img (logo e íconos SVG, fotos WebP por sección y de productos, avatares SVG de entrenadores), assets/video (MP4, WebM, pósteres y subtítulos .vtt) y assets/audio (MP3 originales).",
     "**Otros:** assets/js/main.js, tools/ (ensamblador, métricas, verificación y scripts de multimedia), docs/ (plan, métricas, créditos, capturas e informe), package.json, Dockerfile y el flujo .github/workflows/pages.yml.",
 ]:
     A(vineta(t))
@@ -433,12 +433,12 @@ A(tabla("Técnicas de LESS y SASS aplicadas", ["Preprocesador", "Técnica", "Dó
     ["SASS", "@use y @forward (módulos)", "altura.scss"],
 ], [1400, 3900, 3300]))
 A(h4("Organización Archivos Multimedia."))
-A(p("Las fotos se descargaron de Wikimedia Commons con licencias CC0, CC BY, CC BY-SA o dominio público, se redimensionaron y se convirtieron a WebP con el script tools/media/descargar_commons.py. Los productos de la tienda, el logo, los íconos y los avatares de los entrenadores son ilustraciones SVG propias. Las dos pistas de audio son originales: se sintetizaron con Python y se codificaron a MP3. Los dos videos (12 s cada uno) se generaron con ffmpeg a partir de esas fotos, con acercamiento lento y fundidos (tools/media/generar_videos.py), en MP4 y WebM, con subtítulos en español en formato WebVTT."))
+A(p("Las fotos se descargaron de Wikimedia Commons con licencias CC0, CC BY, CC BY-SA o dominio público, se redimensionaron y se convirtieron a WebP con el script tools/media/descargar_commons.py. Las fotos de los productos de la tienda también son de Wikimedia Commons (tools/media/fotos_productos.py); los cuatro colores de la zapatilla se obtuvieron cambiando el tono de una misma foto. El logo, los íconos y los avatares de los entrenadores son ilustraciones SVG propias. Las dos pistas de audio son originales: se sintetizaron con Python y se codificaron a MP3. Los dos videos (12 s cada uno) se generaron con ffmpeg a partir de esas fotos, con acercamiento lento y fundidos (tools/media/generar_videos.py), en MP4 y WebM, con subtítulos en español en formato WebVTT."))
 A(tabla("Archivos multimedia por carpeta", ["Carpeta", "Formato", "Contenido"], [
     ["assets/img/logo", "SVG", "Logotipo y favicon"],
     ["assets/img/iconos", "SVG", "Sprite de redes sociales, cancha FIBA, Libro de Reclamaciones"],
     ["assets/img/hero, academias, galeria, blog", "WebP", f"{sum(1 for c in creditos if c['archivo'].endswith('.webp'))} fotografías con licencia libre"],
-    ["assets/img/tienda", "SVG", "12 ilustraciones de productos (4 colores de zapatilla)"],
+    ["assets/img/tienda", "WebP", "12 fotos de productos (incluye 4 colores de la zapatilla)"],
     ["assets/img/equipo", "SVG", "6 avatares ilustrados de entrenadores"],
     ["assets/video", "MP4, WebM, VTT", "Clips de básquet y piscina (generados con las fotos), pósteres y subtítulos"],
     ["assets/audio", "MP3", "Ritmo de step (128 BPM) y jingle de la marca"],

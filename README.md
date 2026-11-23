@@ -60,5 +60,5 @@ Edite las páginas en `src/html/`; los `.html` de la raíz y de `paginas/` se ge
 ## Créditos
 
 Fotos y videos de Wikimedia Commons con licencias libres (lista en la página Galería y en
-`docs/creditos-multimedia.json`). Logo, íconos, ilustraciones de productos y audio son originales.
+`docs/creditos-multimedia.json`). Logo, íconos, avatares de entrenadores y audio son originales; las fotos de productos también vienen de Wikimedia Commons.
 Proyecto académico: la empresa y sus datos son ficticios.

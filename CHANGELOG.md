@@ -21,3 +21,8 @@ Cada versión corresponde a una etiqueta de Git y a una fila del "Historial de v
 - Videos generados a partir de las fotos del proyecto (MP4 y WebM con subtítulos).
 - Verificador de enlaces (`tools/verificar.mjs`), README, Dockerfile y flujo de GitHub Pages.
 - Informe en la plantilla del docente con diagramas, capturas y tablas (`docs/informe`).
+
+## Cambios posteriores a v3.0
+- Se agregó al segundo integrante (Mendoza Colque, Carlos Daniel) y el plazo de desarrollo del 18 al 23 de noviembre.
+- Prototipos UX/UI en Figma (17 pantallas de escritorio y 3 móviles) usados en el informe.
+- La tienda usa fotos reales de productos (Wikimedia Commons) en lugar de las ilustraciones SVG; la zapatilla tiene cuatro colores generados a partir de la misma foto.

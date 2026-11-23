@@ -744,8 +744,13 @@ video::cue {
     grid-template-columns: 1fr;
   }
 
+  .promo > * {
+    min-width: 0;
+  }
+
   .promo img {
-    max-width: 340px;
+    width: 100%;
+    max-width: min(340px, 100%);
     justify-self: center;
   }
 

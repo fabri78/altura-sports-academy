@@ -208,5 +208,77 @@
     "licencia": "CC BY-SA 3.0",
     "ancho": 1400,
     "alto": 933
+  },
+  {
+    "archivo": "assets/img/tienda/pelota.webp",
+    "titulo": "File:Isolated basketball.png",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/b/be/Isolated_basketball.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "pagina": "https://commons.wikimedia.org/wiki/File:Isolated_basketball.png",
+    "autor": "User: MrX",
+    "licencia": "CC BY-SA 3.0"
+  },
+  {
+    "archivo": "assets/img/tienda/camiseta.webp",
+    "titulo": "File:Sports T-Shirt.png",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/0/09/Sports_T-Shirt.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "pagina": "https://commons.wikimedia.org/wiki/File:Sports_T-Shirt.png",
+    "autor": "Kuttos2",
+    "licencia": "CC0"
+  },
+  {
+    "archivo": "assets/img/tienda/lentes.webp",
+    "titulo": "File:Swim goggles.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/a/ad/Swim_goggles.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "pagina": "https://commons.wikimedia.org/wiki/File:Swim_goggles.jpg",
+    "autor": "Justus Blümer from Deutschland",
+    "licencia": "CC BY 2.0"
+  },
+  {
+    "archivo": "assets/img/tienda/botella.webp",
+    "titulo": "File:Montclair Film Festival Water Bottle.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/3/37/Montclair_Film_Festival_Water_Bottle.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "pagina": "https://commons.wikimedia.org/wiki/File:Montclair_Film_Festival_Water_Bottle.jpg",
+    "autor": "Montclair Film",
+    "licencia": "CC BY 2.0"
+  },
+  {
+    "archivo": "assets/img/tienda/mancuernas.webp",
+    "titulo": "File:Colorful pile of dumbbells at the gym 2.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/7/79/Colorful_pile_of_dumbbells_at_the_gym_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "pagina": "https://commons.wikimedia.org/wiki/File:Colorful_pile_of_dumbbells_at_the_gym_2.jpg",
+    "autor": "Ser Amantio di Nicolao",
+    "licencia": "CC BY-SA 4.0"
+  },
+  {
+    "archivo": "assets/img/tienda/colchoneta.webp",
+    "titulo": "File:Yoga mat.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Yoga_mat.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "pagina": "https://commons.wikimedia.org/wiki/File:Yoga_mat.jpg",
+    "autor": "Gausanchennai",
+    "licencia": "CC BY-SA 4.0"
+  },
+  {
+    "archivo": "assets/img/tienda/mancuernas-ajustables.webp",
+    "titulo": "File:Kurzhanteln 2 x 15 kg 2v2.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/f/f2/Kurzhanteln_2_x_15_kg_2v2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "pagina": "https://commons.wikimedia.org/wiki/File:Kurzhanteln_2_x_15_kg_2v2.jpg",
+    "autor": "Singlespeedfahrer",
+    "licencia": "CC0"
+  },
+  {
+    "archivo": "assets/img/tienda/mochila.webp",
+    "titulo": "File:Wenger backpack.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Wenger_backpack.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "pagina": "https://commons.wikimedia.org/wiki/File:Wenger_backpack.jpg",
+    "autor": "Sir Tragedy",
+    "licencia": "CC0"
+  },
+  {
+    "archivo": "assets/img/tienda/zapatilla-borgona.webp",
+    "titulo": "File:187's-shoes-double quarter.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/0/03/187%27s-shoes-double_quarter.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "pagina": "https://commons.wikimedia.org/wiki/File:187%27s-shoes-double_quarter.jpg",
+    "autor": "WeLitty999 (variantes de color editadas por el equipo)",
+    "licencia": "CC BY-SA 4.0"
   }
 ]

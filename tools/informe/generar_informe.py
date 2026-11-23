@@ -324,7 +324,7 @@ for titulo, texto in [
     ("Diseño web responsivo", "Consiste en adaptar un sitio a cualquier tamaño de pantalla con unidades relativas, media queries, consultas de contenedor (@container) e imágenes y videos fluidos (Marcotte, 2011; MDN Web Docs, 2024)."),
     ("Flexbox y CSS Grid", "Flexbox distribuye elementos en una dimensión (fila o columna); CSS Grid organiza filas y columnas a la vez, con áreas con nombre (grid-template-areas), auto-fit y subgrid para alinear tarjetas hermanas (MDN Web Docs, 2024)."),
     ("Animaciones, transiciones y transformaciones", "Las transiciones animan el cambio entre dos estados; @keyframes define animaciones de varios pasos; transform traslada, escala y rota en 2D y 3D. Las animaciones ligadas al scroll (animation-timeline) permiten efectos que avanzan con el desplazamiento, como en la página de referencia de Apple (W3C, 2024)."),
-    ("Git, GitHub y GitHub Pages", "Git es un sistema de control de versiones distribuido; GitHub aloja repositorios en la nube y GitHub Pages publica sitios estáticos desde un repositorio, en este caso mediante un flujo de GitHub Actions (Chacon y Straub, 2014; GitHub, 2024)."),
+    ("Git, GitHub y GitHub Pages", "Git es un sistema de control de versiones distribuido; GitHub aloja repositorios en la nube y GitHub Pages publica sitios estáticos desde un repositorio, en este caso directamente desde la rama main, donde están los HTML y los CSS ya compilados (Chacon y Straub, 2014; GitHub, 2024)."),
 ]:
     A(h4(titulo))
     A(p(texto))
@@ -401,7 +401,7 @@ for t in [
     "**HTML:** index.html y 404.html en la raíz; las demás páginas en paginas/. Las fuentes están en src/html: parciales/ (head, cabecera, pie y el horario semanal) y paginas/ (el cuerpo de cada página). El script tools/ensamblar.mjs une ambas partes para que las 18 páginas compartan exactamente el mismo encabezado, menú y pie.",
     "**CSS:** assets/css/base.css (CSS puro), altura-less.css y altura-sass.css (compilados) y la carpeta framework/ con layout.css, responsive.css y animaciones.css, que trabajan sobre las clases de Material Design.",
     "**Contenido multimedia:** assets/img (logo e íconos SVG, fotos WebP por sección y de productos, avatares SVG de entrenadores), assets/video (MP4, WebM, pósteres y subtítulos .vtt) y assets/audio (MP3 originales).",
-    "**Otros:** assets/js/main.js, tools/ (ensamblador, métricas, verificación y scripts de multimedia), docs/ (plan, métricas, créditos, capturas e informe), package.json, Dockerfile y el flujo .github/workflows/pages.yml.",
+    "**Otros:** assets/js/main.js, tools/ (ensamblador, métricas, verificación y scripts de multimedia), docs/ (plan, métricas, créditos, capturas e informe), package.json, Dockerfile y .nojekyll (para que GitHub Pages publique los archivos tal cual).",
 ]:
     A(vineta(t))
 A(h4("Organización HTML."))

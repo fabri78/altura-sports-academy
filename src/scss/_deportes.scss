@@ -10,8 +10,6 @@
 // --- Tarjeta de academia ---
 .card-academia {
   @extend %tarjeta-base;
-  display: flex;
-  flex-direction: column;
   min-height: 420px;
   padding: esp(6);
   color: c("texto-claro");
@@ -82,27 +80,6 @@
   }
 }
 
-// --- Cifras destacadas ---
-.cifra {
-  &__num {
-    @include titular(clamp(2.2rem, 4.6vw, 4rem), 800);
-    display: block;
-    white-space: nowrap;
-    background-image: linear-gradient(100deg, c("brasa"), c("fucsia"));
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    font-variant-numeric: tabular-nums;
-  }
-
-  &__label {
-    display: block;
-    margin-top: esp(2);
-    color: c("gris-3");
-    font-size: rem(15px);
-  }
-}
-
 // --- Tarjeta de entrenador (frente y reverso) ---
 .coach {
   &__cara {
@@ -159,8 +136,6 @@
   border: 1px solid alfa(c("blanco"), 0.08);
 
   &__fecha {
-    display: grid;
-    place-items: center;
     width: 72px;
     height: 72px;
     border-radius: radio("lg");
@@ -292,41 +267,6 @@
   }
 }
 
-// --- Destacados del inicio (tarjetas de la galería horizontal) ---
-.highlight {
-  @extend %tarjeta-base;
-  background-color: c("carbon");
-  color: c("texto-claro");
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  &__caption {
-    position: absolute;
-    inset: auto 0 0 0;
-    padding: esp(6);
-    background: linear-gradient(180deg, transparent, alfa(c("negro"), 0.85));
-    font-family: $f-display;
-    font-size: rem(24px);
-    font-weight: 700;
-    line-height: 1.2;
-  }
-
-  &__caption small {
-    display: block;
-    margin-bottom: esp(2);
-    color: c("brasa");
-    font-family: $f-texto;
-    font-size: rem(13px);
-    font-weight: 600;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-  }
-}
-
 // --- Bloques del bento ---
 .bento__tile {
   @extend %tarjeta-base;
@@ -355,37 +295,5 @@
 
   img {
     border-radius: radio("lg");
-  }
-}
-
-// --- Preguntas frecuentes ---
-.faq {
-  border-bottom: 1px solid alfa(c("blanco"), 0.12);
-
-  summary {
-    @include titular(rem(19px), 600);
-    padding: esp(5) 0;
-    cursor: pointer;
-    list-style: none;
-
-    &::-webkit-details-marker {
-      display: none;
-    }
-
-    &::after {
-      content: "+";
-      float: right;
-      color: c("enlace");
-      font-weight: 400;
-    }
-  }
-
-  &[open] summary::after {
-    content: "–";
-  }
-
-  p {
-    padding-bottom: esp(5);
-    color: c("gris-3");
   }
 }

@@ -156,13 +156,18 @@
     var chips = document.querySelectorAll('[data-filtro]');
     var orden = document.querySelector('[data-orden]');
     var contador = document.querySelector('[data-resultados]');
+    var rango = document.getElementById('f-precio');
+    var rangoTexto = rango ? rango.parentNode.querySelector('.nota') : null;
 
     function aplicar() {
       var activos = Array.prototype.filter.call(chips, function (c) { return c.checked; })
         .map(function (c) { return c.value; });
       var visibles = 0;
+      var tope = rango ? parseFloat(rango.value) : Infinity;
+      if (rangoTexto) rangoTexto.textContent = 'Hasta S/ ' + tope;
       productos.forEach(function (p) {
-        var ok = !activos.length || activos.indexOf(p.getAttribute('data-cat')) > -1;
+        var ok = (!activos.length || activos.indexOf(p.getAttribute('data-cat')) > -1) &&
+          parseFloat(p.getAttribute('data-precio')) <= tope;
         p.hidden = !ok;
         if (ok) visibles += 1;
       });
@@ -181,6 +186,7 @@
     }
 
     chips.forEach(function (c) { c.addEventListener('change', aplicar); });
+    if (rango) rango.addEventListener('input', aplicar);
     if (orden) orden.addEventListener('change', ordenar);
     aplicar();
   }

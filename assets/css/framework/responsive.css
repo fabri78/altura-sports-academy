@@ -234,7 +234,7 @@ video::cue {
   .split,
   .sticky-story,
   .pdp,
-  .post-destacado,
+  .post-card.post-destacado,
   .articulo-layout,
   .form-layout,
   .multimedia-grid {
@@ -594,5 +594,606 @@ video::cue {
 
   .tabla {
     border: 1px solid #999;
+  }
+}
+
+/* =====================================================================
+   12. Escala tipográfica por punto de corte
+   ===================================================================== */
+@media (min-width: 1440px) {
+  :root {
+    --ancho-max: 1280px;
+  }
+
+  body {
+    font-size: 18px;
+  }
+
+  .lead {
+    font-size: 1.45rem;
+  }
+
+  .banner__title {
+    font-size: 5.75rem;
+  }
+
+  .highlight__caption {
+    font-size: 1.75rem;
+  }
+
+  .bento {
+    grid-auto-rows: minmax(260px, auto);
+  }
+}
+
+@media (min-width: 1920px) {
+  :root {
+    --ancho-max: 1440px;
+  }
+
+  .hero__media img,
+  .hero__media video {
+    max-height: 70vh;
+  }
+
+  .galeria-h__track {
+    grid-auto-columns: 980px;
+  }
+}
+
+@media (max-width: 904px) {
+  h1 {
+    font-size: clamp(2.4rem, 8vw, 3.5rem);
+  }
+
+  h2 {
+    font-size: clamp(1.9rem, 6vw, 2.6rem);
+  }
+
+  .eyebrow {
+    font-size: 1.05rem;
+  }
+
+  .lead {
+    font-size: 1.15rem;
+  }
+}
+
+@media (max-width: 599px) {
+  h1 {
+    font-size: 2.4rem;
+  }
+
+  h2 {
+    font-size: 1.9rem;
+  }
+
+  h3 {
+    font-size: 1.3rem;
+  }
+
+  .hero__title {
+    font-size: 3.1rem;
+  }
+
+  .banner__title {
+    font-size: 2.6rem;
+  }
+
+  .lead {
+    font-size: 1.05rem;
+  }
+
+  blockquote {
+    font-size: 1.2rem;
+  }
+
+  .articulo {
+    font-size: 1.02rem;
+  }
+}
+
+/* =====================================================================
+   13. Componentes en tablet (600 - 904 px)
+   ===================================================================== */
+@media (min-width: 600px) and (max-width: 904px) {
+  .catalogo {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .coaches {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .grid-4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .grid-3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .grid-3 > :last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+  }
+
+  .valores {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .medios-fila {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .form-layout > aside {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .galeria-h__track {
+    grid-auto-columns: 78vw;
+  }
+}
+
+@media (max-width: 904px) {
+  .menu {
+    background-color: #161617;
+  }
+
+  .promo {
+    grid-template-columns: 1fr;
+  }
+
+  .promo img {
+    max-width: 340px;
+    justify-self: center;
+  }
+
+  .pdp__escena {
+    aspect-ratio: 16 / 10;
+  }
+
+  .pdp__opciones {
+    padding-top: 8px;
+  }
+
+  .sticky-story__media > * {
+    position: relative;
+  }
+
+  .flip {
+    min-height: 400px;
+  }
+
+  .organigrama__nodo {
+    min-width: 150px;
+  }
+
+  .organigrama__nivel + .organigrama__nivel::before {
+    display: none;
+  }
+
+  .articulo-layout > .sidebar {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+  }
+
+  .articulo-layout > .sidebar .sidebar__block + .sidebar__block {
+    margin-top: 0;
+  }
+
+  .hoja-reclamo__cabecera {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .localnav__right .btn-pill--sm {
+    display: none;
+  }
+}
+
+/* =====================================================================
+   14. Componentes en móvil (< 600 px)
+   ===================================================================== */
+@media (max-width: 599px) {
+  .catalogo {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .producto__body {
+    padding: 12px 14px 16px;
+  }
+
+  .producto__nombre {
+    font-size: 0.95rem;
+  }
+
+  .producto .mdc-button {
+    min-height: 38px;
+    padding: 0 12px;
+    font-size: 0.9rem;
+  }
+
+  .producto__insignia {
+    top: 10px;
+    left: 10px;
+  }
+
+  .catalogo__barra {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .catalogo__barra .fila {
+    justify-content: space-between;
+  }
+
+  .grid-4,
+  .valores {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .valor {
+    padding: 18px;
+  }
+
+  .plan {
+    padding: 24px;
+  }
+
+  .plan__precio {
+    font-size: 2.4rem;
+  }
+
+  .cta-banda {
+    padding: 36px 22px;
+    border-radius: var(--radio-lg);
+  }
+
+  .promo {
+    padding: 24px;
+  }
+
+  .evento__fecha {
+    width: 60px;
+    height: 60px;
+  }
+
+  .evento__titulo {
+    font-size: 1.05rem;
+  }
+
+  .info-contacto {
+    padding: 22px;
+  }
+
+  .opciones-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .tallas {
+    gap: 8px;
+  }
+
+  .talla label {
+    min-width: 48px;
+    height: 44px;
+  }
+
+  .swatch {
+    width: 36px;
+    height: 36px;
+  }
+
+  .flip {
+    min-height: 380px;
+  }
+
+  .coach__cara {
+    padding: 20px;
+  }
+
+  .timeline__item time {
+    font-size: 1.6rem;
+  }
+
+  .sidebar__block {
+    padding: 18px;
+  }
+
+  .audio-card {
+    grid-template-columns: 52px minmax(0, 1fr);
+    padding: 16px;
+  }
+
+  .audio-card__icono {
+    width: 52px;
+    height: 52px;
+  }
+
+  .marquesina {
+    font-size: 0.95rem;
+  }
+
+  .cinta__pista span {
+    font-size: 1.15rem;
+  }
+
+  .faq summary {
+    font-size: 1.05rem;
+    padding: 18px 0;
+  }
+
+  .semana {
+    grid-template-columns: 56px repeat(6, minmax(96px, 1fr));
+  }
+
+  .social__btn {
+    width: 44px;
+    height: 44px;
+  }
+
+  .libro-badge {
+    font-size: 12px;
+  }
+
+  .e404 h1 {
+    font-size: 2rem;
+  }
+
+  .hero__media img {
+    object-position: 30% center;
+  }
+}
+
+/* =====================================================================
+   15. Consultas de contenedor (container queries)
+   ===================================================================== */
+.catalogo,
+.blog-grid,
+.coaches,
+.planes {
+  container-type: inline-size;
+}
+
+@container (max-width: 520px) {
+  .producto__cat {
+    font-size: 11px;
+  }
+
+  .post-card__body {
+    padding: 18px;
+  }
+
+  .post-card__titulo {
+    font-size: 1.1rem;
+  }
+}
+
+@container (min-width: 900px) {
+  .post-card__titulo {
+    font-size: 1.45rem;
+  }
+}
+
+/* =====================================================================
+   16. Multimedia adaptable: encuadre y proporción por pantalla
+   ===================================================================== */
+@media (max-width: 904px) {
+  .video-marco,
+  .iframe-marco {
+    border-radius: var(--radio-lg);
+  }
+
+  .banner__bg img,
+  .banner__bg video {
+    object-position: 65% center;
+  }
+
+  .split__media img {
+    aspect-ratio: 16 / 10;
+  }
+
+  .highlight img {
+    object-position: center 30%;
+  }
+}
+
+@media (max-width: 599px) {
+  .iframe-marco {
+    aspect-ratio: 4 / 3;
+  }
+
+  .multimedia-grid .video-marco {
+    aspect-ratio: 4 / 3;
+  }
+
+  .medios-fila .video-marco {
+    aspect-ratio: 16 / 10;
+  }
+
+  .mosaico__item img {
+    object-position: center;
+  }
+
+  audio {
+    height: 40px;
+  }
+}
+
+@media (min-aspect-ratio: 21 / 9) {
+  .hero__media img,
+  .hero__media video {
+    aspect-ratio: 21 / 9;
+  }
+}
+
+/* =====================================================================
+   17. Tipo de puntero y accesibilidad del sistema
+   ===================================================================== */
+@media (pointer: coarse) {
+  .menu__item > a,
+  .sidebar__list a,
+  .footer__col a {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+
+  .galeria-h__dot {
+    width: 12px;
+    height: 12px;
+  }
+
+  .chip-filtro label {
+    padding: 10px 16px;
+  }
+}
+
+@media (forced-colors: active) {
+  .btn-pill,
+  .chip-filtro label,
+  .opcion-card label,
+  .talla label {
+    border: 1px solid ButtonText;
+  }
+
+  .texto-gradiente,
+  .cifra__num {
+    color: CanvasText;
+    background: none;
+  }
+
+  .swatch {
+    forced-color-adjust: none;
+  }
+}
+
+@media (prefers-reduced-data: reduce) {
+  .video-fondo {
+    display: none;
+  }
+
+  .banner__bg img {
+    opacity: 0.35;
+  }
+}
+
+/* =====================================================================
+   18. Pantallas bajas (laptops con poca altura)
+   ===================================================================== */
+@media (max-height: 760px) and (min-width: 905px) {
+  .hero__content {
+    padding-top: 48px;
+  }
+
+  .hero__media img,
+  .hero__media video {
+    max-height: 62vh;
+  }
+
+  .sticky-story__media {
+    top: calc(var(--nav-alto) + 32px);
+    aspect-ratio: 1;
+  }
+
+  .banner__content {
+    padding-top: 88px;
+    padding-bottom: 72px;
+  }
+}
+
+/* =====================================================================
+   19. Impresión: páginas útiles en papel (horarios y reclamos)
+   ===================================================================== */
+@media print {
+  @page {
+    margin: 16mm;
+  }
+
+  .semana__clase {
+    border: 1px solid #999;
+    background: #fff !important;
+    color: #000 !important;
+  }
+
+  .mdc-tab-bar {
+    display: none;
+  }
+
+  .panel[hidden] {
+    display: block !important;
+  }
+
+  .form-card {
+    box-shadow: none;
+    border: 1px solid #999;
+  }
+
+  .form-acciones,
+  .cta-banda,
+  .lightbox {
+    display: none !important;
+  }
+
+  .tabla-contenedor {
+    overflow: visible;
+    border: 0;
+  }
+
+  h1,
+  h2,
+  h3 {
+    break-after: avoid;
+  }
+
+  .tabla,
+  figure,
+  img {
+    break-inside: avoid;
+  }
+}
+
+/* =====================================================================
+   20. Formularios adaptables
+   ===================================================================== */
+@media (max-width: 599px) {
+  .form-bloque {
+    margin-top: 32px;
+  }
+
+  .form-bloque legend {
+    font-size: 1.05rem;
+  }
+
+  .form-acciones {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .form-acciones .mdc-button {
+    width: 100%;
+  }
+
+  .hoja-reclamo__cabecera {
+    font-size: 13px;
+  }
+
+  .mdc-form-field {
+    align-items: flex-start;
+  }
+
+  .mdc-form-field > label {
+    padding-top: 10px;
+  }
+}
+
+@media (min-width: 905px) {
+  .form-layout > aside {
+    position: sticky;
+    top: calc(var(--nav-alto) + 24px);
   }
 }

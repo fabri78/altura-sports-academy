@@ -1,0 +1,100 @@
+<!--{"titulo":"Zapatilla Cumbre Pro","descripcion":"Zapatilla de básquet Cumbre Pro: amortiguación para saltos, suela de goma para piso de madera y cuatro colores. S/ 459.","activo":"tienda","clase":"tema-claro tienda","palabras":"zapatilla de básquet, Cumbre Pro, zapatillas Arequipa"}-->
+<nav class="localnav" aria-label="Producto">
+  <div class="localnav__inner">
+    <span class="localnav__title">Cumbre Pro</span>
+    <div class="localnav__right">
+      <ul class="localnav__links">
+        <li><a href="#vista">Vista general</a></li>
+        <li><a href="#especificaciones">Especificaciones</a></li>
+        <li><a href="{{P}}tienda.html">Tienda</a></li>
+      </ul>
+      <span class="fila"><span class="material-symbols-rounded" aria-hidden="true">shopping_bag</span><span class="carrito-contador" aria-label="Productos en el carrito">0</span></span>
+    </div>
+  </div>
+</nav>
+
+<main id="contenido">
+  <section class="seccion seccion--blanco seccion--compacta" id="vista" aria-labelledby="titulo-pagina">
+    <div class="contenedor">
+      <ol class="breadcrumb" aria-label="Ruta de navegación">
+        <li><a href="{{R}}index.html">Inicio</a></li>
+        <li><a href="{{P}}tienda.html">Tienda</a></li>
+        <li aria-current="page">Cumbre Pro</li>
+      </ol>
+
+      <!-- Selector de color solo con CSS: radios + combinador general de hermanos (~) -->
+      <div class="pdp">
+        <input class="pdp__radio" type="radio" name="color" id="color-brasa" value="Brasa" checked>
+        <input class="pdp__radio" type="radio" name="color" id="color-glaciar" value="Glaciar">
+        <input class="pdp__radio" type="radio" name="color" id="color-grafito" value="Grafito">
+        <input class="pdp__radio" type="radio" name="color" id="color-borgona" value="Borgoña">
+
+        <div class="pdp__visor" aria-live="polite">
+          <div class="pdp__escena pdp__vista pdp__vista--brasa"><img src="{{R}}assets/img/tienda/zapatilla-brasa.svg" alt="Cumbre Pro color brasa" width="400" height="300"></div>
+          <div class="pdp__escena pdp__vista pdp__vista--glaciar"><img src="{{R}}assets/img/tienda/zapatilla-glaciar.svg" alt="Cumbre Pro color glaciar" width="400" height="300"></div>
+          <div class="pdp__escena pdp__vista pdp__vista--grafito"><img src="{{R}}assets/img/tienda/zapatilla-grafito.svg" alt="Cumbre Pro color grafito" width="400" height="300"></div>
+          <div class="pdp__escena pdp__vista pdp__vista--borgona"><img src="{{R}}assets/img/tienda/zapatilla-borgona.svg" alt="Cumbre Pro color borgoña" width="400" height="300"></div>
+        </div>
+
+        <div class="pdp__opciones">
+          <span class="promo__tag">Nuevo</span>
+          <h1 class="pdp__nombre" id="titulo-pagina">Zapatilla Cumbre Pro</h1>
+          <p class="pdp__precio">S/ 459 <span class="nota">o 3 cuotas de S/ 153</span></p>
+          <p class="pdp__desc">Diseñada para saltar. Espuma de doble densidad en el talón, caña media que protege el tobillo y suela de goma con patrón espiga que agarra en madera.</p>
+
+          <span class="pdp__etiqueta">Color:
+            <span class="pdp__nombre-color pdp__nombre-color--brasa">Brasa</span>
+            <span class="pdp__nombre-color pdp__nombre-color--glaciar">Glaciar</span>
+            <span class="pdp__nombre-color pdp__nombre-color--grafito">Grafito</span>
+            <span class="pdp__nombre-color pdp__nombre-color--borgona">Borgoña</span>
+          </span>
+          <div class="pdp__swatches">
+            <label class="swatch swatch--brasa" for="color-brasa"><span class="sr-only">Brasa</span></label>
+            <label class="swatch swatch--glaciar" for="color-glaciar"><span class="sr-only">Glaciar</span></label>
+            <label class="swatch swatch--grafito" for="color-grafito"><span class="sr-only">Grafito</span></label>
+            <label class="swatch swatch--borgona" for="color-borgona"><span class="sr-only">Borgoña</span></label>
+          </div>
+
+          <span class="pdp__etiqueta" id="tallas-label">Talla (EU)</span>
+          <div class="tallas" role="radiogroup" aria-labelledby="tallas-label">
+            <span class="talla"><input type="radio" name="talla" id="t-39" disabled><label for="t-39">39</label></span>
+            <span class="talla"><input type="radio" name="talla" id="t-40"><label for="t-40">40</label></span>
+            <span class="talla"><input type="radio" name="talla" id="t-41" checked><label for="t-41">41</label></span>
+            <span class="talla"><input type="radio" name="talla" id="t-42"><label for="t-42">42</label></span>
+            <span class="talla"><input type="radio" name="talla" id="t-43"><label for="t-43">43</label></span>
+            <span class="talla"><input type="radio" name="talla" id="t-44"><label for="t-44">44</label></span>
+          </div>
+
+          <div class="form-acciones">
+            <button class="mdc-button mdc-button--unelevated btn-pill btn-pill--lg" type="button" data-carrito="Zapatilla Cumbre Pro" data-mdc-auto-init="MDCRipple"><span class="mdc-button__ripple"></span><span class="mdc-button__label">Agregar al carrito</span></button>
+            <a class="link-mas" href="{{P}}contacto.html">Consultar disponibilidad</a>
+          </div>
+          <p class="nota">Recojo gratis en tienda. Cambios hasta 30 días.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="seccion seccion--niebla seccion--compacta" id="especificaciones" aria-labelledby="specs-titulo">
+    <div class="contenedor">
+      <header class="seccion__head">
+        <h2 id="specs-titulo">Especificaciones</h2>
+      </header>
+      <div class="tabla-contenedor">
+        <table class="tabla tabla--clara">
+          <caption>Ficha técnica de la Cumbre Pro</caption>
+          <thead><tr><th scope="col">Característica</th><th scope="col">Detalle</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Uso</th><td>Básquet en interiores (madera y sintético)</td></tr>
+            <tr><th scope="row">Peso</th><td>395 g (talla 42)</td></tr>
+            <tr><th scope="row">Drop</th><td>8 mm</td></tr>
+            <tr><th scope="row">Capellada</th><td>Malla técnica con refuerzos de TPU</td></tr>
+            <tr><th scope="row">Amortiguación</th><td>Espuma de doble densidad</td></tr>
+            <tr><th scope="row">Suela</th><td>Goma con patrón espiga</td></tr>
+          </tbody>
+          <tfoot><tr><td colspan="2">Garantía de 6 meses por defectos de fabricación.</td></tr></tfoot>
+        </table>
+      </div>
+    </div>
+  </section>
+</main>

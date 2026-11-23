@@ -11,10 +11,16 @@
   text-transform: uppercase;
 }
 
-.producto, .card-academia, .post-card, .highlight, .bento__tile, .mdc-card {
+.producto, .card-academia, .post-card, .bento__tile, .mdc-card {
   position: relative;
   overflow: hidden;
   border-radius: 28px;
+}
+
+.opcion-card input, .chip-filtro input, .pdp__radio, .talla input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .coach__logros, .plan__lista {
@@ -209,8 +215,6 @@
 }
 
 .card-academia {
-  display: flex;
-  flex-direction: column;
   min-height: 420px;
   padding: 32px;
   color: #f5f5f7;
@@ -337,27 +341,6 @@
   color: #d189f6;
 }
 
-.cifra__num {
-  font-family: "Inter Tight", "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
-  font-size: clamp(2.2rem, 4.6vw, 4rem);
-  font-weight: 800;
-  line-height: 1.1;
-  letter-spacing: -0.015em;
-  display: block;
-  white-space: nowrap;
-  background-image: linear-gradient(100deg, #ff6a2b, #ff2e63);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  font-variant-numeric: tabular-nums;
-}
-.cifra__label {
-  display: block;
-  margin-top: 8px;
-  color: #a1a1a6;
-  font-size: 0.9375rem;
-}
-
 .coach__cara {
   background-color: #1d1d1f;
   color: #f5f5f7;
@@ -410,8 +393,6 @@
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 .evento__fecha {
-  display: grid;
-  place-items: center;
   width: 72px;
   height: 72px;
   border-radius: 18px;
@@ -538,36 +519,6 @@
   color: #a1a1a6;
 }
 
-.highlight {
-  background-color: #1d1d1f;
-  color: #f5f5f7;
-}
-.highlight img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.highlight__caption {
-  position: absolute;
-  inset: auto 0 0 0;
-  padding: 32px;
-  background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.85));
-  font-family: "Inter Tight", "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
-  font-size: 1.5rem;
-  font-weight: 700;
-  line-height: 1.2;
-}
-.highlight__caption small {
-  display: block;
-  margin-bottom: 8px;
-  color: #ff6a2b;
-  font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
-  font-size: 0.8125rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
-
 .bento__tile {
   padding: 32px;
   background-color: #1d1d1f;
@@ -596,39 +547,7 @@
   border-radius: 18px;
 }
 
-.faq {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-}
-.faq summary {
-  font-family: "Inter Tight", "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
-  font-size: 1.1875rem;
-  font-weight: 600;
-  line-height: 1.1;
-  letter-spacing: -0.015em;
-  padding: 24px 0;
-  cursor: pointer;
-  list-style: none;
-}
-.faq summary::-webkit-details-marker {
-  display: none;
-}
-.faq summary::after {
-  content: "+";
-  float: right;
-  color: #2997ff;
-  font-weight: 400;
-}
-.faq[open] summary::after {
-  content: "–";
-}
-.faq p {
-  padding-bottom: 24px;
-  color: #a1a1a6;
-}
-
 .producto {
-  display: flex;
-  flex-direction: column;
   border-radius: 18px;
   background-color: #ffffff;
   color: #1d1d1f;
@@ -641,12 +560,12 @@
 .producto__img {
   aspect-ratio: 1;
   background-color: #f0f0f3;
+  padding: 8%;
 }
 .producto__img img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  mix-blend-mode: multiply;
+  object-fit: contain;
 }
 .producto__body {
   padding: 16px 24px 24px;
@@ -693,10 +612,6 @@
   width: 100%;
 }
 
-.chip-filtro input {
-  position: absolute;
-  opacity: 0;
-}
 .chip-filtro label {
   display: inline-flex;
   align-items: center;
@@ -830,16 +745,6 @@
   font-weight: 400;
 }
 
-.pdp__radio {
-  position: absolute;
-  opacity: 0;
-  pointer-events: none;
-}
-
-.talla input {
-  position: absolute;
-  opacity: 0;
-}
 .talla label {
   display: grid;
   place-items: center;
@@ -899,8 +804,6 @@
   font-weight: 700;
   line-height: 1.1;
   letter-spacing: -0.015em;
-  display: flex;
-  align-items: center;
   gap: 12px;
   margin-bottom: 24px;
   padding: 0;
@@ -936,10 +839,6 @@
 .opcion-card {
   position: relative;
 }
-.opcion-card input {
-  position: absolute;
-  opacity: 0;
-}
 .opcion-card label {
   display: block;
   height: 100%;
@@ -967,62 +866,4 @@
 .opcion-card input:focus-visible + label {
   outline: 2px solid #0071e3;
   outline-offset: 3px;
-}
-
-.form-legal {
-  margin-top: 24px;
-  color: #6e6e73;
-  font-size: 0.8125rem;
-}
-
-.form-acciones {
-  margin-top: 32px;
-}
-
-.form-ok {
-  padding: 24px;
-  border-radius: 18px;
-  background-color: rgba(48, 209, 88, 0.12);
-  color: #0a6b2a;
-  font-weight: 600;
-}
-
-.hoja-reclamo__cabecera {
-  padding: 24px;
-  border-radius: 18px;
-  background-color: #f5f5f7;
-  color: #1d1d1f;
-  font-size: 0.875rem;
-}
-.hoja-reclamo__cabecera strong {
-  font-family: "Inter Tight", "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
-  font-size: 1.125rem;
-}
-.hoja-reclamo__numero {
-  font-variant-numeric: tabular-nums;
-  color: #ff2e63;
-  font-weight: 700;
-}
-
-.info-contacto {
-  background-color: #1d1d1f;
-  color: #f5f5f7;
-  border-radius: 28px;
-  padding: 32px;
-}
-.info-contacto .material-symbols-rounded {
-  color: #ff6a2b;
-  font-size: 28px;
-}
-.info-contacto h3 {
-  font-family: "Inter Tight", "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
-  font-size: 1.1875rem;
-  font-weight: 700;
-  line-height: 1.1;
-  letter-spacing: -0.015em;
-  margin-top: 12px;
-}
-.info-contacto p {
-  margin-top: 4px;
-  color: #a1a1a6;
 }

@@ -30,7 +30,7 @@ def get(url):
         except urllib.error.HTTPError as e:
             if e.code != 429:
                 raise
-            time.sleep(15 * (intento + 1))
+            time.sleep(45 * (intento + 1))
     raise RuntimeError("Demasiados reintentos: " + url)
 
 
@@ -49,20 +49,20 @@ def main():
     destino = RAIZ / "assets" / "video"
     destino.mkdir(parents=True, exist_ok=True)
     for nombre, titulo in PEDIDOS.items():
-        if (destino / f"{nombre}.mp4").exists():
+        if (destino / f"{nombre}.mp4").exists() and (destino / f"{nombre}.webm").exists():
             continue
         d = api({"action": "query", "format": "json", "titles": titulo, "prop": "videoinfo",
                  "viprop": "url|extmetadata|derivatives", "viurlwidth": 1280})
         v = list(d["query"]["pages"].values())[0]["videoinfo"][0]
         derivados = v.get("derivatives", [])
-        mp4 = mejor([x for x in derivados if x.get("type", "").startswith("video/mp4")])
-        webm = mejor([x for x in derivados if "webm" in x.get("type", "")])
+        mp4 = mejor([x for x in derivados if "mp4" in x.get("type", "") or "mpeg4" in x.get("src", "")], 360)
+        webm = mejor([x for x in derivados if x.get("src", "").endswith(".webm") and "vp9" in x.get("src", "")], 480)
         for x, ext in ((mp4, "mp4"), (webm, "webm")):
-            if x:
+            if x and not (destino / f"{nombre}.{ext}").exists():
                 datos = get(x["src"])
                 (destino / f"{nombre}.{ext}").write_bytes(datos)
                 print(nombre, ext, x.get("height"), len(datos) // 1024, "KB")
-                time.sleep(3)
+                time.sleep(30)
         if v.get("thumburl"):
             img = Image.open(io.BytesIO(get(v["thumburl"]))).convert("RGB")
             img.save(destino / f"{nombre}-poster.webp", "WEBP", quality=75)

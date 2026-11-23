@@ -1,0 +1,148 @@
+<!--{"titulo":"Matrícula","descripcion":"Matricúlate en línea en las academias de básquet, aeróbicos o natación de ALTURA Sports Academy. Primera clase gratis.","activo":"matricula","clase":"tema-claro"}-->
+<main id="contenido">
+  <section class="seccion seccion--niebla seccion--compacta" aria-labelledby="titulo-pagina">
+    <div class="contenedor">
+      <header class="seccion__head">
+        <ol class="breadcrumb" aria-label="Ruta de navegación">
+          <li><a href="{{R}}index.html">Inicio</a></li>
+          <li aria-current="page">Matrícula</li>
+        </ol>
+        <h1 id="titulo-pagina">Matrícula en línea.</h1>
+        <p class="lead">Completa tus datos en tres pasos. Te llamamos para confirmar el horario y tu clase de prueba gratis.</p>
+      </header>
+
+      <div class="form-layout">
+        <!-- FORMULARIO DE CLIENTES (alumnos) -->
+        <form class="form-card" data-form="matricula" data-ok="¡Listo! Recibimos tu matrícula. Te llamaremos en menos de 24 horas para confirmar el horario." novalidate>
+          <h2 class="form-card__titulo">Datos del alumno</h2>
+          <p class="form-card__intro">Los campos marcados con <abbr title="obligatorio">*</abbr> son obligatorios.</p>
+          <p class="form-ok" tabindex="-1" hidden></p>
+
+          <fieldset class="form-bloque">
+            <legend><span class="form-bloque__paso">1</span>Elige el programa</legend>
+            <div class="opciones-grid">
+              <div class="opcion-card"><input type="radio" name="programa" id="p-basquet" value="basquet" required checked><label for="p-basquet"><strong>Básquet</strong><span>6 a 17 años · desde S/ 150</span></label></div>
+              <div class="opcion-card"><input type="radio" name="programa" id="p-aerobicos" value="aerobicos"><label for="p-aerobicos"><strong>Aeróbicos</strong><span>16 años a más · desde S/ 20</span></label></div>
+              <div class="opcion-card"><input type="radio" name="programa" id="p-natacion" value="natacion"><label for="p-natacion"><strong>Natación</strong><span>6 meses a más · desde S/ 160</span></label></div>
+              <div class="opcion-card"><input type="radio" name="programa" id="p-funcional" value="funcional"><label for="p-funcional"><strong>Preparación física</strong><span>14 años a más · S/ 170</span></label></div>
+            </div>
+          </fieldset>
+
+          <fieldset class="form-bloque">
+            <legend><span class="form-bloque__paso">2</span>Datos personales</legend>
+            <div class="form-grid">
+              <div class="campo">
+                <label class="mdc-text-field mdc-text-field--filled" data-mdc-auto-init="MDCTextField">
+                  <span class="mdc-text-field__ripple"></span>
+                  <span class="mdc-floating-label" id="lbl-m-nombres">Nombres</span>
+                  <input class="mdc-text-field__input" type="text" id="m-nombres" name="nombres" aria-labelledby="lbl-m-nombres" required autocomplete="given-name">
+                  <span class="mdc-line-ripple"></span>
+                </label>
+              </div>
+              <div class="campo">
+                <label class="mdc-text-field mdc-text-field--filled" data-mdc-auto-init="MDCTextField">
+                  <span class="mdc-text-field__ripple"></span>
+                  <span class="mdc-floating-label" id="lbl-m-apellidos">Apellidos</span>
+                  <input class="mdc-text-field__input" type="text" id="m-apellidos" name="apellidos" aria-labelledby="lbl-m-apellidos" required autocomplete="family-name">
+                  <span class="mdc-line-ripple"></span>
+                </label>
+              </div>
+              <div class="campo">
+                <label class="campo__label" for="m-doc">Tipo de documento <abbr title="obligatorio">*</abbr></label>
+                <select class="campo-nativo" id="m-doc" name="tipo_documento" required>
+                  <option value="dni">DNI</option>
+                  <option value="ce">Carné de extranjería</option>
+                  <option value="pasaporte">Pasaporte</option>
+                </select>
+              </div>
+              <div class="campo">
+                <label class="campo__label" for="m-numdoc">Número de documento <abbr title="obligatorio">*</abbr></label>
+                <input class="campo-nativo" type="text" id="m-numdoc" name="numero_documento" required inputmode="numeric" pattern="[0-9]{8,12}" placeholder="8 a 12 dígitos">
+              </div>
+              <div class="campo">
+                <label class="campo__label" for="m-nac">Fecha de nacimiento <abbr title="obligatorio">*</abbr></label>
+                <input class="campo-nativo" type="date" id="m-nac" name="nacimiento" required min="1940-01-01" max="2026-06-01">
+              </div>
+              <div class="campo">
+                <label class="campo__label" for="m-genero">Género</label>
+                <select class="campo-nativo" id="m-genero" name="genero">
+                  <option value="">Prefiero no decirlo</option>
+                  <option>Femenino</option>
+                  <option>Masculino</option>
+                </select>
+              </div>
+              <div class="campo">
+                <label class="mdc-text-field mdc-text-field--filled" data-mdc-auto-init="MDCTextField">
+                  <span class="mdc-text-field__ripple"></span>
+                  <span class="mdc-floating-label" id="lbl-m-correo">Correo electrónico</span>
+                  <input class="mdc-text-field__input" type="email" id="m-correo" name="correo" aria-labelledby="lbl-m-correo" required autocomplete="email">
+                  <span class="mdc-line-ripple"></span>
+                </label>
+              </div>
+              <div class="campo">
+                <label class="mdc-text-field mdc-text-field--filled" data-mdc-auto-init="MDCTextField">
+                  <span class="mdc-text-field__ripple"></span>
+                  <span class="mdc-floating-label" id="lbl-m-cel">Celular</span>
+                  <input class="mdc-text-field__input" type="tel" id="m-cel" name="celular" aria-labelledby="lbl-m-cel" required pattern="9[0-9]{8}" autocomplete="tel">
+                  <span class="mdc-line-ripple"></span>
+                </label>
+              </div>
+              <div class="campo campo--full">
+                <label class="campo__label" for="m-apoderado">Nombre del apoderado (si el alumno es menor de edad)</label>
+                <input class="campo-nativo" type="text" id="m-apoderado" name="apoderado" autocomplete="off">
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset class="form-bloque">
+            <legend><span class="form-bloque__paso">3</span>Turno y salud</legend>
+            <div class="form-grid">
+              <div class="campo">
+                <span class="campo__label" id="turno-label">Turno preferido <abbr title="obligatorio">*</abbr></span>
+                <div class="pila" role="radiogroup" aria-labelledby="turno-label">
+                  <div class="mdc-form-field">
+                    <div class="mdc-radio" data-mdc-auto-init="MDCRadio"><input class="mdc-radio__native-control" type="radio" id="t-manana" name="turno" value="manana" required><div class="mdc-radio__background"><div class="mdc-radio__outer-circle"></div><div class="mdc-radio__inner-circle"></div></div><div class="mdc-radio__ripple"></div></div>
+                    <label for="t-manana">Mañana (6:00 a 12:00)</label>
+                  </div>
+                  <div class="mdc-form-field">
+                    <div class="mdc-radio" data-mdc-auto-init="MDCRadio"><input class="mdc-radio__native-control" type="radio" id="t-tarde" name="turno" value="tarde"><div class="mdc-radio__background"><div class="mdc-radio__outer-circle"></div><div class="mdc-radio__inner-circle"></div></div><div class="mdc-radio__ripple"></div></div>
+                    <label for="t-tarde">Tarde (14:00 a 18:00)</label>
+                  </div>
+                  <div class="mdc-form-field">
+                    <div class="mdc-radio" data-mdc-auto-init="MDCRadio"><input class="mdc-radio__native-control" type="radio" id="t-noche" name="turno" value="noche"><div class="mdc-radio__background"><div class="mdc-radio__outer-circle"></div><div class="mdc-radio__inner-circle"></div></div><div class="mdc-radio__ripple"></div></div>
+                    <label for="t-noche">Noche (18:00 a 22:00)</label>
+                  </div>
+                </div>
+              </div>
+              <div class="campo">
+                <label class="campo__label" for="m-salud">¿Alguna condición de salud que debamos conocer?</label>
+                <textarea class="campo-nativo" id="m-salud" name="salud" rows="5" placeholder="Asma, lesiones previas, alergias…"></textarea>
+              </div>
+            </div>
+          </fieldset>
+
+          <div class="form-legal">
+            <div class="mdc-form-field">
+              <div class="mdc-checkbox" data-mdc-auto-init="MDCCheckbox">
+                <input type="checkbox" class="mdc-checkbox__native-control" id="m-acepto" required>
+                <div class="mdc-checkbox__background"><svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24"><path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"/></svg><div class="mdc-checkbox__mixedmark"></div></div>
+                <div class="mdc-checkbox__ripple"></div>
+              </div>
+              <label for="m-acepto">Acepto el reglamento interno y el tratamiento de mis datos personales.</label>
+            </div>
+          </div>
+          <div class="form-acciones">
+            <button class="mdc-button mdc-button--unelevated btn-pill btn-pill--lg" type="submit" data-mdc-auto-init="MDCRipple"><span class="mdc-button__ripple"></span><span class="mdc-button__label">Enviar matrícula</span></button>
+            <a class="link-mas" href="{{P}}horarios.html">Revisar horarios</a>
+          </div>
+        </form>
+
+        <aside class="pila">
+          <div class="info-contacto"><span class="material-symbols-rounded" aria-hidden="true">redeem</span><h3>Primera clase gratis</h3><p>Sin compromiso, en cualquier disciplina.</p></div>
+          <div class="info-contacto"><span class="material-symbols-rounded" aria-hidden="true">family_restroom</span><h3>Descuento familiar</h3><p>10 % desde el segundo miembro de la familia.</p></div>
+          <div class="info-contacto"><span class="material-symbols-rounded" aria-hidden="true">support_agent</span><h3>¿Dudas?</h3><p><a href="https://wa.me/51954000123" target="_blank" rel="noopener noreferrer">Escríbenos por WhatsApp</a></p></div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</main>

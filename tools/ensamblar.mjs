@@ -21,6 +21,17 @@ const head = leer('parciales/head.html');
 
 const DESTINO = { index: '', '404': '' }; // el resto va a /paginas
 
+// Lista de créditos de fotos y videos con licencia libre (Wikimedia Commons)
+function listaCreditos() {
+  const ruta = join(RAIZ, 'docs', 'creditos-multimedia.json');
+  const vistos = new Set();
+  const items = JSON.parse(readFileSync(ruta, 'utf8')).filter((c) => !vistos.has(c.archivo) && vistos.add(c.archivo));
+  const esc = (t) => String(t || 'Autor desconocido').replace(/&/g, '&amp;').replace(/</g, '&lt;').slice(0, 90);
+  return items
+    .map((c) => `<li><code>${c.archivo.split('/').pop()}</code> · ${esc(c.autor)} · ${esc(c.licencia)} · <a href="${c.pagina}" target="_blank" rel="noopener noreferrer">Wikimedia Commons</a></li>`)
+    .join('\n            ');
+}
+
 let total = 0;
 for (const archivo of readdirSync(join(SRC, 'paginas')).filter((f) => f.endsWith('.html'))) {
   const nombre = archivo.replace('.html', '');
@@ -49,6 +60,7 @@ ${pie}
     .replaceAll('{{descripcion}}', meta.descripcion)
     .replaceAll('{{palabras}}', meta.palabras || 'academia deportiva, Arequipa, básquet, aeróbicos, natación, artículos deportivos')
     .replaceAll('{{archivo}}', enRaiz ? `${nombre}.html` : `paginas/${nombre}.html`)
+    .replaceAll('{{creditos}}', html.includes('{{creditos}}') ? listaCreditos() : '')
     .replaceAll('{{R}}', R)
     .replaceAll('{{P}}', P);
 

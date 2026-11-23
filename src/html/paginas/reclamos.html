@@ -1,0 +1,94 @@
+<!--{"titulo":"Libro de Reclamaciones","descripcion":"Libro de Reclamaciones virtual de ALTURA Sports Academy S.A.C., conforme al Código de Protección y Defensa del Consumidor.","activo":"reclamos","clase":"tema-claro"}-->
+<main id="contenido">
+  <section class="seccion seccion--niebla seccion--compacta" aria-labelledby="titulo-pagina">
+    <div class="contenedor">
+      <header class="seccion__head">
+        <ol class="breadcrumb" aria-label="Ruta de navegación">
+          <li><a href="{{R}}index.html">Inicio</a></li>
+          <li aria-current="page">Libro de Reclamaciones</li>
+        </ol>
+        <h1 id="titulo-pagina">Libro de Reclamaciones</h1>
+        <p class="lead">Conforme a la Ley N.° 29571, Código de Protección y Defensa del Consumidor. Responderemos en un plazo máximo de 15 días hábiles.</p>
+      </header>
+
+      <!-- FORMULARIO DE RECLAMOS -->
+      <form class="form-card hoja-reclamo" data-form="reclamo" novalidate>
+        <div class="hoja-reclamo__cabecera fila fila--entre">
+          <div>
+            <strong>ALTURA Sports Academy S.A.C.</strong><br>
+            RUC 20612345678 · Av. Ejército 1020, Yanahuara, Arequipa
+          </div>
+          <div>Hoja N.° <span class="hoja-reclamo__numero">2026-____</span><br><time datetime="2026-11-23">Fecha: se asigna al enviar</time></div>
+        </div>
+        <p class="form-ok" tabindex="-1" hidden></p>
+
+        <fieldset class="form-bloque">
+          <legend><span class="form-bloque__paso">1</span>Identificación del consumidor</legend>
+          <div class="form-grid">
+            <div class="campo campo--full">
+              <label class="campo__label" for="r-nombre">Nombre completo <abbr title="obligatorio">*</abbr></label>
+              <input class="campo-nativo" type="text" id="r-nombre" name="nombre" required autocomplete="name">
+            </div>
+            <div class="campo">
+              <label class="campo__label" for="r-doc">DNI / CE <abbr title="obligatorio">*</abbr></label>
+              <input class="campo-nativo" type="text" id="r-doc" name="documento" required inputmode="numeric" pattern="[0-9]{8,12}">
+            </div>
+            <div class="campo">
+              <label class="campo__label" for="r-tel">Teléfono <abbr title="obligatorio">*</abbr></label>
+              <input class="campo-nativo" type="tel" id="r-tel" name="telefono" required autocomplete="tel">
+            </div>
+            <div class="campo">
+              <label class="campo__label" for="r-correo">Correo electrónico <abbr title="obligatorio">*</abbr></label>
+              <input class="campo-nativo" type="email" id="r-correo" name="correo" required autocomplete="email">
+            </div>
+            <div class="campo">
+              <label class="campo__label" for="r-dir">Domicilio</label>
+              <input class="campo-nativo" type="text" id="r-dir" name="domicilio" autocomplete="street-address">
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="form-bloque">
+          <legend><span class="form-bloque__paso">2</span>Bien contratado</legend>
+          <div class="opciones-grid">
+            <div class="opcion-card"><input type="radio" name="bien" id="b-servicio" value="servicio" required checked><label for="b-servicio"><strong>Servicio</strong><span>Clases, matrícula, eventos</span></label></div>
+            <div class="opcion-card"><input type="radio" name="bien" id="b-producto" value="producto"><label for="b-producto"><strong>Producto</strong><span>Compras en la tienda</span></label></div>
+          </div>
+          <div class="form-grid">
+            <div class="campo">
+              <label class="campo__label" for="r-monto">Monto reclamado (S/)</label>
+              <input class="campo-nativo" type="number" id="r-monto" name="monto" min="0" step="0.10" placeholder="0.00">
+            </div>
+            <div class="campo">
+              <label class="campo__label" for="r-desc-bien">Descripción del bien <abbr title="obligatorio">*</abbr></label>
+              <input class="campo-nativo" type="text" id="r-desc-bien" name="descripcion_bien" required>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="form-bloque">
+          <legend><span class="form-bloque__paso">3</span>Detalle</legend>
+          <div class="opciones-grid">
+            <div class="opcion-card"><input type="radio" name="tipo" id="tipo-reclamo" value="reclamo" required checked><label for="tipo-reclamo"><strong>Reclamo</strong><span>Disconformidad con el producto o servicio.</span></label></div>
+            <div class="opcion-card"><input type="radio" name="tipo" id="tipo-queja" value="queja"><label for="tipo-queja"><strong>Queja</strong><span>Malestar por la atención recibida.</span></label></div>
+          </div>
+          <div class="form-grid">
+            <div class="campo campo--full">
+              <label class="campo__label" for="r-detalle">Detalle del reclamo o queja <abbr title="obligatorio">*</abbr></label>
+              <textarea class="campo-nativo" id="r-detalle" name="detalle" rows="5" required minlength="20"></textarea>
+            </div>
+            <div class="campo campo--full">
+              <label class="campo__label" for="r-pedido">Pedido del consumidor <abbr title="obligatorio">*</abbr></label>
+              <textarea class="campo-nativo" id="r-pedido" name="pedido" rows="3" required></textarea>
+            </div>
+          </div>
+        </fieldset>
+
+        <p class="form-legal">La formulación del reclamo no impide acudir a otras vías de solución de controversias ni es requisito previo para interponer una denuncia ante el INDECOPI. El proveedor debe dar respuesta en un plazo no mayor a 15 días hábiles.</p>
+        <div class="form-acciones">
+          <button class="mdc-button mdc-button--unelevated btn-pill btn-pill--lg" type="submit" data-mdc-auto-init="MDCRipple"><span class="mdc-button__ripple"></span><span class="mdc-button__label">Registrar hoja de reclamación</span></button>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>

@@ -1,6 +1,6 @@
 {
-  "fecha": "2026-11-23T18:08:32.249Z",
-  "total": 3642,
+  "fecha": "2026-11-23T18:25:55.130Z",
+  "total": 4886,
   "filas": [
     {
       "punto": "g.i",
@@ -9,9 +9,9 @@
       "archivos": [
         "assets/css/base.css"
       ],
-      "lineas": 449,
-      "porcentaje": 12.3,
-      "diferencia": 2.3
+      "lineas": 505,
+      "porcentaje": 10.3,
+      "diferencia": 0.3
     },
     {
       "punto": "g.ii",
@@ -22,15 +22,16 @@
       "archivos": [
         "src/less/altura.less",
         "src/less/_banners.less",
+        "src/less/_componentes.less",
         "src/less/_footer.less",
         "src/less/_header.less",
         "src/less/_mixins.less",
         "src/less/_sidebar.less",
         "src/less/_variables.less"
       ],
-      "lineas": 683,
-      "porcentaje": 18.8,
-      "diferencia": 3.8
+      "lineas": 787,
+      "porcentaje": 16.1,
+      "diferencia": 1.1
     },
     {
       "punto": "g.iii",
@@ -47,9 +48,9 @@
         "src/scss/_tienda.scss",
         "src/scss/_tokens.scss"
       ],
-      "lineas": 921,
-      "porcentaje": 25.3,
-      "diferencia": 10.3
+      "lineas": 801,
+      "porcentaje": 16.4,
+      "diferencia": 1.4
     },
     {
       "punto": "h",
@@ -58,9 +59,9 @@
       "archivos": [
         "assets/css/framework/animaciones.css"
       ],
-      "lineas": 546,
-      "porcentaje": 15,
-      "diferencia": -5
+      "lineas": 940,
+      "porcentaje": 19.2,
+      "diferencia": -0.8
     },
     {
       "punto": "i",
@@ -69,9 +70,9 @@
       "archivos": [
         "assets/css/framework/responsive.css"
       ],
-      "lineas": 471,
-      "porcentaje": 12.9,
-      "diferencia": -7.1
+      "lineas": 924,
+      "porcentaje": 18.9,
+      "diferencia": -1.1
     },
     {
       "punto": "j",
@@ -80,9 +81,9 @@
       "archivos": [
         "assets/css/framework/layout.css"
       ],
-      "lineas": 572,
-      "porcentaje": 15.7,
-      "diferencia": -4.3
+      "lineas": 929,
+      "porcentaje": 19,
+      "diferencia": -1
     }
   ]
 }

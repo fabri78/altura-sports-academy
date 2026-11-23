@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="es-PE" class="no-js">
+<head>
+  <!-- Metadatos básicos -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Galería multimedia | ALTURA Sports Academy</title>
+  <meta name="description" content="Fotos, videos y audio de las academias, torneos y la sede de ALTURA Sports Academy en Arequipa.">
+  <meta name="keywords" content="academia deportiva, Arequipa, básquet, aeróbicos, natación, artículos deportivos">
+  <meta name="author" content="Quispe Morales, Fabricio Oscar - Grupo 04">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#000000">
+  <meta name="color-scheme" content="dark light">
+  <!-- Open Graph: vista previa al compartir en redes -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="ALTURA Sports Academy">
+  <meta property="og:title" content="Galería multimedia | ALTURA Sports Academy">
+  <meta property="og:description" content="Fotos, videos y audio de las academias, torneos y la sede de ALTURA Sports Academy en Arequipa.">
+  <meta property="og:image" content="../assets/img/hero/hero-basquet.webp">
+  <meta property="og:locale" content="es_PE">
+  <link rel="icon" href="../assets/img/logo/favicon.svg" type="image/svg+xml">
+
+  <!-- Tipografías e íconos externos (Google Fonts + Material Symbols) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Inter+Tight:wght@600;700;800&amp;display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,300..600,0..1,0&amp;display=swap">
+
+  <!-- Framework Material Design CSS (MDC Web 14) por enlace externo -->
+  <link rel="stylesheet" href="https://unpkg.com/material-components-web@14.0.0/dist/material-components-web.min.css">
+
+  <!-- Hojas de estilo propias, en orden de cascada -->
+  <link rel="stylesheet" href="../assets/css/base.css">              <!-- g.i   CSS externo (10 %) -->
+  <link rel="stylesheet" href="../assets/css/altura-less.css">       <!-- g.ii  LESS compilado (15 %) -->
+  <link rel="stylesheet" href="../assets/css/altura-sass.css">       <!-- g.iii SASS compilado (15 %) -->
+  <link rel="stylesheet" href="../assets/css/framework/layout.css">      <!-- j. Flexbox + Grid (20 %) -->
+  <link rel="stylesheet" href="../assets/css/framework/responsive.css">  <!-- i. Media queries + multimedia (20 %) -->
+  <link rel="stylesheet" href="../assets/css/framework/animaciones.css"> <!-- h. Animaciones (20 %) -->
+
+  <!-- JavaScript: framework MDC + interacciones propias (diferidos) -->
+  <script src="https://unpkg.com/material-components-web@14.0.0/dist/material-components-web.min.js" defer></script>
+  <script src="../assets/js/main.js" defer></script>
+</head>
+<body class="tema-oscuro" id="arriba">
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+<!-- ENCABEZADO con logo y menú de opciones -->
+<header class="globalnav" role="banner">
+  <div class="globalnav__inner">
+    <a class="logo" href="../index.html" data-menu="inicio" aria-label="ALTURA Sports Academy, ir al inicio">
+      <img src="../assets/img/logo/altura-logo.svg" alt="ALTURA Sports Academy" width="124" height="26">
+    </a>
+
+    <!-- Menú móvil sin JavaScript: el checkbox abre y cierra la lista (patrón "checkbox hack") -->
+    <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-controls="menu-principal">
+    <label for="menu-toggle" class="menu-burger"><span class="sr-only">Abrir o cerrar el menú</span><span></span><span></span></label>
+
+    <nav class="menu" id="menu-principal" aria-label="Menú principal">
+      <ul class="menu__list">
+        <li class="menu__item menu__item--sub">
+          <a href="academias.html" data-menu="academias">Academias</a>
+          <ul class="submenu" aria-label="Academias">
+            <li><a href="basquet.html" data-menu="basquet"><span class="material-symbols-rounded" aria-hidden="true">sports_basketball</span>Básquet</a></li>
+            <li><a href="aerobicos.html" data-menu="aerobicos"><span class="material-symbols-rounded" aria-hidden="true">directions_run</span>Aeróbicos y fitness</a></li>
+            <li><a href="natacion.html" data-menu="natacion"><span class="material-symbols-rounded" aria-hidden="true">pool</span>Natación</a></li>
+            <li><a href="entrenadores.html" data-menu="entrenadores"><span class="material-symbols-rounded" aria-hidden="true">sports</span>Entrenadores</a></li>
+          </ul>
+        </li>
+        <li class="menu__item"><a href="horarios.html" data-menu="horarios">Horarios</a></li>
+        <li class="menu__item"><a href="tienda.html" data-menu="tienda">Tienda</a></li>
+        <li class="menu__item"><a href="eventos.html" data-menu="eventos">Eventos</a></li>
+        <li class="menu__item"><a href="galeria.html" data-menu="galeria" aria-current="page">Galería</a></li>
+        <li class="menu__item"><a href="blog.html" data-menu="blog">Blog</a></li>
+        <li class="menu__item"><a href="nosotros.html" data-menu="nosotros">Nosotros</a></li>
+        <li class="menu__item"><a href="contacto.html" data-menu="contacto">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <a class="mdc-button mdc-button--unelevated btn-pill btn-pill--sm nav-cta" href="matricula.html" data-mdc-auto-init="MDCRipple">
+      <span class="mdc-button__ripple"></span><span class="mdc-button__label">Matricúlate</span>
+    </a>
+  </div>
+</header>
+
+<main id="contenido">
+  <section class="banner" aria-labelledby="titulo-pagina">
+    <div class="banner__content">
+      <ol class="breadcrumb" aria-label="Ruta de navegación">
+        <li><a href="../index.html">Inicio</a></li>
+        <li aria-current="page">Galería</li>
+      </ol>
+      <p class="eyebrow">Galería</p>
+      <h1 class="banner__title" id="titulo-pagina">Lo que pasa en <span class="texto-gradiente">ALTURA.</span></h1>
+      <p class="lead">Fotos, videos y audio. Toca una foto para verla en grande.</p>
+    </div>
+  </section>
+
+  <!-- Mosaico de imágenes (grid denso) -->
+  <section class="seccion seccion--negro seccion--compacta" aria-labelledby="fotos-titulo">
+    <div class="contenedor">
+      <h2 class="sr-only" id="fotos-titulo">Fotos</h2>
+      <div class="mosaico">
+        <a class="mosaico__item mosaico__item--grande" href="#foto-1" data-reveal="escala"><img src="../assets/img/galeria/g-basquet-2.webp" alt="Bandeja en un partido de básquet" loading="lazy" width="1400" height="933"></a>
+        <a class="mosaico__item" href="#foto-2" data-reveal><img src="../assets/img/galeria/g-voley.webp" alt="Partido de vóley en coliseo" loading="lazy" width="1400" height="933"></a>
+        <a class="mosaico__item mosaico__item--alto" href="#foto-3" data-reveal><img src="../assets/img/academias/natacion-nado.webp" alt="Niña nadando bajo el agua" loading="lazy" width="1400" height="1039"></a>
+        <a class="mosaico__item" href="#foto-4" data-reveal><img src="../assets/img/galeria/g-atletismo.webp" alt="Pista de atletismo con carriles numerados" loading="lazy" width="1400" height="933"></a>
+        <a class="mosaico__item mosaico__item--ancho" href="#foto-5" data-reveal><img src="../assets/img/galeria/g-natacion.webp" alt="Nadador en competencia" loading="lazy" width="1400" height="933"></a>
+        <a class="mosaico__item" href="#foto-6" data-reveal><img src="../assets/img/galeria/g-futbol.webp" alt="Práctica de fútbol en un parque" loading="lazy" width="1400" height="933"></a>
+        <a class="mosaico__item mosaico__item--ancho" href="#foto-7" data-reveal><img src="../assets/img/galeria/g-basquet-1.webp" alt="Salto inicial en un partido" loading="lazy" width="1400" height="933"></a>
+        <a class="mosaico__item" href="#foto-8" data-reveal><img src="../assets/img/academias/funcional.webp" alt="Entrenamiento con kettlebell" loading="lazy" width="1400" height="933"></a>
+        <a class="mosaico__item" href="#foto-9" data-reveal><img src="../assets/img/galeria/g-arequipa.webp" alt="Plaza de Armas de Arequipa" loading="lazy" width="1400" height="937"></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox solo con CSS (:target) -->
+  <div class="lightbox" id="foto-1" role="dialog" aria-label="Foto ampliada"><a href="#cerrar" aria-label="Cerrar"><img src="../assets/img/galeria/g-basquet-2.webp" alt="Bandeja en un partido de básquet" loading="lazy"></a></div>
+  <div class="lightbox" id="foto-2" role="dialog" aria-label="Foto ampliada"><a href="#cerrar" aria-label="Cerrar"><img src="../assets/img/galeria/g-voley.webp" alt="Partido de vóley" loading="lazy"></a></div>
+  <div class="lightbox" id="foto-3" role="dialog" aria-label="Foto ampliada"><a href="#cerrar" aria-label="Cerrar"><img src="../assets/img/academias/natacion-nado.webp" alt="Niña nadando bajo el agua" loading="lazy"></a></div>
+  <div class="lightbox" id="foto-4" role="dialog" aria-label="Foto ampliada"><a href="#cerrar" aria-label="Cerrar"><img src="../assets/img/galeria/g-atletismo.webp" alt="Pista de atletismo" loading="lazy"></a></div>
+  <div class="lightbox" id="foto-5" role="dialog" aria-label="Foto ampliada"><a href="#cerrar" aria-label="Cerrar"><img src="../assets/img/galeria/g-natacion.webp" alt="Nadador en competencia" loading="lazy"></a></div>
+  <div class="lightbox" id="foto-6" role="dialog" aria-label="Foto ampliada"><a href="#cerrar" aria-label="Cerrar"><img src="../assets/img/galeria/g-futbol.webp" alt="Práctica de fútbol" loading="lazy"></a></div>
+  <div class="lightbox" id="foto-7" role="dialog" aria-label="Foto ampliada"><a href="#cerrar" aria-label="Cerrar"><img src="../assets/img/galeria/g-basquet-1.webp" alt="Salto inicial" loading="lazy"></a></div>
+  <div class="lightbox" id="foto-8" role="dialog" aria-label="Foto ampliada"><a href="#cerrar" aria-label="Cerrar"><img src="../assets/img/academias/funcional.webp" alt="Entrenamiento con kettlebell" loading="lazy"></a></div>
+  <div class="lightbox" id="foto-9" role="dialog" aria-label="Foto ampliada"><a href="#cerrar" aria-label="Cerrar"><img src="../assets/img/galeria/g-arequipa.webp" alt="Plaza de Armas de Arequipa" loading="lazy"></a></div>
+
+  <!-- Videos y audio -->
+  <section class="seccion seccion--carbon" aria-labelledby="multimedia-titulo">
+    <div class="contenedor">
+      <header class="seccion__head" data-reveal>
+        <p class="eyebrow">Videos y audio</p>
+        <h2 id="multimedia-titulo">Dale play.</h2>
+      </header>
+      <div class="multimedia-grid">
+        <div class="video-marco" data-reveal="escala">
+          <video controls muted playsinline preload="metadata" poster="../assets/video/basquet-poster.webp">
+            <source src="../assets/video/basquet.webm" type="video/webm">
+            <source src="../assets/video/basquet.mp4" type="video/mp4">
+            <track kind="captions" src="../assets/video/basquet-es.vtt" srclang="es" label="Español" default>
+            Tu navegador no puede reproducir este video.
+          </video>
+        </div>
+        <div class="pila">
+          <div class="audio-card" data-reveal>
+            <div class="audio-card__icono"><span class="material-symbols-rounded" aria-hidden="true">podcasts</span></div>
+            <div><h3>Jingle ALTURA</h3><p>Pista original · 14 s</p></div>
+            <audio controls preload="none"><source src="../assets/audio/jingle-altura.mp3" type="audio/mpeg">Tu navegador no puede reproducir audio.</audio>
+          </div>
+          <div class="audio-card" data-reveal data-reveal-delay="1">
+            <div class="audio-card__icono"><span class="material-symbols-rounded" aria-hidden="true">graphic_eq</span></div>
+            <div><h3>Ritmo de step</h3><p>Pista original · 42 s · 128 BPM</p></div>
+            <audio controls preload="none"><source src="../assets/audio/ritmo-aerobicos.mp3" type="audio/mpeg">Tu navegador no puede reproducir audio.</audio>
+          </div>
+        </div>
+      </div>
+      <div class="medios-fila" data-reveal>
+        <div class="video-marco">
+          <video controls muted playsinline preload="metadata" poster="../assets/video/piscina-poster.webp">
+            <source src="../assets/video/piscina.webm" type="video/webm">
+            <source src="../assets/video/piscina.mp4" type="video/mp4">
+            <track kind="captions" src="../assets/video/piscina-es.vtt" srclang="es" label="Español" default>
+          </video>
+        </div>
+        <picture class="video-marco">
+          <source srcset="../assets/img/galeria/g-gimnasio.webp" media="(min-width: 600px)">
+          <img src="../assets/img/academias/basquet-cancha.webp" alt="Cancha de básquet: en celular se muestra la cancha exterior y en pantallas grandes el coliseo" loading="lazy" width="1400" height="933">
+        </picture>
+        <figure class="video-marco">
+          <img src="../assets/img/academias/natacion-carriles.webp" alt="Piscina con carriles" loading="lazy" width="1400" height="933">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Créditos de fotos y videos -->
+  <section class="seccion seccion--negro seccion--compacta" aria-labelledby="creditos-titulo">
+    <div class="contenedor">
+      <h2 class="eyebrow" id="creditos-titulo">Créditos multimedia</h2>
+      <p class="nota">Fotos y videos de Wikimedia Commons con licencias libres (CC0, CC BY, CC BY-SA o dominio público). Las ilustraciones de productos, el logo, los íconos y el audio son originales del proyecto.</p>
+      <details class="faq">
+        <summary>Ver la lista completa</summary>
+        <ul class="nota creditos">
+            <li><code>basquet-tiro.webp</code> · Ross Dunn · CC BY-SA 2.0 · <a href="https://commons.wikimedia.org/wiki/File:Basketball_drills,_shooting_baskets_or_working_on_your_ball_handling_are_all_common_sights_during_the_2020-21_pandemic._(51246562507).jpg" target="_blank" rel="noopener noreferrer">Wikimedia Commons</a></li>
+            <li><code>basquet-cancha.webp</code> · Tdorante10 · CC BY-SA 4.0 · <a href="https://commons.wikimedia.org/wiki/File:LaGuardia_Playground_td_(2023-08-25)_050_-_Basketball_Courts,_Outdoor_Fitness_Equipment.jpg" target="_blank" rel="noopener noreferrer">Wikimedia Commons</a></li>
+            <li><code>aerobicos-step.webp</code> · U.S. Navy photo by Mass Communication Specialist 2nd Class Drew Williams · Public domain · <a href="https://commons.wikimedia.org/wiki/File:US_Navy_090707-N-0515W-019_Sailors_and_Marines_work_out_during_a_spin_class_aboard_the_amphibious_assault_ship_USS_Bonhomme_Richard_(LHD_6).jpg" target="_blank" rel="noopener noreferrer">Wikimedia Commons</a></li>
+            <li><code>funcional.webp</code> · Rafaelqcn · CC BY-SA 4.0 · <a href="https://commons.wikimedia.org/wiki/File:Kettlebell_workout.jpg" target="_blank" rel="noopener noreferrer">Wikimedia Commons</a></li>
+            <li><code>natacion-carriles.webp</code> · KeepActive Australia from Melbourne, VIC, Australia · CC BY-SA 4.0 · <a href="https://commons.wikimedia.org/wiki/File:Public_Swimming_Pool_in_Melbourne_VIC_Australia.jpg" target="_blank" rel="noopener noreferrer">Wikimedia Commons</a></li>
+            <li><code>hero-balon.webp</code> · MichaelMaggs Edit by Richard Bartz · CC BY-SA 3.0 · <a href="https://commons.wikimedia.org/wiki/File:Bouncing_ball_strobe_edit.jpg" target="_blank" rel="noopener noreferrer">Wikimedia Commons</a></li>
+            <li><code>misti.webp</code> · Diego Delso · CC BY-SA 4.0 · <a href="https://commons.wikimedia.org/wiki/File:Volc%C3%A1n_Misti_desde_Arequipa,_Per%C3%BA,_2015-08-02,_DD_03.JPG" target="_blank" rel="noopener noreferrer">Wikimedia Commons</a></li>
+            <li><code>correr-montana.webp</code> · bugflickr from Australia · CC BY-SA 2.0 · <a href="https://commons.wikimedia.org/wiki/File:Mountain_running_2.jpg" target="_blank" rel="noopener noreferrer">Wikimedia Commons</a></li>
+            <li><code>nutricion.webp</code> · www.Pixel.la Free Stock Photos · CC0 · <a href="https://commons.wikimedia.org/wiki/File:Food-healthy-vegetables-potatoes_(23958160949).jpg" target="_blank" rel="noopener noreferrer">Wikimedia Commons</a></li>
+            <li><code>g-basquet-1.webp</code> · IPPA photographer · CC BY 4.0 · <a href="https://commons.wikimedia.org/wiki/File:Maccabi_Tel_Aviv_basketball_team_playing_against_the_Phoenix_Suns_(FL63618281).jpg" target="_blank" rel="noopener noreferrer">Wikimedia Commons</a></li>
+            <li><code>g-basquet-2.webp</code> · U.S. Air Force photo by Staff Sgt. Siuta B. Ika · Public domain · <a href="https://commons.wikimedia.org/wiki/File:Justin_Hammonds_layup_-_Air_Force_at_UNLV_basketball_1-31-2015.jpg" target="_blank" rel="noopener noreferrer">Wikimedia Commons</a></li>
+            <li><code>g-voley.webp</code> · Zorro2212 · CC BY-SA 3.0 · <a href="https://commons.wikimedia.org/wiki/File:Volleyball_match_-_shakehands_before_the_match.jpg" target="_blank" rel="noopener noreferrer">Wikimedia Commons</a></li>
+            <li><code>g-atletismo.webp</code> · Mk2010 · CC BY-SA 4.0 · <a href="https://commons.wikimedia.org/wiki/File:All-weather_running_track.jpg" target="_blank" rel="noopener noreferrer">Wikimedia Commons</a></li>
+            <li><code>g-natacion.webp</code> · U.S. Army · CC BY 2.0 · <a href="https://commons.wikimedia.org/wiki/File:2018_BOSS_Strong_swimming_competition_(30915234027).jpg" target="_blank" rel="noopener noreferrer">Wikimedia Commons</a></li>
+            <li><code>g-gimnasio.webp</code> · David Shankbone · CC BY-SA 3.0 · <a href="https://commons.wikimedia.org/wiki/File:Calhan_Colorado_High_School_Gymnasium_by_David_Shankbone.jpg" target="_blank" rel="noopener noreferrer">Wikimedia Commons</a></li>
+            <li><code>g-arequipa.webp</code> · Pavel Špindler · CC BY 3.0 · <a href="https://commons.wikimedia.org/wiki/File:Arequipa_-_Plaza_de_Armas_-_panoramio_(1).jpg" target="_blank" rel="noopener noreferrer">Wikimedia Commons</a></li>
+            <li><code>basquet-ninos.webp</code> · U.S. Army USAGJ by Dustin Perry · Public domain · <a href="https://commons.wikimedia.org/wiki/File:American,_Japanese_youth_basketball_players_forge_bonds,_learn_fundamentals_during_sports_exchange_(9475666).jpg" target="_blank" rel="noopener noreferrer">Wikimedia Commons</a></li>
+            <li><code>aerobicos-clase.webp</code> · U.S. Air Force photo by Airman 1st Class Phillip Houk · Public domain · <a href="https://commons.wikimedia.org/wiki/File:Buckley_Zumba_session.JPG" target="_blank" rel="noopener noreferrer">Wikimedia Commons</a></li>
+            <li><code>natacion-nado.webp</code> · Reg Mckenna from UK · CC BY 2.0 · <a href="https://commons.wikimedia.org/wiki/File:A_girl_in_a_swimming_pool_-_underwater.jpg" target="_blank" rel="noopener noreferrer">Wikimedia Commons</a></li>
+            <li><code>estiramiento.webp</code> · Benny Ontiveros · Public domain · <a href="https://commons.wikimedia.org/wiki/File:Air_Force_Staff_Sgt._Sanders_stretches_his_leg_muscles_before_competing_in_the_2014_U.S._Army_Warrior_Trials_140617-A-AE845-001.jpg" target="_blank" rel="noopener noreferrer">Wikimedia Commons</a></li>
+            <li><code>g-futbol.webp</code> · Visitor7 · CC BY-SA 3.0 · <a href="https://commons.wikimedia.org/wiki/File:Soccer_Practice_at_Lake_Eola_Park.jpg" target="_blank" rel="noopener noreferrer">Wikimedia Commons</a></li>
+        </ul>
+      </details>
+    </div>
+  </section>
+</main>
+
+<!-- PIE DE PÁGINA -->
+<footer class="footer" role="contentinfo">
+  <div class="footer__inner">
+    <div class="footer__brand">
+      <img src="../assets/img/logo/altura-logo.svg" alt="ALTURA Sports Academy" width="124" height="26">
+      <p>Academia deportiva y tienda en Arequipa, a 2&nbsp;335&nbsp;m s.&nbsp;n.&nbsp;m.<br>Entrena más alto.</p>
+      <!-- Botones a redes sociales (enlaces externos) -->
+      <ul class="social" aria-label="Redes sociales">
+        <li><a class="social__btn social__btn--facebook" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg aria-hidden="true"><use href="../assets/img/iconos/redes.svg#facebook"></use></svg></a></li>
+        <li><a class="social__btn social__btn--instagram" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg aria-hidden="true"><use href="../assets/img/iconos/redes.svg#instagram"></use></svg></a></li>
+        <li><a class="social__btn social__btn--tiktok" href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><svg aria-hidden="true"><use href="../assets/img/iconos/redes.svg#tiktok"></use></svg></a></li>
+        <li><a class="social__btn social__btn--youtube" href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><svg aria-hidden="true"><use href="../assets/img/iconos/redes.svg#youtube"></use></svg></a></li>
+        <li><a class="social__btn social__btn--whatsapp" href="https://wa.me/51954000123" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><svg aria-hidden="true"><use href="../assets/img/iconos/redes.svg#whatsapp"></use></svg></a></li>
+      </ul>
+    </div>
+
+    <nav class="footer__nav" aria-label="Mapa del sitio">
+      <div class="footer__col">
+        <h2 class="footer__title">Academias</h2>
+        <ul>
+          <li><a href="academias.html">Todos los programas</a></li>
+          <li><a href="basquet.html">Básquet</a></li>
+          <li><a href="aerobicos.html">Aeróbicos y fitness</a></li>
+          <li><a href="natacion.html">Natación</a></li>
+          <li><a href="entrenadores.html">Entrenadores</a></li>
+          <li><a href="horarios.html">Horarios y tarifas</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h2 class="footer__title">Tienda</h2>
+        <ul>
+          <li><a href="tienda.html">Catálogo</a></li>
+          <li><a href="producto.html">Zapatilla Cumbre Pro</a></li>
+          <li><a href="tienda.html#filtros">Ofertas</a></li>
+        </ul>
+        <h2 class="footer__title">Comunidad</h2>
+        <ul>
+          <li><a href="eventos.html">Eventos y torneos</a></li>
+          <li><a href="galeria.html">Galería</a></li>
+          <li><a href="blog.html">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h2 class="footer__title">ALTURA</h2>
+        <ul>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="matricula.html">Matrícula</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+          <li><a href="reclamos.html">Libro de Reclamaciones</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h2 class="footer__title">Visítanos</h2>
+        <address class="footer__address">
+          Av. Ejército 1020, Yanahuara<br>Arequipa, Perú<br>
+          <a href="tel:+51954000123">+51 954 000 123</a><br>
+          <a href="mailto:hola@alturasports.pe">hola@alturasports.pe</a>
+        </address>
+        <p class="footer__hours">Lun a sáb · 6:00 a 22:00<br>Dom · 8:00 a 13:00</p>
+      </div>
+    </nav>
+  </div>
+
+  <div class="footer__legal">
+    <p>Copyright © 2026 ALTURA Sports Academy S.A.C. · RUC 20612345678 · Proyecto académico: empresa y datos ficticios.</p>
+    <a class="libro-badge" href="reclamos.html"><img src="../assets/img/iconos/libro-reclamaciones.svg" alt="" width="28" height="28">Libro de Reclamaciones</a>
+    <a class="to-top" href="#arriba" aria-label="Volver arriba"><span class="material-symbols-rounded" aria-hidden="true">arrow_upward</span></a>
+  </div>
+</footer>
+
+<!-- Snackbar de Material Design para confirmar acciones (formularios, carrito) -->
+<aside class="mdc-snackbar" id="snackbar">
+  <div class="mdc-snackbar__surface" role="status" aria-relevant="additions">
+    <div class="mdc-snackbar__label" aria-atomic="false"></div>
+    <div class="mdc-snackbar__actions" aria-atomic="true">
+      <button type="button" class="mdc-button mdc-snackbar__action"><span class="mdc-button__ripple"></span><span class="mdc-button__label">Cerrar</span></button>
+    </div>
+  </div>
+</aside>
+
+</body>
+</html>

@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="es-PE" class="no-js">
+<head>
+  <!-- Metadatos básicos -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Matrícula | ALTURA Sports Academy</title>
+  <meta name="description" content="Matricúlate en línea en las academias de básquet, aeróbicos o natación de ALTURA Sports Academy. Primera clase gratis.">
+  <meta name="keywords" content="academia deportiva, Arequipa, básquet, aeróbicos, natación, artículos deportivos">
+  <meta name="author" content="Quispe Morales, Fabricio Oscar - Grupo 04">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#000000">
+  <meta name="color-scheme" content="dark light">
+  <!-- Open Graph: vista previa al compartir en redes -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="ALTURA Sports Academy">
+  <meta property="og:title" content="Matrícula | ALTURA Sports Academy">
+  <meta property="og:description" content="Matricúlate en línea en las academias de básquet, aeróbicos o natación de ALTURA Sports Academy. Primera clase gratis.">
+  <meta property="og:image" content="../assets/img/hero/hero-basquet.webp">
+  <meta property="og:locale" content="es_PE">
+  <link rel="icon" href="../assets/img/logo/favicon.svg" type="image/svg+xml">
+
+  <!-- Tipografías e íconos externos (Google Fonts + Material Symbols) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Inter+Tight:wght@600;700;800&amp;display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,300..600,0..1,0&amp;display=swap">
+
+  <!-- Framework Material Design CSS (MDC Web 14) por enlace externo -->
+  <link rel="stylesheet" href="https://unpkg.com/material-components-web@14.0.0/dist/material-components-web.min.css">
+
+  <!-- Hojas de estilo propias, en orden de cascada -->
+  <link rel="stylesheet" href="../assets/css/base.css">              <!-- g.i   CSS externo (10 %) -->
+  <link rel="stylesheet" href="../assets/css/altura-less.css">       <!-- g.ii  LESS compilado (15 %) -->
+  <link rel="stylesheet" href="../assets/css/altura-sass.css">       <!-- g.iii SASS compilado (15 %) -->
+  <link rel="stylesheet" href="../assets/css/framework/layout.css">      <!-- j. Flexbox + Grid (20 %) -->
+  <link rel="stylesheet" href="../assets/css/framework/responsive.css">  <!-- i. Media queries + multimedia (20 %) -->
+  <link rel="stylesheet" href="../assets/css/framework/animaciones.css"> <!-- h. Animaciones (20 %) -->
+
+  <!-- JavaScript: framework MDC + interacciones propias (diferidos) -->
+  <script src="https://unpkg.com/material-components-web@14.0.0/dist/material-components-web.min.js" defer></script>
+  <script src="../assets/js/main.js" defer></script>
+</head>
+<body class="tema-claro" id="arriba">
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+<!-- ENCABEZADO con logo y menú de opciones -->
+<header class="globalnav" role="banner">
+  <div class="globalnav__inner">
+    <a class="logo" href="../index.html" data-menu="inicio" aria-label="ALTURA Sports Academy, ir al inicio">
+      <img src="../assets/img/logo/altura-logo.svg" alt="ALTURA Sports Academy" width="124" height="26">
+    </a>
+
+    <!-- Menú móvil sin JavaScript: el checkbox abre y cierra la lista (patrón "checkbox hack") -->
+    <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-controls="menu-principal">
+    <label for="menu-toggle" class="menu-burger"><span class="sr-only">Abrir o cerrar el menú</span><span></span><span></span></label>
+
+    <nav class="menu" id="menu-principal" aria-label="Menú principal">
+      <ul class="menu__list">
+        <li class="menu__item menu__item--sub">
+          <a href="academias.html" data-menu="academias">Academias</a>
+          <ul class="submenu" aria-label="Academias">
+            <li><a href="basquet.html" data-menu="basquet"><span class="material-symbols-rounded" aria-hidden="true">sports_basketball</span>Básquet</a></li>
+            <li><a href="aerobicos.html" data-menu="aerobicos"><span class="material-symbols-rounded" aria-hidden="true">directions_run</span>Aeróbicos y fitness</a></li>
+            <li><a href="natacion.html" data-menu="natacion"><span class="material-symbols-rounded" aria-hidden="true">pool</span>Natación</a></li>
+            <li><a href="entrenadores.html" data-menu="entrenadores"><span class="material-symbols-rounded" aria-hidden="true">sports</span>Entrenadores</a></li>
+          </ul>
+        </li>
+        <li class="menu__item"><a href="horarios.html" data-menu="horarios">Horarios</a></li>
+        <li class="menu__item"><a href="tienda.html" data-menu="tienda">Tienda</a></li>
+        <li class="menu__item"><a href="eventos.html" data-menu="eventos">Eventos</a></li>
+        <li class="menu__item"><a href="galeria.html" data-menu="galeria">Galería</a></li>
+        <li class="menu__item"><a href="blog.html" data-menu="blog">Blog</a></li>
+        <li class="menu__item"><a href="nosotros.html" data-menu="nosotros">Nosotros</a></li>
+        <li class="menu__item"><a href="contacto.html" data-menu="contacto">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <a class="mdc-button mdc-button--unelevated btn-pill btn-pill--sm nav-cta" href="matricula.html" data-mdc-auto-init="MDCRipple">
+      <span class="mdc-button__ripple"></span><span class="mdc-button__label">Matricúlate</span>
+    </a>
+  </div>
+</header>
+
+<main id="contenido">
+  <section class="seccion seccion--niebla seccion--compacta" aria-labelledby="titulo-pagina">
+    <div class="contenedor">
+      <header class="seccion__head">
+        <ol class="breadcrumb" aria-label="Ruta de navegación">
+          <li><a href="../index.html">Inicio</a></li>
+          <li aria-current="page">Matrícula</li>
+        </ol>
+        <h1 id="titulo-pagina">Matrícula en línea.</h1>
+        <p class="lead">Completa tus datos en tres pasos. Te llamamos para confirmar el horario y tu clase de prueba gratis.</p>
+      </header>
+
+      <div class="form-layout">
+        <!-- FORMULARIO DE CLIENTES (alumnos) -->
+        <form class="form-card" data-form="matricula" data-ok="¡Listo! Recibimos tu matrícula. Te llamaremos en menos de 24 horas para confirmar el horario." novalidate>
+          <h2 class="form-card__titulo">Datos del alumno</h2>
+          <p class="form-card__intro">Los campos marcados con <abbr title="obligatorio">*</abbr> son obligatorios.</p>
+          <p class="form-ok" tabindex="-1" hidden></p>
+
+          <fieldset class="form-bloque">
+            <legend><span class="form-bloque__paso">1</span>Elige el programa</legend>
+            <div class="opciones-grid">
+              <div class="opcion-card"><input type="radio" name="programa" id="p-basquet" value="basquet" required checked><label for="p-basquet"><strong>Básquet</strong><span>6 a 17 años · desde S/ 150</span></label></div>
+              <div class="opcion-card"><input type="radio" name="programa" id="p-aerobicos" value="aerobicos"><label for="p-aerobicos"><strong>Aeróbicos</strong><span>16 años a más · desde S/ 20</span></label></div>
+              <div class="opcion-card"><input type="radio" name="programa" id="p-natacion" value="natacion"><label for="p-natacion"><strong>Natación</strong><span>6 meses a más · desde S/ 160</span></label></div>
+              <div class="opcion-card"><input type="radio" name="programa" id="p-funcional" value="funcional"><label for="p-funcional"><strong>Preparación física</strong><span>14 años a más · S/ 170</span></label></div>
+            </div>
+          </fieldset>
+
+          <fieldset class="form-bloque">
+            <legend><span class="form-bloque__paso">2</span>Datos personales</legend>
+            <div class="form-grid">
+              <div class="campo">
+                <label class="mdc-text-field mdc-text-field--filled" data-mdc-auto-init="MDCTextField">
+                  <span class="mdc-text-field__ripple"></span>
+                  <span class="mdc-floating-label" id="lbl-m-nombres">Nombres</span>
+                  <input class="mdc-text-field__input" type="text" id="m-nombres" name="nombres" aria-labelledby="lbl-m-nombres" required autocomplete="given-name">
+                  <span class="mdc-line-ripple"></span>
+                </label>
+              </div>
+              <div class="campo">
+                <label class="mdc-text-field mdc-text-field--filled" data-mdc-auto-init="MDCTextField">
+                  <span class="mdc-text-field__ripple"></span>
+                  <span class="mdc-floating-label" id="lbl-m-apellidos">Apellidos</span>
+                  <input class="mdc-text-field__input" type="text" id="m-apellidos" name="apellidos" aria-labelledby="lbl-m-apellidos" required autocomplete="family-name">
+                  <span class="mdc-line-ripple"></span>
+                </label>
+              </div>
+              <div class="campo">
+                <label class="campo__label" for="m-doc">Tipo de documento <abbr title="obligatorio">*</abbr></label>
+                <select class="campo-nativo" id="m-doc" name="tipo_documento" required>
+                  <option value="dni">DNI</option>
+                  <option value="ce">Carné de extranjería</option>
+                  <option value="pasaporte">Pasaporte</option>
+                </select>
+              </div>
+              <div class="campo">
+                <label class="campo__label" for="m-numdoc">Número de documento <abbr title="obligatorio">*</abbr></label>
+                <input class="campo-nativo" type="text" id="m-numdoc" name="numero_documento" required inputmode="numeric" pattern="[0-9]{8,12}" placeholder="8 a 12 dígitos">
+              </div>
+              <div class="campo">
+                <label class="campo__label" for="m-nac">Fecha de nacimiento <abbr title="obligatorio">*</abbr></label>
+                <input class="campo-nativo" type="date" id="m-nac" name="nacimiento" required min="1940-01-01" max="2026-06-01">
+              </div>
+              <div class="campo">
+                <label class="campo__label" for="m-genero">Género</label>
+                <select class="campo-nativo" id="m-genero" name="genero">
+                  <option value="">Prefiero no decirlo</option>
+                  <option>Femenino</option>
+                  <option>Masculino</option>
+                </select>
+              </div>
+              <div class="campo">
+                <label class="mdc-text-field mdc-text-field--filled" data-mdc-auto-init="MDCTextField">
+                  <span class="mdc-text-field__ripple"></span>
+                  <span class="mdc-floating-label" id="lbl-m-correo">Correo electrónico</span>
+                  <input class="mdc-text-field__input" type="email" id="m-correo" name="correo" aria-labelledby="lbl-m-correo" required autocomplete="email">
+                  <span class="mdc-line-ripple"></span>
+                </label>
+              </div>
+              <div class="campo">
+                <label class="mdc-text-field mdc-text-field--filled" data-mdc-auto-init="MDCTextField">
+                  <span class="mdc-text-field__ripple"></span>
+                  <span class="mdc-floating-label" id="lbl-m-cel">Celular</span>
+                  <input class="mdc-text-field__input" type="tel" id="m-cel" name="celular" aria-labelledby="lbl-m-cel" required pattern="9[0-9]{8}" autocomplete="tel">
+                  <span class="mdc-line-ripple"></span>
+                </label>
+              </div>
+              <div class="campo campo--full">
+                <label class="campo__label" for="m-apoderado">Nombre del apoderado (si el alumno es menor de edad)</label>
+                <input class="campo-nativo" type="text" id="m-apoderado" name="apoderado" autocomplete="off">
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset class="form-bloque">
+            <legend><span class="form-bloque__paso">3</span>Turno y salud</legend>
+            <div class="form-grid">
+              <div class="campo">
+                <span class="campo__label" id="turno-label">Turno preferido <abbr title="obligatorio">*</abbr></span>
+                <div class="pila" role="radiogroup" aria-labelledby="turno-label">
+                  <div class="mdc-form-field">
+                    <div class="mdc-radio" data-mdc-auto-init="MDCRadio"><input class="mdc-radio__native-control" type="radio" id="t-manana" name="turno" value="manana" required><div class="mdc-radio__background"><div class="mdc-radio__outer-circle"></div><div class="mdc-radio__inner-circle"></div></div><div class="mdc-radio__ripple"></div></div>
+                    <label for="t-manana">Mañana (6:00 a 12:00)</label>
+                  </div>
+                  <div class="mdc-form-field">
+                    <div class="mdc-radio" data-mdc-auto-init="MDCRadio"><input class="mdc-radio__native-control" type="radio" id="t-tarde" name="turno" value="tarde"><div class="mdc-radio__background"><div class="mdc-radio__outer-circle"></div><div class="mdc-radio__inner-circle"></div></div><div class="mdc-radio__ripple"></div></div>
+                    <label for="t-tarde">Tarde (14:00 a 18:00)</label>
+                  </div>
+                  <div class="mdc-form-field">
+                    <div class="mdc-radio" data-mdc-auto-init="MDCRadio"><input class="mdc-radio__native-control" type="radio" id="t-noche" name="turno" value="noche"><div class="mdc-radio__background"><div class="mdc-radio__outer-circle"></div><div class="mdc-radio__inner-circle"></div></div><div class="mdc-radio__ripple"></div></div>
+                    <label for="t-noche">Noche (18:00 a 22:00)</label>
+                  </div>
+                </div>
+              </div>
+              <div class="campo">
+                <label class="campo__label" for="m-salud">¿Alguna condición de salud que debamos conocer?</label>
+                <textarea class="campo-nativo" id="m-salud" name="salud" rows="5" placeholder="Asma, lesiones previas, alergias…"></textarea>
+              </div>
+            </div>
+          </fieldset>
+
+          <div class="form-legal">
+            <div class="mdc-form-field">
+              <div class="mdc-checkbox" data-mdc-auto-init="MDCCheckbox">
+                <input type="checkbox" class="mdc-checkbox__native-control" id="m-acepto" required>
+                <div class="mdc-checkbox__background"><svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24"><path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"/></svg><div class="mdc-checkbox__mixedmark"></div></div>
+                <div class="mdc-checkbox__ripple"></div>
+              </div>
+              <label for="m-acepto">Acepto el reglamento interno y el tratamiento de mis datos personales.</label>
+            </div>
+          </div>
+          <div class="form-acciones">
+            <button class="mdc-button mdc-button--unelevated btn-pill btn-pill--lg" type="submit" data-mdc-auto-init="MDCRipple"><span class="mdc-button__ripple"></span><span class="mdc-button__label">Enviar matrícula</span></button>
+            <a class="link-mas" href="horarios.html">Revisar horarios</a>
+          </div>
+        </form>
+
+        <aside class="pila">
+          <div class="info-contacto"><span class="material-symbols-rounded" aria-hidden="true">redeem</span><h3>Primera clase gratis</h3><p>Sin compromiso, en cualquier disciplina.</p></div>
+          <div class="info-contacto"><span class="material-symbols-rounded" aria-hidden="true">family_restroom</span><h3>Descuento familiar</h3><p>10 % desde el segundo miembro de la familia.</p></div>
+          <div class="info-contacto"><span class="material-symbols-rounded" aria-hidden="true">support_agent</span><h3>¿Dudas?</h3><p><a href="https://wa.me/51954000123" target="_blank" rel="noopener noreferrer">Escríbenos por WhatsApp</a></p></div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- PIE DE PÁGINA -->
+<footer class="footer" role="contentinfo">
+  <div class="footer__inner">
+    <div class="footer__brand">
+      <img src="../assets/img/logo/altura-logo.svg" alt="ALTURA Sports Academy" width="124" height="26">
+      <p>Academia deportiva y tienda en Arequipa, a 2&nbsp;335&nbsp;m s.&nbsp;n.&nbsp;m.<br>Entrena más alto.</p>
+      <!-- Botones a redes sociales (enlaces externos) -->
+      <ul class="social" aria-label="Redes sociales">
+        <li><a class="social__btn social__btn--facebook" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg aria-hidden="true"><use href="../assets/img/iconos/redes.svg#facebook"></use></svg></a></li>
+        <li><a class="social__btn social__btn--instagram" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg aria-hidden="true"><use href="../assets/img/iconos/redes.svg#instagram"></use></svg></a></li>
+        <li><a class="social__btn social__btn--tiktok" href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><svg aria-hidden="true"><use href="../assets/img/iconos/redes.svg#tiktok"></use></svg></a></li>
+        <li><a class="social__btn social__btn--youtube" href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><svg aria-hidden="true"><use href="../assets/img/iconos/redes.svg#youtube"></use></svg></a></li>
+        <li><a class="social__btn social__btn--whatsapp" href="https://wa.me/51954000123" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><svg aria-hidden="true"><use href="../assets/img/iconos/redes.svg#whatsapp"></use></svg></a></li>
+      </ul>
+    </div>
+
+    <nav class="footer__nav" aria-label="Mapa del sitio">
+      <div class="footer__col">
+        <h2 class="footer__title">Academias</h2>
+        <ul>
+          <li><a href="academias.html">Todos los programas</a></li>
+          <li><a href="basquet.html">Básquet</a></li>
+          <li><a href="aerobicos.html">Aeróbicos y fitness</a></li>
+          <li><a href="natacion.html">Natación</a></li>
+          <li><a href="entrenadores.html">Entrenadores</a></li>
+          <li><a href="horarios.html">Horarios y tarifas</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h2 class="footer__title">Tienda</h2>
+        <ul>
+          <li><a href="tienda.html">Catálogo</a></li>
+          <li><a href="producto.html">Zapatilla Cumbre Pro</a></li>
+          <li><a href="tienda.html#filtros">Ofertas</a></li>
+        </ul>
+        <h2 class="footer__title">Comunidad</h2>
+        <ul>
+          <li><a href="eventos.html">Eventos y torneos</a></li>
+          <li><a href="galeria.html">Galería</a></li>
+          <li><a href="blog.html">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h2 class="footer__title">ALTURA</h2>
+        <ul>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="matricula.html">Matrícula</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+          <li><a href="reclamos.html">Libro de Reclamaciones</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h2 class="footer__title">Visítanos</h2>
+        <address class="footer__address">
+          Av. Ejército 1020, Yanahuara<br>Arequipa, Perú<br>
+          <a href="tel:+51954000123">+51 954 000 123</a><br>
+          <a href="mailto:hola@alturasports.pe">hola@alturasports.pe</a>
+        </address>
+        <p class="footer__hours">Lun a sáb · 6:00 a 22:00<br>Dom · 8:00 a 13:00</p>
+      </div>
+    </nav>
+  </div>
+
+  <div class="footer__legal">
+    <p>Copyright © 2026 ALTURA Sports Academy S.A.C. · RUC 20612345678 · Proyecto académico: empresa y datos ficticios.</p>
+    <a class="libro-badge" href="reclamos.html"><img src="../assets/img/iconos/libro-reclamaciones.svg" alt="" width="28" height="28">Libro de Reclamaciones</a>
+    <a class="to-top" href="#arriba" aria-label="Volver arriba"><span class="material-symbols-rounded" aria-hidden="true">arrow_upward</span></a>
+  </div>
+</footer>
+
+<!-- Snackbar de Material Design para confirmar acciones (formularios, carrito) -->
+<aside class="mdc-snackbar" id="snackbar">
+  <div class="mdc-snackbar__surface" role="status" aria-relevant="additions">
+    <div class="mdc-snackbar__label" aria-atomic="false"></div>
+    <div class="mdc-snackbar__actions" aria-atomic="true">
+      <button type="button" class="mdc-button mdc-snackbar__action"><span class="mdc-button__ripple"></span><span class="mdc-button__label">Cerrar</span></button>
+    </div>
+  </div>
+</aside>
+
+</body>
+</html>

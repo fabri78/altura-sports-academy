@@ -541,7 +541,7 @@
   gap: 22px;
 }
 
-.post-destacado {
+.post-card.post-destacado {
   display: grid;
   grid-template-columns: 1.3fr 1fr;
   align-items: center;
@@ -702,4 +702,475 @@
   max-height: 82vh;
   width: auto;
   border-radius: var(--radio-lg);
+}
+
+/* =====================================================================
+   21. Distribución interna de componentes (Flexbox)
+   ===================================================================== */
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.banner__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.seccion__head {
+  display: flex;
+  flex-direction: column;
+}
+
+.seccion__head--centro {
+  align-items: center;
+}
+
+.cta-banda {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.promo {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+  align-items: center;
+  gap: 24px;
+}
+
+.promo > div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.card-academia {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.card-academia__body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.post-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.post-card__body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  flex: 1;
+}
+
+.post-card__body .meta-post {
+  margin-top: auto;
+  padding-top: 12px;
+}
+
+.evento__fecha {
+  display: grid;
+  place-items: center;
+  align-content: center;
+}
+
+.plan {
+  align-content: start;
+}
+
+.plan__nombre {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.plan .mdc-button {
+  align-self: end;
+  margin-top: 24px;
+}
+
+.valor > .chip-deporte--aerobicos,
+.valor > .chip-deporte--voley,
+.valor > .chip-deporte--funcional,
+.valor > .chip-deporte--natacion {
+  align-self: flex-start;
+  margin-top: auto;
+}
+
+.info-contacto {
+  display: flex;
+  flex-direction: column;
+}
+
+.audio-card > div:not(.audio-card__icono) {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.faq summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.faq summary::after {
+  float: none;
+  flex-shrink: 0;
+}
+
+.form-bloque legend {
+  display: flex;
+  align-items: center;
+}
+
+.mdc-form-field {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.opcion-card {
+  display: flex;
+}
+
+.opcion-card label {
+  flex: 1;
+}
+
+.hoja-reclamo__cabecera {
+  gap: 16px;
+}
+
+.sidebar__block {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar__list a {
+  align-items: center;
+  gap: 12px;
+}
+
+.sidebar__newsletter .form-acciones {
+  margin-top: 12px;
+}
+
+.footer__brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.footer__col {
+  display: flex;
+  flex-direction: column;
+}
+
+.libro-badge img {
+  flex-shrink: 0;
+}
+
+.localnav__right .fila {
+  flex-wrap: nowrap;
+  gap: 6px;
+}
+
+.articulo > header {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.articulo > footer {
+  margin-top: 40px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.coach__cara {
+  justify-content: flex-start;
+}
+
+.coach__cara--reverso {
+  justify-content: center;
+}
+
+.pdp__escena {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 4 / 3;
+  padding: 6%;
+}
+
+.pdp__escena img {
+  width: 100%;
+}
+
+.pdp__precio {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.e404 > div:first-child {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lightbox > a {
+  display: contents;
+}
+
+.timeline__item time {
+  font-family: var(--f-display);
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--c-brasa);
+}
+
+/* Conectores del organigrama con pseudoelementos */
+.organigrama__nivel {
+  position: relative;
+  padding-top: 20px;
+}
+
+.organigrama__nivel:first-child {
+  padding-top: 0;
+}
+
+.organigrama__nivel + .organigrama__nivel::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  width: 1px;
+  height: 20px;
+  background-color: rgba(255, 255, 255, 0.24);
+}
+
+/* =====================================================================
+   22. Subgrid: alinear filas entre tarjetas hermanas
+   ===================================================================== */
+@supports (grid-template-rows: subgrid) {
+  .blog-grid {
+    grid-auto-rows: auto;
+  }
+
+  .blog-grid > .post-card {
+    display: grid;
+    grid-row: span 2;
+    grid-template-rows: subgrid;
+    gap: 0;
+  }
+
+  .catalogo > .producto {
+    display: grid;
+    grid-row: span 2;
+    grid-template-rows: subgrid;
+    gap: 0;
+  }
+}
+
+/* =====================================================================
+   23. Rejilla de Material Design: utilidades de alineación y orden
+   ===================================================================== */
+.mdc-layout-grid__inner > .valor {
+  height: 100%;
+}
+
+.mdc-layout-grid__cell--abajo {
+  align-self: end;
+}
+
+.mdc-layout-grid__cell--primero {
+  order: -1;
+}
+
+.mdc-layout-grid--anidada {
+  padding: 0;
+  --mdc-layout-grid-gutter-desktop: 16px;
+}
+
+/* =====================================================================
+   24. Utilidades de Flexbox y Grid reutilizables
+   ===================================================================== */
+.flex {
+  display: flex;
+}
+
+.flex--centro {
+  align-items: center;
+  justify-content: center;
+}
+
+.flex--columna {
+  flex-direction: column;
+}
+
+.flex--envolver {
+  flex-wrap: wrap;
+}
+
+.crecer {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.no-encoger {
+  flex-shrink: 0;
+}
+
+.grid {
+  display: grid;
+}
+
+.grid--centro {
+  place-items: center;
+}
+
+.span-todo {
+  grid-column: 1 / -1;
+}
+
+.gap-s {
+  gap: 8px;
+}
+
+.gap-m {
+  gap: 16px;
+}
+
+.gap-l {
+  gap: 32px;
+}
+
+/* =====================================================================
+   25. Horario semanal: primera columna y cabecera fijas al desplazar
+   ===================================================================== */
+.semana > .semana__hora {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  background-color: var(--c-negro);
+}
+
+.semana > .semana__dia {
+  position: sticky;
+  top: 0;
+}
+
+.semana__clase {
+  min-width: 0;
+}
+
+/* =====================================================================
+   26. Galería multimedia y mosaico
+   ===================================================================== */
+.multimedia-grid .pila {
+  height: 100%;
+  justify-content: space-between;
+}
+
+.medios-fila {
+  margin-top: 24px;
+}
+
+.medios-fila > * {
+  margin: 0;
+}
+
+.medios-fila img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mosaico__item {
+  display: block;
+}
+
+/* =====================================================================
+   27. Catálogo: barra superior y controles
+   ===================================================================== */
+.catalogo__barra .fila {
+  flex-wrap: nowrap;
+}
+
+.catalogo__barra select {
+  width: auto;
+  padding-block: 0.6rem;
+}
+
+.filtros-chips .chip-filtro {
+  display: inline-flex;
+}
+
+.tallas .talla {
+  display: inline-flex;
+}
+
+/* =====================================================================
+   28. Encabezado y pie: distribución fina
+   ===================================================================== */
+.globalnav .logo {
+  display: flex;
+  align-items: center;
+}
+
+.menu__item {
+  display: flex;
+  align-items: center;
+}
+
+.menu__item--sub {
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.footer__legal .to-top {
+  flex-shrink: 0;
+}
+
+.social li,
+.etiquetas li,
+.breadcrumb li {
+  display: flex;
+  align-items: center;
+}
+
+.breadcrumb li + li::before {
+  display: inline-block;
+}
+
+/* =====================================================================
+   29. Tarjeta de producto (alternativa cuando no hay subgrid)
+   ===================================================================== */
+.producto {
+  display: flex;
+  flex-direction: column;
+}
+
+.producto__img {
+  display: grid;
+  place-items: center;
+}
+
+.form-bloque__paso {
+  flex-shrink: 0;
 }

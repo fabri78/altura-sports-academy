@@ -17,8 +17,6 @@ $acabados: (
 // --- Tarjeta de producto ---
 .producto {
   @extend %tarjeta-base;
-  display: flex;
-  flex-direction: column;
   border-radius: radio("lg");
   background-color: c("blanco");
   color: c("texto-oscuro");
@@ -28,11 +26,12 @@ $acabados: (
     aspect-ratio: 1;
     background-color: #f0f0f3;
 
+    padding: 8%;
+
     img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
-      mix-blend-mode: multiply;
+      object-fit: contain;
     }
   }
 
@@ -89,8 +88,7 @@ $acabados: (
 // --- Chips de filtro (checkbox + label) ---
 .chip-filtro {
   input {
-    position: absolute;
-    opacity: 0;
+    @extend %oculto;
   }
 
   label {
@@ -185,16 +183,13 @@ $acabados: (
 }
 
 .pdp__radio {
-  position: absolute;
-  opacity: 0;
-  pointer-events: none;
+  @extend %oculto;
 }
 
 // Tallas
 .talla {
   input {
-    position: absolute;
-    opacity: 0;
+    @extend %oculto;
   }
 
   label {

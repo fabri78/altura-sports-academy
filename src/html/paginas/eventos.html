@@ -1,0 +1,101 @@
+<!--{"titulo":"Eventos y torneos","descripcion":"Torneos de básquet, maratones de aeróbicos y festivales de natación en ALTURA Sports Academy, Arequipa.","activo":"eventos","clase":"tema-oscuro"}-->
+<main id="contenido">
+  <section class="banner" aria-labelledby="titulo-pagina">
+    <div class="banner__bg"><img src="{{R}}assets/img/galeria/g-basquet-2.webp" alt="" width="1400" height="933"></div>
+    <div class="banner__content">
+      <ol class="breadcrumb" aria-label="Ruta de navegación">
+        <li><a href="{{R}}index.html">Inicio</a></li>
+        <li aria-current="page">Eventos</li>
+      </ol>
+      <p class="en-vivo">Inscripciones abiertas</p>
+      <h1 class="banner__title" id="titulo-pagina">Misti Cup <span class="texto-gradiente">2026.</span></h1>
+      <p class="lead">El torneo de básquet juvenil más alto del Perú. 24 equipos, tres categorías, un fin de semana.</p>
+      <div class="acciones acciones--inicio">
+        <a class="mdc-button mdc-button--unelevated btn-pill" href="{{P}}matricula.html" data-mdc-auto-init="MDCRipple"><span class="mdc-button__ripple"></span><span class="mdc-button__label">Inscribir a mi equipo</span></a>
+        <a class="link-mas" href="#calendario">Ver calendario</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Marquesina con etiqueta marquee (pedida en los lineamientos) -->
+  <marquee class="marquesina" behavior="alternate" scrollamount="4" aria-label="Últimos resultados">
+    <span>U15 · ALTURA 68 – 61 Misti Kings</span>
+    <span>U17 · Cóndores 55 – <b>72 ALTURA</b></span>
+    <span>U13 · ALTURA 40 – 38 Yanahuara BC</span>
+  </marquee>
+
+  <!-- Calendario -->
+  <section class="seccion seccion--negro" id="calendario" aria-labelledby="cal-titulo">
+    <div class="contenedor">
+      <header class="seccion__head" data-reveal>
+        <p class="eyebrow">Próximos eventos</p>
+        <h2 id="cal-titulo">Marca tu calendario.</h2>
+      </header>
+      <ol class="eventos-lista">
+        <li class="tarjeta-adaptable" data-reveal>
+          <article class="evento">
+            <time class="evento__fecha" datetime="2026-12-05"><b>05</b><small>Dic</small></time>
+            <div><h3 class="evento__titulo">Misti Cup 2026 · Básquet U13, U15 y U17</h3><p class="evento__meta">Coliseo ALTURA · 8:00 a 20:00 · S/ 250 por equipo</p></div>
+            <span class="evento__estado">Cupos</span>
+          </article>
+        </li>
+        <li class="tarjeta-adaptable" data-reveal data-reveal-delay="1">
+          <article class="evento">
+            <time class="evento__fecha" datetime="2026-12-12"><b>12</b><small>Dic</small></time>
+            <div><h3 class="evento__titulo">Maratón de aeróbicos navideña</h3><p class="evento__meta">Salón principal · 9:00 a 12:00 · Donación de un juguete</p></div>
+            <span class="evento__estado">Cupos</span>
+          </article>
+        </li>
+        <li class="tarjeta-adaptable" data-reveal data-reveal-delay="2">
+          <article class="evento">
+            <time class="evento__fecha" datetime="2026-12-19"><b>19</b><small>Dic</small></time>
+            <div><h3 class="evento__titulo">Festival de natación infantil</h3><p class="evento__meta">Piscina · 10:00 · Para alumnos de iniciación</p></div>
+            <span class="evento__estado evento__estado--lleno">Lleno</span>
+          </article>
+        </li>
+        <li class="tarjeta-adaptable" data-reveal data-reveal-delay="3">
+          <article class="evento">
+            <time class="evento__fecha" datetime="2027-01-10"><b>10</b><small>Ene</small></time>
+            <div><h3 class="evento__titulo">Inicio de la temporada de verano 2027</h3><p class="evento__meta">Todas las academias · Clase de prueba gratis</p></div>
+            <span class="evento__estado">Abierto</span>
+          </article>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Cinta de patrocinadores en CSS -->
+  <section class="seccion seccion--carbon seccion--compacta" aria-labelledby="patro-titulo">
+    <div class="contenedor">
+      <h2 class="eyebrow" id="patro-titulo">Con el apoyo de</h2>
+    </div>
+    <div class="cinta" aria-label="Patrocinadores">
+      <div class="cinta__pista">
+        <span>Panadería La Cumbre</span><span>Clínica Andina Sport</span><span>Agua Volcán Azul</span><span>Radio Sillar FM</span><span>Ferretería El Cráter</span>
+        <span aria-hidden="true">Panadería La Cumbre</span><span aria-hidden="true">Clínica Andina Sport</span><span aria-hidden="true">Agua Volcán Azul</span><span aria-hidden="true">Radio Sillar FM</span><span aria-hidden="true">Ferretería El Cráter</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bases del torneo: tabla -->
+  <section class="seccion seccion--negro" aria-labelledby="bases-titulo">
+    <div class="contenedor">
+      <header class="seccion__head" data-reveal>
+        <p class="eyebrow">Misti Cup</p>
+        <h2 id="bases-titulo">Formato del torneo.</h2>
+      </header>
+      <div class="tabla-contenedor" data-reveal>
+        <table class="tabla">
+          <caption>Programación por categoría</caption>
+          <thead><tr><th scope="col">Categoría</th><th scope="col">Equipos</th><th scope="col">Fase de grupos</th><th scope="col">Final</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">U13</th><td>8</td><td>Sábado 5, 8:00 a 13:00</td><td>Domingo 6, 10:00</td></tr>
+            <tr><th scope="row">U15</th><td>8</td><td>Sábado 5, 13:00 a 17:00</td><td>Domingo 6, 12:00</td></tr>
+            <tr><th scope="row">U17</th><td>8</td><td>Sábado 5, 17:00 a 20:00</td><td>Domingo 6, 16:00</td></tr>
+          </tbody>
+          <tfoot><tr><td colspan="4">Partidos de 4 cuartos de 8 minutos. Reglamento FIBA.</td></tr></tfoot>
+        </table>
+      </div>
+    </div>
+  </section>
+</main>

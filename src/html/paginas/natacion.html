@@ -1,0 +1,87 @@
+<!--{"titulo":"Natación","descripcion":"Clases de natación en piscina semiolímpica temperada a 28 °C en Arequipa: estimulación acuática, iniciación, perfeccionamiento y máster.","activo":"natacion","clase":"tema-oscuro","palabras":"natación Arequipa, piscina temperada, clases de natación niños, natación adultos"}-->
+<main id="contenido">
+  <!-- Banner con video de fondo -->
+  <section class="banner" aria-labelledby="titulo-pagina">
+    <div class="banner__bg">
+      <video class="video-fondo" autoplay muted loop playsinline poster="{{R}}assets/video/piscina-poster.webp" aria-hidden="true">
+        <source src="{{R}}assets/video/piscina.webm" type="video/webm">
+        <source src="{{R}}assets/video/piscina.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="banner__content">
+      <ol class="breadcrumb" aria-label="Ruta de navegación">
+        <li><a href="{{R}}index.html">Inicio</a></li>
+        <li><a href="{{P}}academias.html">Academias</a></li>
+        <li aria-current="page">Natación</li>
+      </ol>
+      <p class="eyebrow">Natación</p>
+      <h1 class="banner__title" id="titulo-pagina">Agua a 28 °C. <span class="texto-gradiente">Todo el año.</span></h1>
+      <p class="lead">Piscina semiolímpica de 25 metros con seis carriles: uno para cada nivel.</p>
+    </div>
+  </section>
+
+  <!-- Niveles con la rejilla de Material Design -->
+  <section class="seccion seccion--negro" aria-labelledby="niveles-titulo">
+    <div class="contenedor">
+      <header class="seccion__head" data-reveal>
+        <p class="eyebrow">Niveles</p>
+        <h2 id="niveles-titulo">Del primer chapoteo al estilo mariposa.</h2>
+      </header>
+      <div class="mdc-layout-grid">
+        <div class="mdc-layout-grid__inner">
+          <article class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3 mdc-layout-grid__cell--span-4-tablet valor deporte--natacion" data-reveal><span class="material-symbols-rounded" aria-hidden="true">child_care</span><h3>Estimulación</h3><p class="nota">De 6 a 36 meses, con mamá o papá en el agua.</p></article>
+          <article class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3 mdc-layout-grid__cell--span-4-tablet valor" data-reveal data-reveal-delay="1"><span class="material-symbols-rounded" aria-hidden="true">pool</span><h3>Iniciación</h3><p class="nota">Flotación, respiración y crol básico. De 4 a 12 años.</p></article>
+          <article class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3 mdc-layout-grid__cell--span-4-tablet valor" data-reveal data-reveal-delay="2"><span class="material-symbols-rounded" aria-hidden="true">waves</span><h3>Perfeccionamiento</h3><p class="nota">Los cuatro estilos, vueltas y salidas.</p></article>
+          <article class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3 mdc-layout-grid__cell--span-4-tablet valor" data-reveal data-reveal-delay="3"><span class="material-symbols-rounded" aria-hidden="true">emoji_events</span><h3>Máster</h3><p class="nota">Adultos que entrenan para competir o para mantenerse.</p></article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Video con subtítulos -->
+  <section class="seccion seccion--carbon" aria-labelledby="piscina-titulo">
+    <div class="contenedor split split--invertido">
+      <div data-reveal>
+        <p class="eyebrow">Conoce la piscina</p>
+        <h2 id="piscina-titulo">Seis carriles, un nivel por carril.</h2>
+        <p class="lead">Nadie espera turno: cada grupo tiene su espacio y su entrenador en el borde.</p>
+      </div>
+      <div class="video-marco" data-reveal="escala">
+        <video controls muted playsinline preload="metadata" poster="{{R}}assets/video/piscina-poster.webp">
+          <source src="{{R}}assets/video/piscina.webm" type="video/webm">
+          <source src="{{R}}assets/video/piscina.mp4" type="video/mp4">
+          <track kind="captions" src="{{R}}assets/video/piscina-es.vtt" srclang="es" label="Español" default>
+          Tu navegador no puede reproducir este video.
+        </video>
+      </div>
+    </div>
+  </section>
+
+  <!-- Preguntas frecuentes -->
+  <section class="seccion seccion--negro" aria-labelledby="faq-titulo">
+    <div class="contenedor">
+      <header class="seccion__head" data-reveal>
+        <p class="eyebrow">Preguntas frecuentes</p>
+        <h2 id="faq-titulo">Lo que más nos preguntan.</h2>
+      </header>
+      <div data-reveal>
+        <details class="faq" open>
+          <summary>¿Qué necesito para la primera clase?</summary>
+          <p>Ropa de baño, gorro, lentes, sandalias y toalla. Si no tienes gorro o lentes, los encuentras en la <a href="{{P}}tienda.html">tienda</a>.</p>
+        </details>
+        <details class="faq">
+          <summary>¿El agua tiene cloro?</summary>
+          <p>Usamos un sistema de sal y ozono con cloro residual mínimo. Es más amable con la piel y los ojos.</p>
+        </details>
+        <details class="faq">
+          <summary>¿Qué pasa si mi hijo tiene miedo al agua?</summary>
+          <p>Empieza en el carril de poca profundidad (90 cm) con un entrenador por cada cuatro niños. Avanza a su ritmo.</p>
+        </details>
+        <details class="faq">
+          <summary>¿Puedo recuperar una clase perdida?</summary>
+          <p>Sí, hasta dos clases por mes, en cualquier turno con cupo disponible.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+</main>

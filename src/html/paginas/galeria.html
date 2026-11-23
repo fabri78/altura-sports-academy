@@ -1,0 +1,105 @@
+<!--{"titulo":"Galería multimedia","descripcion":"Fotos, videos y audio de las academias, torneos y la sede de ALTURA Sports Academy en Arequipa.","activo":"galeria","clase":"tema-oscuro"}-->
+<main id="contenido">
+  <section class="banner" aria-labelledby="titulo-pagina">
+    <div class="banner__content">
+      <ol class="breadcrumb" aria-label="Ruta de navegación">
+        <li><a href="{{R}}index.html">Inicio</a></li>
+        <li aria-current="page">Galería</li>
+      </ol>
+      <p class="eyebrow">Galería</p>
+      <h1 class="banner__title" id="titulo-pagina">Lo que pasa en <span class="texto-gradiente">ALTURA.</span></h1>
+      <p class="lead">Fotos, videos y audio. Toca una foto para verla en grande.</p>
+    </div>
+  </section>
+
+  <!-- Mosaico de imágenes (grid denso) -->
+  <section class="seccion seccion--negro seccion--compacta" aria-labelledby="fotos-titulo">
+    <div class="contenedor">
+      <h2 class="sr-only" id="fotos-titulo">Fotos</h2>
+      <div class="mosaico">
+        <a class="mosaico__item mosaico__item--grande" href="#foto-1" data-reveal="escala"><img src="{{R}}assets/img/galeria/g-basquet-2.webp" alt="Bandeja en un partido de básquet" loading="lazy" width="1400" height="933"></a>
+        <a class="mosaico__item" href="#foto-2" data-reveal><img src="{{R}}assets/img/galeria/g-voley.webp" alt="Partido de vóley en coliseo" loading="lazy" width="1400" height="933"></a>
+        <a class="mosaico__item mosaico__item--alto" href="#foto-3" data-reveal><img src="{{R}}assets/img/academias/natacion-nado.webp" alt="Niña nadando bajo el agua" loading="lazy" width="1400" height="1039"></a>
+        <a class="mosaico__item" href="#foto-4" data-reveal><img src="{{R}}assets/img/galeria/g-atletismo.webp" alt="Pista de atletismo con carriles numerados" loading="lazy" width="1400" height="933"></a>
+        <a class="mosaico__item mosaico__item--ancho" href="#foto-5" data-reveal><img src="{{R}}assets/img/galeria/g-natacion.webp" alt="Nadador en competencia" loading="lazy" width="1400" height="933"></a>
+        <a class="mosaico__item" href="#foto-6" data-reveal><img src="{{R}}assets/img/galeria/g-futbol.webp" alt="Práctica de fútbol en un parque" loading="lazy" width="1400" height="933"></a>
+        <a class="mosaico__item mosaico__item--ancho" href="#foto-7" data-reveal><img src="{{R}}assets/img/galeria/g-basquet-1.webp" alt="Salto inicial en un partido" loading="lazy" width="1400" height="933"></a>
+        <a class="mosaico__item" href="#foto-8" data-reveal><img src="{{R}}assets/img/academias/funcional.webp" alt="Entrenamiento con kettlebell" loading="lazy" width="1400" height="933"></a>
+        <a class="mosaico__item" href="#foto-9" data-reveal><img src="{{R}}assets/img/galeria/g-arequipa.webp" alt="Plaza de Armas de Arequipa" loading="lazy" width="1400" height="937"></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox solo con CSS (:target) -->
+  <div class="lightbox" id="foto-1" role="dialog" aria-label="Foto ampliada"><a href="#cerrar" aria-label="Cerrar"><img src="{{R}}assets/img/galeria/g-basquet-2.webp" alt="Bandeja en un partido de básquet" loading="lazy"></a></div>
+  <div class="lightbox" id="foto-2" role="dialog" aria-label="Foto ampliada"><a href="#cerrar" aria-label="Cerrar"><img src="{{R}}assets/img/galeria/g-voley.webp" alt="Partido de vóley" loading="lazy"></a></div>
+  <div class="lightbox" id="foto-3" role="dialog" aria-label="Foto ampliada"><a href="#cerrar" aria-label="Cerrar"><img src="{{R}}assets/img/academias/natacion-nado.webp" alt="Niña nadando bajo el agua" loading="lazy"></a></div>
+  <div class="lightbox" id="foto-4" role="dialog" aria-label="Foto ampliada"><a href="#cerrar" aria-label="Cerrar"><img src="{{R}}assets/img/galeria/g-atletismo.webp" alt="Pista de atletismo" loading="lazy"></a></div>
+  <div class="lightbox" id="foto-5" role="dialog" aria-label="Foto ampliada"><a href="#cerrar" aria-label="Cerrar"><img src="{{R}}assets/img/galeria/g-natacion.webp" alt="Nadador en competencia" loading="lazy"></a></div>
+  <div class="lightbox" id="foto-6" role="dialog" aria-label="Foto ampliada"><a href="#cerrar" aria-label="Cerrar"><img src="{{R}}assets/img/galeria/g-futbol.webp" alt="Práctica de fútbol" loading="lazy"></a></div>
+  <div class="lightbox" id="foto-7" role="dialog" aria-label="Foto ampliada"><a href="#cerrar" aria-label="Cerrar"><img src="{{R}}assets/img/galeria/g-basquet-1.webp" alt="Salto inicial" loading="lazy"></a></div>
+  <div class="lightbox" id="foto-8" role="dialog" aria-label="Foto ampliada"><a href="#cerrar" aria-label="Cerrar"><img src="{{R}}assets/img/academias/funcional.webp" alt="Entrenamiento con kettlebell" loading="lazy"></a></div>
+  <div class="lightbox" id="foto-9" role="dialog" aria-label="Foto ampliada"><a href="#cerrar" aria-label="Cerrar"><img src="{{R}}assets/img/galeria/g-arequipa.webp" alt="Plaza de Armas de Arequipa" loading="lazy"></a></div>
+
+  <!-- Videos y audio -->
+  <section class="seccion seccion--carbon" aria-labelledby="multimedia-titulo">
+    <div class="contenedor">
+      <header class="seccion__head" data-reveal>
+        <p class="eyebrow">Videos y audio</p>
+        <h2 id="multimedia-titulo">Dale play.</h2>
+      </header>
+      <div class="multimedia-grid">
+        <div class="video-marco" data-reveal="escala">
+          <video controls muted playsinline preload="metadata" poster="{{R}}assets/video/basquet-poster.webp">
+            <source src="{{R}}assets/video/basquet.webm" type="video/webm">
+            <source src="{{R}}assets/video/basquet.mp4" type="video/mp4">
+            <track kind="captions" src="{{R}}assets/video/basquet-es.vtt" srclang="es" label="Español" default>
+            Tu navegador no puede reproducir este video.
+          </video>
+        </div>
+        <div class="pila">
+          <div class="audio-card" data-reveal>
+            <div class="audio-card__icono"><span class="material-symbols-rounded" aria-hidden="true">podcasts</span></div>
+            <div><h3>Jingle ALTURA</h3><p>Pista original · 14 s</p></div>
+            <audio controls preload="none"><source src="{{R}}assets/audio/jingle-altura.mp3" type="audio/mpeg">Tu navegador no puede reproducir audio.</audio>
+          </div>
+          <div class="audio-card" data-reveal data-reveal-delay="1">
+            <div class="audio-card__icono"><span class="material-symbols-rounded" aria-hidden="true">graphic_eq</span></div>
+            <div><h3>Ritmo de step</h3><p>Pista original · 42 s · 128 BPM</p></div>
+            <audio controls preload="none"><source src="{{R}}assets/audio/ritmo-aerobicos.mp3" type="audio/mpeg">Tu navegador no puede reproducir audio.</audio>
+          </div>
+        </div>
+      </div>
+      <div class="medios-fila" data-reveal>
+        <div class="video-marco">
+          <video controls muted playsinline preload="metadata" poster="{{R}}assets/video/piscina-poster.webp">
+            <source src="{{R}}assets/video/piscina.webm" type="video/webm">
+            <source src="{{R}}assets/video/piscina.mp4" type="video/mp4">
+            <track kind="captions" src="{{R}}assets/video/piscina-es.vtt" srclang="es" label="Español" default>
+          </video>
+        </div>
+        <picture class="video-marco">
+          <source srcset="{{R}}assets/img/galeria/g-gimnasio.webp" media="(min-width: 600px)">
+          <img src="{{R}}assets/img/academias/basquet-cancha.webp" alt="Cancha de básquet: en celular se muestra la cancha exterior y en pantallas grandes el coliseo" loading="lazy" width="1400" height="933">
+        </picture>
+        <figure class="video-marco">
+          <img src="{{R}}assets/img/academias/natacion-carriles.webp" alt="Piscina con carriles" loading="lazy" width="1400" height="933">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Créditos de fotos y videos -->
+  <section class="seccion seccion--negro seccion--compacta" aria-labelledby="creditos-titulo">
+    <div class="contenedor">
+      <h2 class="eyebrow" id="creditos-titulo">Créditos multimedia</h2>
+      <p class="nota">Fotos y videos de Wikimedia Commons con licencias libres (CC0, CC BY, CC BY-SA o dominio público). Las ilustraciones de productos, el logo, los íconos y el audio son originales del proyecto.</p>
+      <details class="faq">
+        <summary>Ver la lista completa</summary>
+        <ul class="nota creditos">
+            {{creditos}}
+        </ul>
+      </details>
+    </div>
+  </section>
+</main>

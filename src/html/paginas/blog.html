@@ -1,0 +1,99 @@
+<!--{"titulo":"Blog","descripcion":"Artículos sobre entrenamiento en altura, nutrición deportiva, básquet, natación y prevención de lesiones.","activo":"blog","clase":"tema-claro"}-->
+<main id="contenido">
+  <section class="seccion seccion--niebla seccion--compacta" aria-labelledby="titulo-pagina">
+    <div class="contenedor">
+      <header class="seccion__head">
+        <ol class="breadcrumb" aria-label="Ruta de navegación">
+          <li><a href="{{R}}index.html">Inicio</a></li>
+          <li aria-current="page">Blog</li>
+        </ol>
+        <h1 id="titulo-pagina">Blog ALTURA</h1>
+        <p class="lead">Ciencia del deporte explicada por nuestros entrenadores, sin rodeos.</p>
+      </header>
+
+      <div class="con-sidebar con-sidebar--derecha">
+        <div class="con-sidebar__main">
+          <!-- Artículo destacado -->
+          <article class="post-card post-destacado" data-reveal>
+            <img src="{{R}}assets/img/blog/misti.webp" alt="Volcán Misti con cielo despejado" width="1600" height="900">
+            <div class="post-card__body">
+              <span class="chip-deporte--basquet">Ciencia · Destacado</span>
+              <h2 class="post-card__titulo"><a href="{{P}}articulo.html">Entrenar en altura: qué cambia en tu cuerpo</a></h2>
+              <p class="post-card__extracto">A 2 335 m cada bocanada trae menos oxígeno. Así se adapta tu cuerpo y así lo aprovechamos.</p>
+              <p class="meta-post"><time datetime="2026-11-18">18 de noviembre de 2026</time> · 6 min de lectura</p>
+            </div>
+          </article>
+
+          <div class="blog-grid">
+            <article class="post-card" data-reveal>
+              <img src="{{R}}assets/img/blog/nutricion.webp" alt="Verduras frescas en un mercado" loading="lazy" width="1400" height="933">
+              <div class="post-card__body">
+                <span class="chip-deporte--funcional">Nutrición</span>
+                <h2 class="post-card__titulo"><a href="{{P}}articulo.html">Qué comer antes de un partido</a></h2>
+                <p class="post-card__extracto">Carbohidratos tres horas antes, agua siempre y nada nuevo el día del juego.</p>
+                <p class="meta-post"><time datetime="2026-11-10">10 nov 2026</time></p>
+              </div>
+            </article>
+            <article class="post-card" data-reveal data-reveal-delay="1">
+              <img src="{{R}}assets/img/blog/estiramiento.webp" alt="Atleta estirando" loading="lazy" width="1400" height="800">
+              <div class="post-card__body">
+                <span class="chip-deporte--aerobicos">Prevención</span>
+                <h2 class="post-card__titulo"><a href="{{P}}articulo.html">Cinco estiramientos para después del step</a></h2>
+                <p class="post-card__extracto">Diez minutos que evitan semanas de dolor de rodilla.</p>
+                <p class="meta-post"><time datetime="2026-11-02">2 nov 2026</time></p>
+              </div>
+            </article>
+            <article class="post-card" data-reveal>
+              <img src="{{R}}assets/img/blog/correr-montana.webp" alt="Corredor en un sendero de montaña" loading="lazy" width="1400" height="933">
+              <div class="post-card__body">
+                <span class="chip-deporte--voley">Resistencia</span>
+                <h2 class="post-card__titulo"><a href="{{P}}articulo.html">Rutas para trotar alrededor de Arequipa</a></h2>
+                <p class="post-card__extracto">De Sabandía a Chilina: cuatro recorridos con distancia y desnivel.</p>
+                <p class="meta-post"><time datetime="2026-10-25">25 oct 2026</time></p>
+              </div>
+            </article>
+            <article class="post-card" data-reveal data-reveal-delay="1">
+              <img src="{{R}}assets/img/academias/natacion-carriles.webp" alt="Piscina con carriles" loading="lazy" width="1400" height="933">
+              <div class="post-card__body">
+                <span class="chip-deporte--natacion">Natación</span>
+                <h2 class="post-card__titulo"><a href="{{P}}articulo.html">¿A qué edad debe aprender a nadar un niño?</a></h2>
+                <p class="post-card__extracto">Lo que dicen los pediatras y lo que vemos cada semana en la piscina.</p>
+                <p class="meta-post"><time datetime="2026-10-15">15 oct 2026</time></p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- BARRA LATERAL del blog -->
+        <aside class="sidebar" aria-label="Más del blog">
+          <div class="sidebar__block">
+            <h2 class="sidebar__title">Categorías</h2>
+            <ul class="sidebar__list">
+              <li><a href="{{P}}blog.html">Ciencia <span>8</span></a></li>
+              <li><a href="{{P}}blog.html">Nutrición <span>5</span></a></li>
+              <li><a href="{{P}}blog.html">Prevención <span>6</span></a></li>
+              <li><a href="{{P}}blog.html">Básquet <span>11</span></a></li>
+              <li><a href="{{P}}blog.html">Natación <span>4</span></a></li>
+            </ul>
+          </div>
+          <div class="sidebar__block">
+            <h2 class="sidebar__title">Etiquetas</h2>
+            <ul class="etiquetas">
+              <li><a href="{{P}}blog.html">altura</a></li><li><a href="{{P}}blog.html">hidratación</a></li><li><a href="{{P}}blog.html">rodilla</a></li><li><a href="{{P}}blog.html">U17</a></li><li><a href="{{P}}blog.html">step</a></li><li><a href="{{P}}blog.html">niños</a></li>
+            </ul>
+          </div>
+          <form class="sidebar__block sidebar__newsletter" data-form="boletin" data-ok="Listo. Te enviaremos un artículo cada viernes.">
+            <h2 class="sidebar__title">Boletín semanal</h2>
+            <p>Un artículo cada viernes. Sin spam.</p>
+            <p class="form-ok" tabindex="-1" hidden></p>
+            <label class="sr-only" for="b-correo">Correo electrónico</label>
+            <input class="campo-nativo" type="email" id="b-correo" name="correo" placeholder="tu@correo.com" required autocomplete="email">
+            <div class="form-acciones">
+              <button class="mdc-button mdc-button--unelevated btn-pill btn-pill--claro" type="submit" data-mdc-auto-init="MDCRipple"><span class="mdc-button__ripple"></span><span class="mdc-button__label">Suscribirme</span></button>
+            </div>
+          </form>
+        </aside>
+      </div>
+    </div>
+  </section>
+</main>

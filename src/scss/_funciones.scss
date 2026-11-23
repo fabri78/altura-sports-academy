@@ -99,6 +99,13 @@
   border-radius: radio("xl");
 }
 
+// Oculta visualmente un control nativo pero lo mantiene accesible
+%oculto {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
 %reset-lista {
   margin: 0;
   padding: 0;

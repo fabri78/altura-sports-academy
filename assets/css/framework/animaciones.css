@@ -679,3 +679,534 @@
     scroll-behavior: smooth;
   }
 }
+
+/* =====================================================================
+   17. Fotogramas adicionales
+   ===================================================================== */
+@keyframes ecualizador {
+  0%, 100% { transform: scaleY(0.3); }
+  50% { transform: scaleY(1); }
+}
+
+@keyframes sacudir {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-6px); }
+  40%, 80% { transform: translateX(6px); }
+}
+
+@keyframes destello {
+  from { transform: translateX(-120%) skewX(-20deg); }
+  to { transform: translateX(220%) skewX(-20deg); }
+}
+
+@keyframes anillo {
+  0% { box-shadow: 0 0 0 0 rgba(0, 113, 227, 0.55); }
+  100% { box-shadow: 0 0 0 10px rgba(0, 113, 227, 0); }
+}
+
+@keyframes subrayar {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+@keyframes encoger-nav {
+  from { background-color: rgba(22, 22, 23, 0.6); }
+  to { background-color: rgba(22, 22, 23, 0.92); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35); }
+}
+
+@keyframes mostrar-arriba {
+  from { opacity: 0; transform: translateY(20px) scale(0.8); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes linea-tiempo {
+  from { background-size: 0% 2px; }
+  to { background-size: 100% 2px; }
+}
+
+@keyframes girar-3d {
+  from { transform: perspective(800px) rotateY(-25deg) rotateX(8deg); }
+  to { transform: perspective(800px) rotateY(0) rotateX(0); }
+}
+
+@keyframes respirar {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.04); }
+}
+
+@keyframes aparecer-desenfoque {
+  from { opacity: 0; filter: blur(12px); transform: scale(1.04); }
+  to { opacity: 1; filter: blur(0); transform: none; }
+}
+
+@keyframes cargar {
+  to { transform: rotate(1turn); }
+}
+
+/* =====================================================================
+   18. Animaciones ligadas al scroll en más componentes
+   ===================================================================== */
+@supports (animation-timeline: view()) {
+  .card-academia,
+  .bento__tile,
+  .post-card,
+  .producto,
+  .valor,
+  .plan {
+    animation: aparecer-escala linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 60%;
+  }
+
+  .split__media img {
+    animation: acercar-hero linear both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 50%;
+  }
+
+  .timeline__item {
+    background-image: var(--grad-brasa);
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    animation: linea-tiempo linear both;
+    animation-timeline: view();
+    animation-range: entry 20% cover 40%;
+  }
+
+  .pdp__escena {
+    animation: girar-3d linear both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 30%;
+  }
+
+  .cta-banda {
+    animation: aparecer-desenfoque linear both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 35%;
+  }
+}
+
+/* Barra global: se oscurece y gana sombra al desplazarse (scroll timeline) */
+@supports (animation-timeline: scroll()) {
+  .globalnav {
+    animation: encoger-nav linear both;
+    animation-timeline: scroll(root);
+    animation-range: 0 240px;
+  }
+
+  .to-top {
+    animation: mostrar-arriba linear both;
+    animation-timeline: scroll(root);
+    animation-range: 60% 75%;
+  }
+}
+
+/* =====================================================================
+   19. Escalonado automático en rejillas (nth-child)
+   ===================================================================== */
+.js .grid-3 > [data-reveal]:nth-child(3n + 2),
+.js .grid-4 > [data-reveal]:nth-child(4n + 2),
+.js .catalogo > [data-reveal]:nth-child(3n + 2) {
+  transition-delay: 0.1s;
+}
+
+.js .grid-3 > [data-reveal]:nth-child(3n + 3),
+.js .grid-4 > [data-reveal]:nth-child(4n + 3),
+.js .catalogo > [data-reveal]:nth-child(3n + 3) {
+  transition-delay: 0.2s;
+}
+
+.js .grid-4 > [data-reveal]:nth-child(4n + 4) {
+  transition-delay: 0.3s;
+}
+
+.menu__list > .menu__item {
+  transition: transform 0.25s ease-out;
+}
+
+/* =====================================================================
+   20. Enlaces con subrayado animado
+   ===================================================================== */
+.menu__item > a,
+.footer__col a,
+.breadcrumb a,
+.sidebar__list a {
+  position: relative;
+}
+
+.menu__item > a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 2px;
+  height: 2px;
+  border-radius: 2px;
+  background-image: var(--grad-brasa);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.menu__item > a:hover::before,
+.menu__item > a[aria-current="page"]::before {
+  transform: scaleX(1);
+}
+
+.footer__col a,
+.breadcrumb a {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 0% 1px;
+  transition: background-size 0.3s ease-out, color 0.2s ease-out;
+}
+
+.footer__col a:hover,
+.breadcrumb a:hover {
+  background-size: 100% 1px;
+  text-decoration: none;
+}
+
+.sidebar__list a {
+  transition: color 0.2s ease-out, padding-left 0.25s ease-out;
+}
+
+.sidebar__list a:hover {
+  padding-left: 6px;
+}
+
+.etiquetas a {
+  transition: background-color 0.25s ease-out, color 0.2s ease-out, transform 0.25s ease-out;
+}
+
+.etiquetas a:hover {
+  transform: translateY(-2px);
+}
+
+.logo img {
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.logo:hover img {
+  transform: scale(1.06);
+}
+
+/* =====================================================================
+   21. Brillo que cruza las tarjetas al pasar el cursor
+   ===================================================================== */
+.highlight::before,
+.card-academia::before,
+.promo::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  z-index: 3;
+  width: 40%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.18), transparent);
+  transform: translateX(-120%) skewX(-20deg);
+  pointer-events: none;
+}
+
+.promo {
+  position: relative;
+}
+
+.highlight:hover::before,
+.card-academia:hover::before,
+.promo:hover::before {
+  animation: destello 0.9s ease-out;
+}
+
+.promo img {
+  transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.promo:hover img {
+  transform: rotate(-6deg) scale(1.06);
+}
+
+.producto__img img {
+  transform-origin: center 70%;
+}
+
+.producto:hover .producto__img img {
+  transform: rotate(-4deg) scale(1.08);
+}
+
+/* =====================================================================
+   22. Audio: barras de ecualizador en el ícono
+   ===================================================================== */
+.audio-card__icono {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease-out;
+}
+
+.audio-card:hover .audio-card__icono {
+  transform: scale(1.06) rotate(-4deg);
+}
+
+.audio-card:hover .audio-card__icono .material-symbols-rounded {
+  animation: ecualizador 0.6s ease-in-out infinite;
+  transform-origin: center bottom;
+}
+
+.audio-card:focus-within .audio-card__icono {
+  animation: respirar 1.6s ease-in-out infinite;
+}
+
+/* =====================================================================
+   23. Formularios: foco, error y envío
+   ===================================================================== */
+.campo-nativo {
+  transition: border-color 0.2s ease-out, box-shadow 0.25s ease-out, background-color 0.2s;
+}
+
+.campo-nativo:user-invalid,
+.mdc-text-field--invalid {
+  animation: sacudir 0.4s ease-in-out;
+}
+
+.opcion-card input:checked + label {
+  animation: aparecer-escala 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.mdc-checkbox__background,
+.mdc-radio__outer-circle {
+  transition: border-color 0.2s ease-out, background-color 0.2s ease-out;
+}
+
+.form-bloque__paso {
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.3s;
+}
+
+.form-bloque:focus-within .form-bloque__paso {
+  transform: scale(1.15);
+  background-color: var(--c-accion);
+}
+
+button[type="submit"].mdc-button:focus-visible {
+  animation: anillo 1.2s ease-out infinite;
+}
+
+.cargando::after {
+  content: "";
+  width: 16px;
+  height: 16px;
+  margin-left: 8px;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: cargar 0.7s linear infinite;
+}
+
+/* =====================================================================
+   24. Tienda: selección de talla, filtros y color
+   ===================================================================== */
+.swatch:focus-visible,
+.pdp__radio:focus-visible + .swatch {
+  animation: anillo 1.2s ease-out infinite;
+}
+
+.pdp__vista img {
+  transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.pdp__escena:hover img {
+  transform: translateY(-8px) rotate(-3deg) scale(1.03);
+}
+
+.chip-filtro input:checked + label {
+  animation: aparecer-escala 0.3s ease-out;
+}
+
+.producto[hidden] {
+  display: none;
+}
+
+.sidebar__range {
+  transition: accent-color 0.2s;
+}
+
+/* =====================================================================
+   25. Navegación de pestañas y migas de pan
+   ===================================================================== */
+.mdc-tab .mdc-tab__text-label {
+  transition: color 0.25s ease-out;
+}
+
+.mdc-tab:hover .mdc-tab__text-label {
+  color: var(--c-texto-claro);
+}
+
+.breadcrumb li {
+  animation: deslizar-izquierda 0.5s ease-out both;
+}
+
+.breadcrumb li:nth-child(2) { animation-delay: 0.05s; }
+.breadcrumb li:nth-child(3) { animation-delay: 0.1s; }
+
+/* =====================================================================
+   26. Transiciones entre páginas (View Transitions API, solo CSS)
+   ===================================================================== */
+@view-transition {
+  navigation: auto;
+}
+
+::view-transition-old(root) {
+  animation: 0.25s ease-in both desvanecer-salida;
+}
+
+::view-transition-new(root) {
+  animation: 0.35s ease-out both aparecer-arriba;
+}
+
+@keyframes desvanecer-salida {
+  to { opacity: 0; }
+}
+
+.globalnav {
+  view-transition-name: barra-global;
+}
+
+/* =====================================================================
+   27. Organigrama, línea de tiempo y cifras
+   ===================================================================== */
+.organigrama__nodo--raiz {
+  background-size: 200% 100%;
+  animation: degradado-mover 6s ease-in-out infinite;
+}
+
+.timeline__item:hover time {
+  display: inline-block;
+  transform: translateX(6px);
+  transition: transform 0.3s ease-out;
+}
+
+.cifras > div:hover .cifra__num {
+  animation: respirar 0.8s ease-in-out;
+}
+
+.valor .material-symbols-rounded {
+  transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1), color 0.3s;
+}
+
+.valor:hover .material-symbols-rounded {
+  transform: rotate(-10deg) scale(1.2);
+  color: var(--c-fucsia);
+}
+
+.info-contacto:hover .material-symbols-rounded {
+  animation: flotar 1.2s ease-in-out infinite;
+}
+
+/* =====================================================================
+   28. Encabezado: vidrio que reacciona al menú
+   ===================================================================== */
+.globalnav:has(.menu-toggle:checked) {
+  background-color: #161617;
+}
+
+.menu__item--sub:hover > a,
+.menu__item--sub:focus-within > a {
+  color: var(--c-texto-claro);
+}
+
+.nav-cta.mdc-button:hover {
+  transform: scale(1.05);
+}
+
+/* =====================================================================
+   29. Multimedia, tablas y detalles finales
+   ===================================================================== */
+.video-marco,
+.iframe-marco {
+  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.5s ease-out;
+}
+
+.video-marco:hover,
+.iframe-marco:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45);
+}
+
+.video-marco video:not([poster]) {
+  animation: aparecer-desenfoque 0.8s ease-out both;
+}
+
+.mdc-data-table__row {
+  transition: background-color 0.2s ease-out;
+}
+
+.tabla tbody tr {
+  transition: background-color 0.2s ease-out;
+}
+
+.tabla tbody tr:hover th,
+.tabla tbody tr:hover td:first-child {
+  color: var(--c-brasa);
+  transition: color 0.2s ease-out;
+}
+
+.skip-link {
+  transition: top 0.25s ease-out;
+}
+
+.lightbox a {
+  cursor: zoom-out;
+}
+
+.mosaico__item {
+  cursor: zoom-in;
+}
+
+[class*="chip-deporte--"] {
+  transition: transform 0.25s ease-out, filter 0.25s;
+}
+
+a:hover [class*="chip-deporte--"],
+[class*="chip-deporte--"]:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.2);
+}
+
+.step h3 {
+  transition: color 0.4s ease-out;
+}
+
+.step.is-activo h3 {
+  color: var(--c-brasa);
+}
+
+.evento__fecha {
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.evento:hover .evento__fecha {
+  transform: rotate(-6deg) scale(1.05);
+}
+
+.plan--destacado {
+  animation: respirar 4s ease-in-out infinite;
+}
+
+.plan--destacado:hover {
+  animation-play-state: paused;
+}
+
+.libro-badge img {
+  transition: transform 0.35s ease-out;
+}
+
+.libro-badge:hover img {
+  transform: rotate(-8deg) scale(1.1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .plan--destacado,
+  .organigrama__nodo--raiz,
+  .texto-gradiente--vivo {
+    animation: none;
+  }
+}

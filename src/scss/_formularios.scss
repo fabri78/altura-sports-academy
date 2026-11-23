@@ -26,8 +26,6 @@
 
   legend {
     @include titular(rem(19px));
-    display: flex;
-    align-items: center;
     gap: esp(3);
     margin-bottom: esp(5);
     padding: 0;
@@ -72,8 +70,7 @@
   position: relative;
 
   input {
-    position: absolute;
-    opacity: 0;
+    @extend %oculto;
   }
 
   label {
@@ -106,67 +103,5 @@
 
   input:focus-visible + label {
     @include enfoque;
-  }
-}
-
-.form-legal {
-  margin-top: esp(5);
-  color: c("gris-2");
-  font-size: rem(13px);
-}
-
-.form-acciones {
-  margin-top: esp(6);
-}
-
-// Mensaje de éxito (se muestra al enviar)
-.form-ok {
-  padding: esp(5);
-  border-radius: radio("lg");
-  background-color: alfa(c("exito"), 0.12);
-  color: #0a6b2a;
-  font-weight: 600;
-}
-
-// Hoja de reclamación: cabecera oficial
-.hoja-reclamo {
-  &__cabecera {
-    padding: esp(5);
-    border-radius: radio("lg");
-    background-color: c("niebla");
-    color: c("texto-oscuro");
-    font-size: rem(14px);
-
-    strong {
-      font-family: $f-display;
-      font-size: rem(18px);
-    }
-  }
-
-  &__numero {
-    font-variant-numeric: tabular-nums;
-    color: c("fucsia");
-    font-weight: 700;
-  }
-}
-
-// Tarjeta de información de contacto
-.info-contacto {
-  @include superficie(c("carbon"));
-  padding: esp(6);
-
-  .material-symbols-rounded {
-    color: c("brasa");
-    font-size: 28px;
-  }
-
-  h3 {
-    @include titular(rem(19px));
-    margin-top: esp(3);
-  }
-
-  p {
-    margin-top: esp(1);
-    color: c("gris-3");
   }
 }

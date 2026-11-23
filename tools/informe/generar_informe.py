@@ -281,7 +281,7 @@ A(tabla("Roles y responsabilidades del equipo", ["Integrante", "Rol", "Responsab
 A(h3("1.4 RECURSOS Y PRESUPUESTO"))
 A(tabla("Recursos y presupuesto estimado del proyecto", ["Recurso", "Detalle", "Cantidad", "Costo (S/)"], [
     ["Hardware", "Laptops de desarrollo (depreciación del periodo)", "2", "150.00"],
-    ["Software", "Visual Studio Code, Node.js, Git, navegadores, Figma (plan gratuito)", "—", "0.00 (libre)"],
+    ["Software", "Visual Studio Code, Node.js, Git, navegadores, Figma (plan gratuito), asistente de IA", "—", "0.00 (libre)"],
     ["Frameworks", "LESS, SASS, MDC Web 14, Google Fonts, Material Symbols", "—", "0.00 (libre)"],
     ["Hosting", "GitHub y GitHub Pages", "1", "0.00"],
     ["Dominio (opcional)", "alturasports.pe por un año", "1", "120.00"],
@@ -501,6 +501,25 @@ for t in [
     A(p(t, ind='w:left="1122" w:hanging="720" w:right="400"'))
 
 A(titulo1("ANEXOS"))
+A(h3("DECLARACIÓN DE USO DE INTELIGENCIA ARTIFICIAL"))
+A(p("Con la autorización del docente del curso, el equipo utilizó un asistente de inteligencia artificial (Claude, de Anthropic) como herramienta de apoyo durante el desarrollo del proyecto."))
+A(p("**Para qué se usó:**"))
+for t in [
+    "Proponer la estructura del sitio, del plan de trabajo y del informe a partir de los lineamientos del curso.",
+    "Generar y revisar código HTML, CSS, LESS, SASS y JavaScript, y el script que mide el reparto de los estilos.",
+    "Preparar diagramas, prototipos en Figma, capturas y borradores de texto del informe.",
+    "Buscar fotografías con licencia libre y preparar los archivos multimedia.",
+]:
+    A(vineta(t))
+A(p("**Qué decidió y revisó el equipo:**"))
+for t in [
+    "La elección de la empresa, el rubro y la referencia visual (página del iPhone 18 Pro).",
+    "La aprobación del plan de desarrollo, los datos de los integrantes y el plazo del proyecto.",
+    "La revisión de cada versión en el navegador y los cambios solicitados, como el uso de fotos reales en la tienda y los prototipos en Figma.",
+    "La publicación del repositorio y del sitio en GitHub, y la preparación de la exposición.",
+]:
+    A(vineta(t))
+A(p("El equipo es responsable del contenido entregado y puede explicar el funcionamiento de cada parte del proyecto."))
 A(h3("ENCUESTA"))
 A(p("Cuestionario propuesto para validar el sitio con alumnos y padres de familia. Se aplica con Google Forms; sus resultados se registrarán cuando la academia la difunda."))
 A(tabla("Cuestionario de satisfacción del sitio web", ["N.°", "Pregunta", "Tipo de respuesta"], [

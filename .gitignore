@@ -5,3 +5,4 @@ tools/media/tmp/
 Thumbs.db
 .claude/settings.local.json
 entrega/
+.claude/

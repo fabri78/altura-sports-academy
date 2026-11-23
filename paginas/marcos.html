@@ -1,0 +1,23 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+<!--
+  Demostración de marcos clásicos (FRAMESET) pedida en el punto f de los lineamientos.
+  <frameset> y <frame> son obsoletos en HTML5, por eso esta página usa el DOCTYPE
+  HTML 4.01 Frameset y queda fuera de las 17 páginas principales del sitio.
+  En el resto del sitio los marcos se resuelven con <iframe>.
+-->
+<html lang="es-PE">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Marcos (frameset) | ALTURA Sports Academy</title>
+  <link rel="icon" href="../assets/img/logo/favicon.svg" type="image/svg+xml">
+</head>
+<frameset cols="260,*" frameborder="0" border="0" framespacing="0">
+  <frame src="marcos-menu.html" name="menu" title="Menú de la demostración de marcos" scrolling="auto" noresize>
+  <frame src="horarios.html" name="contenido" title="Contenido seleccionado" scrolling="auto">
+  <noframes>
+    <body>
+      <p>Tu navegador no muestra marcos. <a href="horarios.html">Ver horarios</a>.</p>
+    </body>
+  </noframes>
+</frameset>
+</html>

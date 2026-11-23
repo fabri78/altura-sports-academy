@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Evidencias del informe</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap">
+<link rel="stylesheet" href="evidencias.css">
+</head>
+<body>
+<!-- Página auxiliar: ?v=arbol muestra la estructura de carpetas, ?v=metricas el reparto del CSS -->
+<section id="arbol" class="panel">
+<h1>altura-sports/ · organización de paquetes y ficheros</h1>
+<pre><b>altura-sports/</b>
+├── <b>index.html</b>                 <i>página de inicio</i>
+├── <b>404.html</b>                   <i>página no encontrada</i>
+├── <b>paginas/</b>                   <i>16 páginas internas + horario-semanal y marcos</i>
+├── <b>src/</b>                       <i>código fuente que se compila</i>
+│   ├── html/parciales/        <i>head, cabecera, pie, semana</i>
+│   ├── html/paginas/          <i>cuerpo de cada página</i>
+│   ├── less/                  <i>_variables _mixins _header _footer _banners _sidebar _componentes</i>
+│   └── scss/                  <i>_tokens _funciones _mdc-tema _deportes _tienda _formularios</i>
+├── <b>assets/</b>                    <i>lo que se publica</i>
+│   ├── css/base.css           <i>CSS externo (10 %)</i>
+│   ├── css/altura-less.css    <i>LESS compilado (15 %)</i>
+│   ├── css/altura-sass.css    <i>SASS compilado (15 %)</i>
+│   ├── css/framework/         <i>layout.css · responsive.css · animaciones.css (20 % c/u)</i>
+│   ├── js/main.js             <i>inicio de Material Design e interacciones</i>
+│   ├── img/                   <i>logo/ iconos/ hero/ academias/ tienda/ equipo/ blog/ galeria/</i>
+│   ├── video/                 <i>.mp4 .webm .vtt y pósteres</i>
+│   └── audio/                 <i>.mp3 originales</i>
+├── <b>tools/</b>                     <i>ensamblar.mjs · metricas.mjs · verificar.mjs · media/ · informe/</i>
+├── <b>docs/</b>                      <i>plan, métricas, créditos, capturas, diagramas, informe</i>
+├── package.json · Dockerfile · README.md · CHANGELOG.md
+└── .github/workflows/pages.yml   <i>publicación automática en GitHub Pages</i></pre>
+</section>
+<section id="metricas" class="panel">
+<h1>Reparto del código de estilos propio (npm run metricas)</h1>
+<div id="barras"></div>
+</section>
+<script>
+const v = new URLSearchParams(location.search).get('v') || 'arbol';
+document.querySelectorAll('.panel').forEach((p) => { p.hidden = p.id !== v; });
+if (v === 'metricas') {
+  fetch('../../docs/metricas.json').then((r) => r.json()).then((d) => {
+    const cont = document.getElementById('barras');
+    d.filas.forEach((f) => {
+      const fila = document.createElement('div');
+      fila.className = 'fila';
+      fila.innerHTML = `<span class="et">${f.punto} · ${f.nombre}</span>
+        <span class="pista"><span class="meta" data-pct="${f.meta}"></span><span class="real" data-pct="${f.porcentaje}"></span></span>
+        <span class="num">${f.porcentaje.toFixed(1)} % <small>meta ${f.meta} %</small></span>`;
+      fila.querySelector('.meta').style.width = (f.meta * 4) + '%';
+      fila.querySelector('.real').style.width = (f.porcentaje * 4) + '%';
+      cont.appendChild(fila);
+    });
+    const t = document.createElement('p');
+    t.textContent = `Total: ${d.total} líneas útiles. La barra clara es la meta; la oscura, el valor real.`;
+    cont.appendChild(t);
+  });
+}
+</script>
+</body>
+</html>

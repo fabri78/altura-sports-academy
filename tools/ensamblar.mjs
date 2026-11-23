@@ -39,7 +39,8 @@ for (const archivo of readdirSync(join(SRC, 'paginas')).filter((f) => f.endsWith
   const m = fuente.match(/^<!--\s*(\{[\s\S]*?\})\s*-->\s*/);
   if (!m) throw new Error(`Falta el bloque de metadatos en ${archivo}`);
   const meta = JSON.parse(m[1]);
-  const cuerpo = fuente.slice(m[0].length);
+  // {{incluir:nombre}} inserta src/html/parciales/nombre.html (bloques compartidos entre páginas)
+  const cuerpo = fuente.slice(m[0].length).replace(/\{\{incluir:([\w-]+)\}\}/g, (_, n) => leer(`parciales/${n}.html`));
 
   const enRaiz = nombre in DESTINO;
   const R = nombre === '404' ? REPO : enRaiz ? '' : '../';
@@ -49,9 +50,9 @@ for (const archivo of readdirSync(join(SRC, 'paginas')).filter((f) => f.endsWith
 <html lang="es-PE" class="no-js">
 ${head}
 <body class="${meta.clase || 'tema-oscuro'}" id="arriba">
-${cabecera}
+${meta.simple ? '' : cabecera}
 ${cuerpo.trim()}
-${pie}
+${meta.simple ? '' : pie}
 </body>
 </html>
 `;

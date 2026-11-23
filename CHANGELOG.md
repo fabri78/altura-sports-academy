@@ -13,3 +13,11 @@ Cada versión corresponde a una etiqueta de Git y a una fila del "Historial de v
 - Multimedia: video con subtítulos, audio original, iframes (YouTube, OpenStreetMap y marco interno) y marquesinas.
 - Ilustraciones SVG propias de los productos y selector de color hecho solo con CSS.
 - Script `npm run metricas` y reparto del código ajustado a los porcentajes de los lineamientos.
+
+## v3.0 · Incremento de resultados
+- Hojas `layout.css`, `responsive.css` y `animaciones.css` completas: subgrid, consultas de contenedor, animaciones ligadas al scroll, View Transitions, tarjetas 3D y preferencias del sistema.
+- Reparto del código ajustado: todas las categorías a menos de 1,5 puntos de su meta.
+- `paginas/marcos.html` (frameset HTML 4.01) y `paginas/horario-semanal.html` para el iframe interno.
+- Videos generados a partir de las fotos del proyecto (MP4 y WebM con subtítulos).
+- Verificador de enlaces (`tools/verificar.mjs`), README, Dockerfile y flujo de GitHub Pages.
+- Informe en la plantilla del docente con diagramas, capturas y tablas (`docs/informe`).

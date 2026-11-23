@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Diagramas del informe</title>
+<link rel="stylesheet" href="../../assets/css/base.css">
+<link rel="stylesheet" href="diagramas.css">
+</head>
+<body class="diagrama">
+<!-- Fuente de los diagramas del informe. Se muestra uno por vez con ?d=nombre y se captura con Chrome. -->
+<pre class="mermaid" id="conceptual">
+mindmap
+  root((ALTURA Sports<br/>sitio web))
+    HTML5
+      17 páginas + 404
+      Formularios
+      Tablas
+      iFrames y marquee
+      Multimedia
+    CSS externo 10 %
+      Selectores
+      Tipografía
+      Tablas y marcos
+    Preprocesadores
+      LESS 15 %
+        Variables
+        Mixins y guards
+        Bucles
+      SASS 15 %
+        Mapas
+        @each y @function
+        @use y @extend
+    Material Design
+      MDC Web 14 por CDN
+      Animaciones 20 %
+      Media queries 20 %
+      Flexbox y Grid 20 %
+    Git y GitHub
+      Versiones v1.0 a v4.0
+      GitHub Pages
+      Docker
+</pre>
+
+<pre class="mermaid" id="organigrama">
+flowchart TB
+  G["Gerencia general<br/>Renzo Calderón"]
+  G --> D["Dirección deportiva"]
+  G --> A["Administración"]
+  G --> T["Tienda"]
+  G --> M["Marketing"]
+  D --> B["Básquet<br/>2 entrenadores"]
+  D --> AE["Aeróbicos y fitness<br/>2 instructores"]
+  D --> N["Natación<br/>1 jefa + asistentes"]
+  D --> F["Fisioterapia"]
+  A --> MA["Matrículas y caja"]
+  A --> R["Libro de Reclamaciones"]
+  T --> V["Ventas e inventario"]
+  M --> W["Sitio web, redes y blog"]
+</pre>
+
+<pre class="mermaid" id="proceso-matricula">
+flowchart LR
+  I([Interesado]) --> W[Visita academias<br/>y horarios]
+  W --> F[Llena el formulario<br/>de matrícula]
+  F --> V{¿Datos<br/>válidos?}
+  V -- No --> E[El navegador marca<br/>los campos con error] --> F
+  V -- Sí --> C[Confirmación en pantalla]
+  C --> L[Administración llama<br/>en menos de 24 h]
+  L --> P[Clase de prueba gratis]
+  P --> Q{¿Se inscribe?}
+  Q -- Sí --> PG[Pago y carné] --> FIN([Alumno activo])
+  Q -- No --> SEG[Seguimiento por WhatsApp]
+</pre>
+
+<pre class="mermaid" id="proceso-compra">
+flowchart LR
+  C([Cliente]) --> CAT[Catálogo con filtros]
+  CAT --> FICHA[Ficha del producto:<br/>color y talla]
+  FICHA --> CARR[Agrega al carrito]
+  CARR --> REC[Recojo en tienda<br/>y pago en caja]
+  REC --> DESC{¿Es alumno?}
+  DESC -- Sí --> D15[15 % de descuento] --> ENT([Entrega])
+  DESC -- No --> ENT
+</pre>
+
+<pre class="mermaid" id="proceso-reclamo">
+flowchart LR
+  U([Consumidor]) --> H[Llena la hoja de reclamación]
+  H --> N[Se asigna número<br/>2026-XXXX]
+  N --> AD[Administración evalúa]
+  AD --> R[Respuesta en máx.<br/>15 días hábiles]
+  R --> S{¿Conforme?}
+  S -- Sí --> CI([Cierre])
+  S -- No --> IN[Puede acudir a INDECOPI]
+</pre>
+
+<pre class="mermaid" id="clases">
+classDiagram
+  class Alumno {
+    +int id
+    +String nombres
+    +String apellidos
+    +String documento
+    +Date nacimiento
+    +String celular
+    +matricular(Programa, Horario)
+  }
+  class Apoderado {
+    +String nombre
+    +String celular
+  }
+  class Programa {
+    +String nombre
+    +String disciplina
+    +int edadMin
+    +int edadMax
+    +decimal mensualidad
+  }
+  class Horario {
+    +String dia
+    +Time inicio
+    +int cupos
+  }
+  class Entrenador {
+    +String nombre
+    +String especialidad
+  }
+  class Matricula {
+    +Date fecha
+    +String turno
+    +String estado
+  }
+  class Producto {
+    +String nombre
+    +String categoria
+    +decimal precio
+    +String[] colores
+  }
+  class Pedido {
+    +Date fecha
+    +decimal total
+    +agregar(Producto, int)
+  }
+  class Reclamo {
+    +String numero
+    +String tipo
+    +String detalle
+    +Date fechaRespuesta
+  }
+  Alumno "0..*" --> "0..1" Apoderado
+  Alumno "1" --> "0..*" Matricula
+  Matricula "0..*" --> "1" Programa
+  Matricula "0..*" --> "1" Horario
+  Programa "1" --> "1..*" Horario
+  Entrenador "1" --> "0..*" Horario
+  Alumno "1" --> "0..*" Pedido
+  Pedido "0..*" --> "1..*" Producto
+  Alumno "1" --> "0..*" Reclamo
+</pre>
+
+<pre class="mermaid" id="er">
+erDiagram
+  ALUMNO ||--o{ MATRICULA : tiene
+  PROGRAMA ||--o{ MATRICULA : recibe
+  HORARIO ||--o{ MATRICULA : asigna
+  PROGRAMA ||--|{ HORARIO : ofrece
+  ENTRENADOR ||--o{ HORARIO : dicta
+  ALUMNO }o--o| APODERADO : representa
+  ALUMNO ||--o{ PEDIDO : realiza
+  PEDIDO ||--|{ DETALLE_PEDIDO : contiene
+  PRODUCTO ||--o{ DETALLE_PEDIDO : aparece
+  ALUMNO ||--o{ RECLAMO : presenta
+  ALUMNO { int id PK string documento string nombres date nacimiento }
+  PROGRAMA { int id PK string nombre decimal mensualidad }
+  HORARIO { int id PK int programa_id FK int entrenador_id FK string dia time inicio }
+  MATRICULA { int id PK int alumno_id FK int horario_id FK date fecha }
+  PRODUCTO { int id PK string nombre decimal precio }
+  PEDIDO { int id PK int alumno_id FK decimal total }
+  DETALLE_PEDIDO { int pedido_id FK int producto_id FK int cantidad }
+  RECLAMO { string numero PK int alumno_id FK string tipo }
+</pre>
+
+<pre class="mermaid" id="gantt">
+gantt
+  title Cronograma del proyecto ALTURA (noviembre 2026)
+  dateFormat YYYY-MM-DD HH:mm
+  axisFormat %d/%m %H:%M
+  section Inicio
+  Análisis de lineamientos y plantilla :done, a1, 2026-11-23 08:00, 2h
+  Plan de desarrollo aprobado        :milestone, m1, 2026-11-23 10:00, 0h
+  section Planificación
+  Sistema de diseño y mapa del sitio :done, p1, 2026-11-23 10:00, 2h
+  section Ejecución
+  v1.0 Alcance inicial (8 páginas)    :done, e1, 2026-11-23 12:00, 3h
+  v2.0 Ampliación (18 páginas)        :done, e2, after e1, 3h
+  v3.0 Animaciones y responsive       :done, e3, after e2, 3h
+  section Supervisión y control
+  Métricas, validación y capturas     :s1, after e3, 2h
+  section Cierre
+  Informe, publicación y v4.0         :c1, after s1, 3h
+  Entrega en UTP+CLASS                :milestone, m2, 2026-11-24 08:00, 0h
+</pre>
+
+<pre class="mermaid" id="mapa-sitio">
+flowchart TB
+  IN["Inicio<br/>index.html"]
+  IN --> AC["Academias"]
+  AC --> BA["Básquet"]
+  AC --> AE["Aeróbicos"]
+  AC --> NA["Natación"]
+  AC --> EN["Entrenadores"]
+  IN --> HO["Horarios"]
+  IN --> TI["Tienda"] --> PR["Producto"]
+  IN --> EV["Eventos"]
+  IN --> GA["Galería"]
+  IN --> BL["Blog"] --> AR["Artículo"]
+  IN --> NO["Nosotros"]
+  IN --> CO["Contacto"]
+  IN --> MA["Matrícula"]
+  IN --> RE["Libro de Reclamaciones"]
+  AE -. iframe .-> HS["Horario semanal"]
+</pre>
+
+<pre class="mermaid" id="capas">
+flowchart LR
+  subgraph Fuentes
+    L["src/less/*.less"]
+    S["src/scss/*.scss"]
+    H["src/html/*"]
+  end
+  subgraph Compilación
+    LC["lessc"]
+    SC["sass"]
+    EN["ensamblar.mjs"]
+  end
+  subgraph Sitio publicado
+    CDN["MDC Web 14<br/>(CDN unpkg)"]
+    B["base.css"]
+    LO["altura-less.css"]
+    SO["altura-sass.css"]
+    FW["framework/<br/>layout · responsive · animaciones"]
+    P["18 páginas HTML"]
+  end
+  L --> LC --> LO
+  S --> SC --> SO
+  H --> EN --> P
+  CDN --> P
+  B --> P
+  LO --> P
+  SO --> P
+  FW --> P
+  P --> GH["GitHub Pages"]
+</pre>
+
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.min.js"></script>
+<script>
+  const elegido = new URLSearchParams(location.search).get('d');
+  document.querySelectorAll('pre.mermaid').forEach((p) => { if (elegido && p.id !== elegido) p.remove(); });
+  mermaid.initialize({ startOnLoad: true, theme: 'base', themeVariables: {
+    fontFamily: 'Inter, Arial, sans-serif', primaryColor: '#fff1ea', primaryBorderColor: '#ff6a2b',
+    primaryTextColor: '#1d1d1f', lineColor: '#6e6e73', secondaryColor: '#eef5ff', tertiaryColor: '#f5f5f7' } });
+</script>
+</body>
+</html>

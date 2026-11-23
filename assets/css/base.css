@@ -471,7 +471,7 @@ marquee.marquesina b {
   color: var(--c-blanco);
 }
 
-.articulo p:first-of-type::first-letter {
+.articulo > p:first-of-type::first-letter {
   float: left;
   margin: 0.08em 0.12em 0 0;
   font-family: var(--f-display);
@@ -481,7 +481,7 @@ marquee.marquesina b {
   color: var(--c-brasa);
 }
 
-.articulo p:first-of-type::first-line {
+.articulo > p:first-of-type::first-line {
   font-weight: 600;
 }
 
@@ -495,7 +495,7 @@ marquee.marquesina b {
   margin-top: 0.75rem;
 }
 
-.articulo p ~ p {
+.articulo > p ~ p {
   margin-top: 1.1rem;
 }
 

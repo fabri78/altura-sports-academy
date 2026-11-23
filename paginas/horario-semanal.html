@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es-PE" class="no-js">
+<head>
+  <!-- Metadatos básicos -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Horario semanal | ALTURA Sports Academy</title>
+  <meta name="description" content="Horario semanal de clases de ALTURA Sports Academy, para mostrar dentro de un marco (iframe).">
+  <meta name="keywords" content="academia deportiva, Arequipa, básquet, aeróbicos, natación, artículos deportivos">
+  <meta name="author" content="Quispe Morales, Fabricio Oscar - Grupo 04">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#000000">
+  <meta name="color-scheme" content="dark light">
+  <!-- Open Graph: vista previa al compartir en redes -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="ALTURA Sports Academy">
+  <meta property="og:title" content="Horario semanal | ALTURA Sports Academy">
+  <meta property="og:description" content="Horario semanal de clases de ALTURA Sports Academy, para mostrar dentro de un marco (iframe).">
+  <meta property="og:image" content="../assets/img/hero/hero-basquet.webp">
+  <meta property="og:locale" content="es_PE">
+  <link rel="icon" href="../assets/img/logo/favicon.svg" type="image/svg+xml">
+
+  <!-- Tipografías e íconos externos (Google Fonts + Material Symbols) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Inter+Tight:wght@600;700;800&amp;display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,300..600,0..1,0&amp;display=swap">
+
+  <!-- Framework Material Design CSS (MDC Web 14) por enlace externo -->
+  <link rel="stylesheet" href="https://unpkg.com/material-components-web@14.0.0/dist/material-components-web.min.css">
+
+  <!-- Hojas de estilo propias, en orden de cascada -->
+  <link rel="stylesheet" href="../assets/css/base.css">              <!-- g.i   CSS externo (10 %) -->
+  <link rel="stylesheet" href="../assets/css/altura-less.css">       <!-- g.ii  LESS compilado (15 %) -->
+  <link rel="stylesheet" href="../assets/css/altura-sass.css">       <!-- g.iii SASS compilado (15 %) -->
+  <link rel="stylesheet" href="../assets/css/framework/layout.css">      <!-- j. Flexbox + Grid (20 %) -->
+  <link rel="stylesheet" href="../assets/css/framework/responsive.css">  <!-- i. Media queries + multimedia (20 %) -->
+  <link rel="stylesheet" href="../assets/css/framework/animaciones.css"> <!-- h. Animaciones (20 %) -->
+
+  <!-- JavaScript: framework MDC + interacciones propias (diferidos) -->
+  <script src="https://unpkg.com/material-components-web@14.0.0/dist/material-components-web.min.js" defer></script>
+  <script src="../assets/js/main.js" defer></script>
+</head>
+<body class="tema-oscuro marco-widget" id="arriba">
+
+<main id="contenido" class="seccion seccion--negro seccion--compacta">
+  <div class="contenedor">
+    <h1 class="sr-only">Horario semanal</h1>
+      <div class="desplazable" tabindex="0" aria-label="Horario semanal">
+        <div class="semana" role="table" aria-label="Clases por día y hora">
+          <div class="semana__hora" role="columnheader">Hora</div>
+          <div class="semana__dia" role="columnheader">Lun</div><div class="semana__dia" role="columnheader">Mar</div><div class="semana__dia" role="columnheader">Mié</div><div class="semana__dia" role="columnheader">Jue</div><div class="semana__dia" role="columnheader">Vie</div><div class="semana__dia" role="columnheader">Sáb</div>
+
+          <div class="semana__hora" role="rowheader">6:30</div>
+          <div class="semana__clase deporte--aerobicos" role="cell">Step<small>Lucía</small></div>
+          <div class="semana__clase deporte--funcional" role="cell">Funcional<small>Diego</small></div>
+          <div class="semana__clase deporte--aerobicos" role="cell">Step<small>Lucía</small></div>
+          <div class="semana__clase deporte--funcional" role="cell">Funcional<small>Diego</small></div>
+          <div class="semana__clase deporte--aerobicos" role="cell">Zumba<small>Lucía</small></div>
+          <div class="semana__clase deporte--natacion" role="cell">Natación máster<small>Andrea</small></div>
+
+          <div class="semana__hora" role="rowheader">9:00</div>
+          <div class="semana__clase deporte--natacion" role="cell">Bebés<small>Andrea</small></div>
+          <div class="semana__clase deporte--aerobicos" role="cell">Zumba<small>Lucía</small></div>
+          <div class="semana__clase deporte--natacion" role="cell">Bebés<small>Andrea</small></div>
+          <div class="semana__clase deporte--aerobicos" role="cell">Zumba<small>Lucía</small></div>
+          <div class="semana__clase deporte--natacion" role="cell">Bebés<small>Andrea</small></div>
+          <div class="semana__clase deporte--basquet" role="cell">Mini básquet<small>Mariela</small></div>
+
+          <div class="semana__hora" role="rowheader">16:00</div>
+          <div class="semana__clase deporte--basquet" role="cell">U13<small>Mariela</small></div>
+          <div class="semana__clase deporte--basquet" role="cell">Mini básquet<small>Mariela</small></div>
+          <div class="semana__clase deporte--basquet" role="cell">U13<small>Mariela</small></div>
+          <div class="semana__clase deporte--basquet" role="cell">Mini básquet<small>Mariela</small></div>
+          <div class="semana__clase deporte--basquet" role="cell">U13<small>Mariela</small></div>
+          <div class="semana__clase deporte--basquet" role="cell">U17<small>Renzo</small></div>
+
+          <div class="semana__hora" role="rowheader">18:00</div>
+          <div class="semana__clase deporte--basquet" role="cell">U15<small>Renzo</small></div>
+          <div class="semana__clase deporte--basquet" role="cell">U17<small>Renzo</small></div>
+          <div class="semana__clase deporte--basquet" role="cell">U15<small>Renzo</small></div>
+          <div class="semana__clase deporte--basquet" role="cell">U17<small>Renzo</small></div>
+          <div class="semana__clase deporte--basquet" role="cell">U15<small>Renzo</small></div>
+          <div class="semana__clase deporte--natacion" role="cell">Natación niños<small>Andrea</small></div>
+
+          <div class="semana__hora" role="rowheader">19:30</div>
+          <div class="semana__clase deporte--aerobicos" role="cell">Step<small>Lucía</small></div>
+          <div class="semana__clase deporte--funcional" role="cell">Ciclismo<small>Diego</small></div>
+          <div class="semana__clase deporte--aerobicos" role="cell">Step<small>Lucía</small></div>
+          <div class="semana__clase deporte--funcional" role="cell">Ciclismo<small>Diego</small></div>
+          <div class="semana__clase deporte--aerobicos" role="cell">Zumba<small>Lucía</small></div>
+          <div class="semana__clase deporte--voley" role="cell">Cancha libre<small>Todos</small></div>
+        </div>
+      </div>
+
+  </div>
+</main>
+
+</body>
+</html>

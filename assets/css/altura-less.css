@@ -665,6 +665,13 @@
   color: #ffffff;
   text-decoration: none;
 }
+.marcos-menu {
+  padding: 16px;
+  background-color: #000000;
+}
+.marcos-menu .sidebar__block {
+  gap: 12px;
+}
 .highlight {
   position: relative;
   overflow: hidden;

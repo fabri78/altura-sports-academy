@@ -7,8 +7,8 @@ Empresa ficticia del rubro **Deportes**: academia de básquet, aeróbicos y nata
 - **Integrantes:** Mendoza Colque, Carlos Daniel (U25317351) · Quispe Morales, Fabricio Oscar (U25316441)
 - **Plazo de desarrollo:** del 18 al 23 de noviembre de 2026
 - **Componentes CSS asignados:** LESS, SASS y Material Design CSS (MDC Web 14)
-- **Publicación:** https://USUARIO.github.io/altura-sports/
-- **Repositorio:** https://github.com/USUARIO/altura-sports
+- **Publicación:** https://fabri78.github.io/altura-sports/
+- **Repositorio:** https://github.com/fabri78/altura-sports
 
 ## Páginas (17 + 404)
 

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Colchoneta Flow de 6 mm">
+  <defs>
+    <radialGradient id="sombra" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#000" stop-opacity=".28"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient>
+    <linearGradient id="p" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff5c86"/><stop offset="1" stop-color="#b3123f"/></linearGradient>
+  </defs>
+  <ellipse cx="200" cy="246" rx="160" ry="12" fill="url(#sombra)"/>
+  <rect x="70" y="120" width="250" height="110" rx="12" fill="url(#p)"/>
+  <circle cx="300" cy="175" r="58" fill="#ff2e63"/>
+  <g fill="none" stroke="#8c1d2f" stroke-width="5">
+    <circle cx="300" cy="175" r="44"/><circle cx="300" cy="175" r="30"/><circle cx="300" cy="175" r="16"/>
+  </g>
+  <rect x="110" y="114" width="20" height="122" rx="4" fill="#1d1d1f"/>
+  <rect x="210" y="114" width="20" height="122" rx="4" fill="#1d1d1f"/>
+</svg>

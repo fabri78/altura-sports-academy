@@ -1,0 +1,116 @@
+// =====================================================================
+// LESS · Barras laterales (tienda, blog y artículo)
+// =====================================================================
+
+.sidebar {
+  font-size: 15px;
+
+  &__block {
+    padding: 22px;
+    border-radius: @radio-lg;
+    background-color: @blanco;
+    color: @texto-oscuro;
+
+    & + & {
+      margin-top: 16px;
+    }
+
+    // Variante oscura para páginas de tema oscuro
+    .tema-oscuro & {
+      background-color: @carbon;
+      color: @texto-claro;
+    }
+  }
+
+  &__title {
+    margin-bottom: 14px;
+    font-family: @f-display;
+    font-size: 17px;
+    font-weight: 700;
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+      margin: 0;
+    }
+
+    a {
+      display: flex;
+      justify-content: space-between;
+      padding: 9px 0;
+      color: inherit;
+      .divisor(bottom; 6%);
+
+      &:hover {
+        color: @accion;
+        text-decoration: none;
+      }
+
+      span {
+        color: @gris;
+      }
+    }
+
+    li:last-child a {
+      border-bottom: 0;
+    }
+  }
+
+  // Filtro de precio y casillas
+  &__check {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 0;
+    cursor: pointer;
+  }
+
+  &__range {
+    width: 100%;
+    accent-color: @accion;
+  }
+
+  &__newsletter {
+    background: linear-gradient(140deg, @borgona 0%, darken(@borgona, 12%) 100%);
+    color: @texto-claro;
+
+    p {
+      margin: 0 0 14px;
+      color: fade(@texto-claro, 80%);
+    }
+  }
+}
+
+// Etiquetas del blog
+.etiquetas {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    margin: 0;
+  }
+
+  a {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: @radio-pill;
+    background-color: fade(@negro, 6%);
+    color: inherit;
+    font-size: 13px;
+
+    .tema-oscuro & {
+      background-color: fade(@blanco, 8%);
+    }
+
+    &:hover {
+      background-color: @accion;
+      color: @blanco;
+      text-decoration: none;
+    }
+  }
+}

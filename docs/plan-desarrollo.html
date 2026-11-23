@@ -1,0 +1,646 @@
+<title>Plan ALTURA Sports</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@600;700;800&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: una columna de lectura (max 1080px) con bandas a todo el ancho que alternan oscuro/claro, igual que la página de referencia. Dark-first. */
+:root{
+  --bg:#000000; --band:#1d1d1f; --surface:#161617; --surface-2:#2a2a2d;
+  --fg:#f5f5f7; --fg-2:#a1a1a6; --fg-3:#6e6e73; --line:rgba(255,255,255,.12);
+  --link:#2997ff; --cta:#0071e3; --ember:#ff6a2b; --wine:#8c1d2f;
+  --ok:#30d158; --warn:#ffd60a; --crit:#ff453a;
+  --f-display:"Inter Tight","Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-text:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,Consolas,monospace;
+  color-scheme:dark;
+}
+@media (prefers-color-scheme: light){:root:not([data-theme="dark"]){
+  --bg:#ffffff; --band:#f5f5f7; --surface:#fbfbfd; --surface-2:#e8e8ed;
+  --fg:#1d1d1f; --fg-2:#515154; --fg-3:#6e6e73; --line:rgba(0,0,0,.1);
+  --link:#0066cc; --cta:#0071e3; --ember:#d9480f; --wine:#8c1d2f;
+  --ok:#1f8a3b; --warn:#9a6b00; --crit:#c9302c; color-scheme:light;}}
+:root[data-theme="light"]{
+  --bg:#ffffff; --band:#f5f5f7; --surface:#fbfbfd; --surface-2:#e8e8ed;
+  --fg:#1d1d1f; --fg-2:#515154; --fg-3:#6e6e73; --line:rgba(0,0,0,.1);
+  --link:#0066cc; --cta:#0071e3; --ember:#d9480f; --wine:#8c1d2f;
+  --ok:#1f8a3b; --warn:#9a6b00; --crit:#c9302c; color-scheme:light;}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--f-text);font-size:17px;line-height:1.5;letter-spacing:-.022em;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+a{color:var(--link);text-decoration:none}
+a:hover{text-decoration:underline}
+:focus-visible{outline:2px solid var(--link);outline-offset:3px;border-radius:4px}
+code,.mono{font-family:var(--f-mono);font-size:.84em;letter-spacing:0}
+h1,h2,h3,h4{font-family:var(--f-display);text-wrap:balance;margin:0;letter-spacing:-.015em}
+p{margin:0}
+
+.wrap{max-width:1080px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.band{padding-block:72px}
+.band.alt{background:var(--band)}
+.stack{display:flex;flex-direction:column;gap:20px}
+.eyebrow{font-family:var(--f-display);font-size:19px;font-weight:600;color:var(--fg-3);letter-spacing:.01em}
+.lead{font-size:21px;line-height:1.45;color:var(--fg-2);max-width:62ch}
+.lead b{color:var(--fg);font-weight:600}
+.h2{font-size:clamp(32px,5vw,48px);line-height:1.08;font-weight:700}
+.h3{font-size:24px;line-height:1.2;font-weight:700}
+.muted{color:var(--fg-2)}
+.small{font-size:14px;line-height:1.45}
+
+/* Local nav (sticky, glass) */
+.localnav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 78%,transparent);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--line)}
+.localnav .wrap{display:flex;align-items:center;gap:20px;height:52px}
+.localnav .brand{font-family:var(--f-display);font-weight:700;font-size:19px;white-space:nowrap}
+.localnav nav{display:flex;gap:18px;overflow-x:auto;scrollbar-width:none;flex:1;min-width:0}
+.localnav nav::-webkit-scrollbar{display:none}
+.localnav nav a{color:var(--fg-2);font-size:13px;white-space:nowrap}
+.localnav nav a:hover{color:var(--fg);text-decoration:none}
+.pill{display:inline-flex;align-items:center;gap:6px;background:var(--cta);color:#fff;border-radius:980px;padding:7px 15px;font-size:13px;font-weight:500;white-space:nowrap}
+.pill:hover{text-decoration:none;filter:brightness(1.1)}
+
+/* Hero */
+.hero{padding-block:88px 64px;text-align:left}
+.hero h1{font-size:clamp(44px,8vw,88px);line-height:1.02;font-weight:800;letter-spacing:-.03em}
+.grad{background:linear-gradient(100deg,var(--ember),#ff2e63 55%,var(--wine));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .lead{margin-top:20px}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:18px;overflow:hidden;margin-top:40px}
+.facts div{background:var(--bg);padding:18px 20px;display:flex;flex-direction:column;gap:4px;min-width:0}
+.facts dt{font-size:12px;color:var(--fg-3);text-transform:uppercase;letter-spacing:.08em;font-weight:600}
+.facts dd{margin:0;font-weight:600;font-size:16px}
+.status{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--warn);border:1px solid color-mix(in srgb,var(--warn) 45%,transparent);border-radius:980px;padding:4px 12px}
+.status::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor}
+
+/* Generic grids */
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.tile{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:24px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.band.alt .tile{background:var(--bg)}
+.tile h3{font-size:19px}
+.tile p{color:var(--fg-2);font-size:15px}
+.tile ul{margin:0;padding-left:18px;color:var(--fg-2);font-size:15px;display:flex;flex-direction:column;gap:4px}
+
+/* Tables */
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:16px}
+table{width:100%;border-collapse:collapse;font-size:14.5px;line-height:1.45}
+th,td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+thead th{font-size:12px;text-transform:uppercase;letter-spacing:.07em;color:var(--fg-3);font-weight:600;background:var(--surface)}
+.band.alt thead th{background:var(--bg)}
+tbody tr:last-child td{border-bottom:0}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+td:first-child{font-weight:600}
+.tag{display:inline-block;font-size:12px;font-weight:600;border-radius:6px;padding:2px 8px;background:var(--surface-2);color:var(--fg);white-space:nowrap}
+.tag.less{background:#1d365d;color:#cfe3ff}
+.tag.sass{background:#5a1f3d;color:#ffd3e8}
+.tag.mdc{background:#3d2a5c;color:#e6d8ff}
+.tag.css{background:#1d3f2d;color:#c9f5d8}
+
+/* Metrics bar */
+.bar{display:flex;height:44px;border-radius:12px;overflow:hidden;margin-top:8px}
+.bar span{display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:#fff;font-variant-numeric:tabular-nums;min-width:0}
+.legend{display:flex;flex-wrap:wrap;gap:10px 20px;font-size:14px;color:var(--fg-2)}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:middle}
+
+/* Swatches */
+.swatches{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px}
+.sw{border-radius:18px;overflow:hidden;border:1px solid var(--line);background:var(--surface)}
+.sw .chip{height:84px}
+.sw .meta{padding:10px 12px;display:flex;flex-direction:column;gap:2px}
+.sw .meta b{font-size:14px}
+.sw .meta span{font-family:var(--f-mono);font-size:12px;color:var(--fg-2)}
+
+/* Live demo */
+.demo{border-radius:28px;overflow:hidden;background:#000;color:#f5f5f7;border:1px solid var(--line)}
+.demo-nav{display:flex;align-items:center;justify-content:space-between;padding:0 20px;height:48px;background:rgba(22,22,23,.8);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.08);font-size:13px}
+.demo-nav b{font-family:var(--f-display);font-size:17px}
+.demo-nav .links{display:flex;gap:16px;color:#a1a1a6}
+.demo-hero{padding:56px 28px 36px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:14px}
+.demo-hero .eb{color:#86868b;font-family:var(--f-display);font-weight:600;font-size:19px}
+.demo-hero h3{font-size:clamp(36px,6vw,64px);font-weight:800;line-height:1.02;letter-spacing:-.03em}
+.demo-hero p{color:#a1a1a6;max-width:46ch}
+.demo-cta{display:flex;gap:14px;align-items:center;flex-wrap:wrap;justify-content:center}
+.demo-cta a.pill{font-size:15px;padding:10px 20px;transition:transform .3s ease-out,filter .2s ease-out}
+.demo-cta a.pill:hover{transform:scale(1.04)}
+.demo-cta a.more{color:#2997ff}
+.gallery{display:grid;grid-auto-flow:column;grid-auto-columns:min(78%,300px);gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:8px 28px 28px;scrollbar-width:none}
+.gallery::-webkit-scrollbar{display:none}
+.card{scroll-snap-align:start;border-radius:28px;min-height:220px;padding:22px;display:flex;flex-direction:column;justify-content:flex-end;gap:6px;position:relative;overflow:hidden;transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+.card:hover{transform:translateY(-6px) scale(1.015)}
+.card small{font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.7);font-weight:600}
+.card strong{font-family:var(--f-display);font-size:22px;line-height:1.15}
+.card.c1{background:radial-gradient(120% 90% at 80% 10%,#ff6a2b 0,#8c1d2f 55%,#1d0a0f 100%)}
+.card.c2{background:radial-gradient(120% 90% at 20% 10%,#2997ff 0,#0b2a55 60%,#05101f 100%)}
+.card.c3{background:radial-gradient(120% 90% at 70% 0%,#30d158 0,#0d3b20 60%,#04140b 100%)}
+.card.c4{background:radial-gradient(120% 90% at 30% 0%,#bf5af2 0,#3a1450 60%,#12061a 100%)}
+.paddles{display:flex;justify-content:flex-end;gap:10px;padding:0 28px 22px}
+.paddles button{width:36px;height:36px;border-radius:50%;border:0;background:rgba(66,66,69,.72);color:#f5f5f7;font-size:16px;cursor:pointer;transition:background .25s linear}
+.paddles button:hover{background:rgba(110,110,115,.8)}
+.reveal{animation:rise .9s cubic-bezier(.2,.8,.2,1) both}
+.reveal.d1{animation-delay:.08s}.reveal.d2{animation-delay:.16s}.reveal.d3{animation-delay:.24s}
+@keyframes rise{from{opacity:.001;transform:translateY(24px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.reveal{animation:none}.card,.demo-cta a.pill{transition:none}}
+
+/* Tree */
+pre.tree{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:20px;overflow-x:auto;font-family:var(--f-mono);font-size:13px;line-height:1.6;color:var(--fg-2)}
+.band.alt pre.tree{background:var(--bg)}
+pre.tree b{color:var(--fg);font-weight:500}
+pre.tree em{color:var(--fg-3);font-style:normal}
+
+/* Phases */
+.phases{display:flex;flex-direction:column;gap:0;border-left:2px solid var(--line);margin-left:8px}
+.phase{position:relative;padding:0 0 28px 28px;display:flex;flex-direction:column;gap:8px}
+.phase::before{content:"";position:absolute;left:-8px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:2px solid var(--ember)}
+.band.alt .phase::before{background:var(--band)}
+.phase h3{font-size:20px;display:flex;flex-wrap:wrap;align-items:baseline;gap:10px}
+.phase h3 .tag{font-family:var(--f-mono);font-weight:500}
+.phase ul{margin:0;padding-left:18px;color:var(--fg-2);font-size:15px;display:flex;flex-direction:column;gap:4px}
+
+/* Questions */
+.q{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:start;padding:18px 0;border-bottom:1px solid var(--line)}
+.q:last-child{border-bottom:0}
+.q .n{font-family:var(--f-display);font-weight:800;font-size:15px;width:32px;height:32px;border-radius:50%;display:grid;place-items:center;background:var(--surface-2)}
+.q h3{font-size:18px;margin-bottom:4px}
+.q p{color:var(--fg-2);font-size:15px}
+.q .rec{color:var(--ok);font-weight:600}
+
+.callout{border:1px solid color-mix(in srgb,var(--ember) 40%,transparent);background:color-mix(in srgb,var(--ember) 8%,transparent);border-radius:18px;padding:18px 20px;font-size:15px;color:var(--fg-2)}
+.callout b{color:var(--fg)}
+.check{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:10px 24px}
+.check li{position:relative;padding-left:28px;font-size:15px;color:var(--fg-2)}
+.check li::before{content:"";position:absolute;left:0;top:3px;width:16px;height:16px;border-radius:5px;border:1.5px solid var(--fg-3)}
+.check li b{color:var(--fg);font-weight:600}
+footer.end{padding-block:40px;color:var(--fg-3);font-size:13px;border-top:1px solid var(--line)}
+@media (max-width:640px){.band{padding-block:52px}.hero{padding-block:56px 44px}.demo-nav .links{display:none}}
+</style>
+
+<header class="localnav">
+  <div class="wrap">
+    <span class="brand">ALTURA · Plan</span>
+    <nav aria-label="Secciones del plan">
+      <a href="#lectura">Lineamientos</a>
+      <a href="#empresa">Empresa</a>
+      <a href="#estilo">Estilo</a>
+      <a href="#metricas">Métricas CSS</a>
+      <a href="#mapa">Páginas</a>
+      <a href="#matriz">Cumplimiento</a>
+      <a href="#arquitectura">Arquitectura</a>
+      <a href="#fases">Fases</a>
+      <a href="#informe">Informe</a>
+      <a href="#qa">Verificación</a>
+      <a href="#decisiones">Decisiones</a>
+    </nav>
+    <a class="pill" href="#decisiones">Revisar y aprobar</a>
+  </div>
+</header>
+
+<main>
+<section class="wrap hero">
+  <span class="status">Borrador · pendiente de visto bueno</span>
+  <h1 style="margin-top:20px">Entrena más <span class="grad">alto.</span></h1>
+  <p class="lead">Plan de desarrollo completo del <b>Trabajo Final 04</b> de Hojas de Estilo en Cascada Avanzado: un sitio web frontend para una academia y tienda deportiva, construido con <b>LESS, SASS y Material Design CSS</b>, con la estética y el movimiento de la página del iPhone 18 Pro como referencia.</p>
+  <dl class="facts">
+    <div><dt>Grupo</dt><dd>04</dd></div>
+    <div><dt>Rubro</dt><dd>Deportes: academias, aeróbicos, artículos deportivos, básquet</dd></div>
+    <div><dt>Componentes exclusivos</dt><dd>LESS · SASS · Material Design CSS</dd></div>
+    <div><dt>Páginas</dt><dd>17 + página 404 (mínimo pedido: 14)</dd></div>
+    <div><dt>Publicación</dt><dd>GitHub (repositorio) + GitHub Pages</dd></div>
+    <div><dt>Entregables</dt><dd>Sitio publicado, repositorio, ZIP del código, informe PDF</dd></div>
+  </dl>
+</section>
+
+<!-- 1. LECTURA -->
+<section class="band alt" id="lectura">
+  <div class="wrap stack">
+    <p class="eyebrow">1 · Cómo leemos los lineamientos</p>
+    <h2 class="h2">Los porcentajes suman 100. Son el reparto del código de estilos.</h2>
+    <p class="lead">Los puntos g.i a j del documento asignan 10 + 15 + 15 + 20 + 20 + 20 = <b>100 %</b>. Por eso los tratamos como la proporción que debe tener cada tecnología dentro de todo el código de estilos que escribimos, y no como requisitos sueltos. Cada categoría vive en sus propios archivos externos, para que el docente vea cada porcentaje por separado y podamos medirlo con un script.</p>
+    <div class="grid3">
+      <div class="tile"><h3>Solo lo asignado</h3><p>De la lista de 8 tecnologías (a–h), al Grupo 04 le tocan <b>a. LESS</b>, <b>b. SASS</b> y <b>g. Material Design CSS</b>. No usaremos Bootstrap, Tailwind, Foundation, Bulma ni Materialize, para no cruzarnos con otros grupos.</p></div>
+      <div class="tile"><h3>Todo externo</h3><p>Cero estilos <code>style=""</code> en línea y cero bloques <code>&lt;style&gt;</code>. Todo se enlaza con <code>&lt;link&gt;</code> a archivos .css. Los .less y .scss fuente se compilan a .css, y ambas versiones van al repositorio.</p></div>
+      <div class="tile"><h3>Framework por enlace</h3><p>Los puntos h, i y j piden el framework “por un enlace externo”. Material Design se carga desde CDN con versión fija, y nuestras hojas de animación, responsive y layout trabajan sobre sus clases.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 2. EMPRESA -->
+<section class="band" id="empresa">
+  <div class="wrap stack">
+    <p class="eyebrow">2 · Empresa propuesta (ficticia)</p>
+    <h2 class="h2">ALTURA Sports Academy</h2>
+    <p class="lead">Academia deportiva y tienda en <b>Arequipa, a 2 335 m s. n. m.</b> Entrena en altura y lo convierte en su propuesta: básquet de formación, aeróbicos y fitness, natación, y una tienda de artículos deportivos con asesoría. Nombre y datos son inventados para evitar el punto 11 (empresas repetidas) y cualquier marca real.</p>
+    <div class="grid2">
+      <div class="tile">
+        <h3>Problema que resolvemos</h3>
+        <ul>
+          <li>La matrícula y las consultas se atienden solo por WhatsApp y en recepción.</li>
+          <li>Los horarios y tarifas se publican como imágenes sueltas en redes y quedan desactualizados.</li>
+          <li>La tienda no tiene catálogo en línea; los alumnos no saben qué equipo comprar para su nivel.</li>
+          <li>No existe un canal formal para reclamos (Libro de Reclamaciones exigido por INDECOPI).</li>
+        </ul>
+      </div>
+      <div class="tile">
+        <h3>Módulos del sitio</h3>
+        <ul>
+          <li><b>Academias:</b> básquet, aeróbicos y fitness, natación, con categorías por edad.</li>
+          <li><b>Horarios y tarifas:</b> tablas completas y responsivas.</li>
+          <li><b>Tienda:</b> catálogo, filtros en barra lateral, detalle de producto.</li>
+          <li><b>Comunidad:</b> eventos y torneos, galería multimedia, blog.</li>
+          <li><b>Atención:</b> matrícula, contacto, libro de reclamaciones.</li>
+        </ul>
+      </div>
+    </div>
+    <p class="small muted">Misión, visión, organigrama, áreas y trabajadores se redactan con este mismo perfil para el Capítulo 1 del informe.</p>
+  </div>
+</section>
+
+<!-- 3. ESTILO -->
+<section class="band alt" id="estilo">
+  <div class="wrap stack">
+    <p class="eyebrow">3 · Dirección visual</p>
+    <h2 class="h2">La estructura viene de Material Design. El acabado, de la página del iPhone 18 Pro.</h2>
+    <p class="lead">Medimos la página de referencia en el navegador (estilos computados, no de memoria). Tomamos su sistema: fondos negros que alternan con gris carbón, titulares grandes de peso 600 con dos líneas (frase corta + titular), botones en píldora, tarjetas de 28 px de radio y transiciones cortas con <code>ease-out</code>. Material Design aporta los componentes: campos de texto, botones con <i>ripple</i>, chips, tablas de datos, pestañas, diálogos y la rejilla de 12 columnas. Los re-tematizamos con SASS para que se vean como la referencia.</p>
+
+    <h3 class="h3" style="margin-top:12px">Paleta</h3>
+    <div class="swatches">
+      <div class="sw"><div class="chip" style="background:#000000"></div><div class="meta"><b>Negro escena</b><span>#000000 · ref.</span></div></div>
+      <div class="sw"><div class="chip" style="background:#1d1d1f"></div><div class="meta"><b>Carbón</b><span>#1d1d1f · ref.</span></div></div>
+      <div class="sw"><div class="chip" style="background:#f5f5f7"></div><div class="meta"><b>Niebla</b><span>#f5f5f7 · ref.</span></div></div>
+      <div class="sw"><div class="chip" style="background:#86868b"></div><div class="meta"><b>Texto secundario</b><span>#86868b · ref.</span></div></div>
+      <div class="sw"><div class="chip" style="background:#2997ff"></div><div class="meta"><b>Enlace</b><span>#2997ff · ref.</span></div></div>
+      <div class="sw"><div class="chip" style="background:#0071e3"></div><div class="meta"><b>Botón principal</b><span>#0071e3 · ref.</span></div></div>
+      <div class="sw"><div class="chip" style="background:linear-gradient(120deg,#ff6a2b,#ff2e63 55%,#8c1d2f)"></div><div class="meta"><b>Brasa ALTURA</b><span>#ff6a2b → #8c1d2f</span></div></div>
+      <div class="sw"><div class="chip" style="background:#2e0f14"></div><div class="meta"><b>Borgoña</b><span>#2e0f14 · acabado 18 Pro</span></div></div>
+    </div>
+    <p class="small muted">“ref.” = valor medido en la página. El azul queda para todo lo interactivo (enlaces y botones). El degradado Brasa es el color de marca: logo, titulares clave y cifras. Las secciones narrativas (academias) van en oscuro; la tienda, los formularios y el blog en claro (#f5f5f7) para leer mejor, igual que la referencia, que pasa a claro en su zona de compra.</p>
+
+    <div class="grid2" style="margin-top:8px">
+      <div class="tile">
+        <h3>Tipografía</h3>
+        <ul>
+          <li>SF Pro tiene licencia de Apple, así que usamos <b>Inter Tight</b> (titulares) e <b>Inter</b> (texto), de Google Fonts, que son lo más cercano.</li>
+          <li>Hero: 56–96 px, peso 700–800, interletrado −0,03 em.</li>
+          <li>Titular de sección: 40–56 px, peso 600, con frase previa de 17–21 px en gris #6e6e73 (patrón medido).</li>
+          <li>Texto: 17 px / 25 px, interletrado −0,374 px (valor medido).</li>
+          <li>Íconos: <b>Material Symbols</b> (fuente externa de Google). Logo e ilustraciones en <b>SVG</b>.</li>
+        </ul>
+      </div>
+      <div class="tile">
+        <h3>Movimiento</h3>
+        <ul>
+          <li>Aparición al hacer scroll (sube y se desvanece), en cascada con 0,2 s de retraso, como la referencia.</li>
+          <li>Imagen del hero que escala con el scroll (<code>animation-timeline: view()</code>, con alternativa).</li>
+          <li>Sección fija en básquet: la imagen se queda y los textos cambian por pasos.</li>
+          <li>Galería horizontal con <i>scroll-snap</i>, botones de flecha y puntos (“Get the highlights”).</li>
+          <li>Selector de color en el producto, solo con CSS (<code>:checked</code>).</li>
+          <li><i>Ripple</i> de Material, tarjetas que se elevan al pasar el cursor, navegación de vidrio con desenfoque.</li>
+          <li>Respeta <code>prefers-reduced-motion</code>.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 class="h3" style="margin-top:12px">Muestra en vivo</h3>
+    <p class="muted small">Un adelanto del tono, con los valores medidos. Pasen el cursor por las tarjetas y usen las flechas.</p>
+    <div class="demo" aria-label="Vista previa del estilo">
+      <div class="demo-nav"><b>ALTURA</b><span class="links"><span>Academias</span><span>Horarios</span><span>Tienda</span><span>Blog</span></span><a class="pill" href="#estilo">Matricúlate</a></div>
+      <div class="demo-hero">
+        <span class="eb reveal">Básquet · Temporada 2027</span>
+        <h3 class="reveal d1">Salta más <span class="grad">alto.</span></h3>
+        <p class="reveal d2">Entrenamos a 2 335 metros. Cuando bajes al nivel del mar, vas a notar la diferencia.</p>
+        <div class="demo-cta reveal d3"><a class="pill" href="#estilo">Reserva tu clase de prueba</a><a class="more" href="#estilo">Ver programas ›</a></div>
+      </div>
+      <div class="gallery" id="demoGallery" tabindex="0" aria-label="Galería de programas">
+        <div class="card c1"><small>Academia</small><strong>Básquet formativo, de 6 a 17 años</strong></div>
+        <div class="card c2"><small>Piscina</small><strong>Natación semiolímpica de 25 m</strong></div>
+        <div class="card c3"><small>Fitness</small><strong>Aeróbicos, step y funcional</strong></div>
+        <div class="card c4"><small>Tienda</small><strong>Equipo probado en cancha</strong></div>
+      </div>
+      <div class="paddles"><button type="button" aria-label="Anterior" data-dir="-1">‹</button><button type="button" aria-label="Siguiente" data-dir="1">›</button></div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. METRICAS -->
+<section class="band" id="metricas">
+  <div class="wrap stack">
+    <p class="eyebrow">4 · Reparto del código de estilos</p>
+    <h2 class="h2">Cada porcentaje tiene su archivo y se mide con un script.</h2>
+    <p class="lead">Un script (<code>npm run metricas</code>) cuenta las líneas útiles (sin vacías ni comentarios) de cada categoría y genera la tabla del informe. La meta es quedar a <b>±2 puntos</b> de cada porcentaje. El CSS del framework que viene por CDN no se cuenta: no lo escribimos nosotros.</p>
+    <div class="bar" role="img" aria-label="Distribución: CSS 10, LESS 15, SASS 15, Animaciones 20, Responsive 20, Flexbox y Grid 20">
+      <span style="flex:10;background:#2f7d4f">10</span>
+      <span style="flex:15;background:#1d5fae">15</span>
+      <span style="flex:15;background:#b0306f">15</span>
+      <span style="flex:20;background:#c2541f">20</span>
+      <span style="flex:20;background:#6b45b0">20</span>
+      <span style="flex:20;background:#4a4a50">20</span>
+    </div>
+    <div class="legend">
+      <span><i style="background:#2f7d4f"></i>CSS externo</span><span><i style="background:#1d5fae"></i>LESS</span><span><i style="background:#b0306f"></i>SASS</span><span><i style="background:#c2541f"></i>Animaciones (MD)</span><span><i style="background:#6b45b0"></i>Responsive + multimedia (MD)</span><span><i style="background:#4a4a50"></i>Flexbox + Grid (MD)</span>
+    </div>
+    <div class="tbl">
+      <table>
+        <thead><tr><th>Punto</th><th class="num">Meta</th><th>Archivo(s)</th><th>Qué contiene</th></tr></thead>
+        <tbody>
+          <tr><td>g.i CSS externo</td><td class="num">10 %</td><td><span class="tag css">CSS</span> <code>assets/css/base.css</code></td><td>Reset, tipografía (<code>@font-face</code>/Google Fonts), selectores de todo tipo (elemento, clase, id, atributo, pseudoclase, pseudoelemento, combinadores), tablas, <code>iframe</code>, <code>marquee</code>, enlaces, listas, impresión.</td></tr>
+          <tr><td>g.ii LESS externo</td><td class="num">15 %</td><td><span class="tag less">LESS</span> <code>src/less/*.less</code> → <code>assets/css/altura-less.css</code></td><td>Variables, <i>mixins</i> paramétricos y con <i>guards</i>, anidamiento, operaciones, funciones de color (<code>darken</code>, <code>fade</code>), <code>@import</code>. Cubre: cabecera y menú, pie de página, botones a redes, banners, CTA, barras laterales.</td></tr>
+          <tr><td>g.iii SASS externo</td><td class="num">15 %</td><td><span class="tag sass">SASS</span> <code>src/scss/*.scss</code> → <code>assets/css/altura-sass.css</code></td><td>Módulos <code>@use</code>/<code>@forward</code>, mapas, <code>@each</code> por deporte (color y fondo de cada academia), <code>@function</code>, <code>@mixin</code>/<code>@include</code>, <code>%placeholder</code>/<code>@extend</code>. Re-tematiza Material Design (botones, campos, chips, tablas de datos).</td></tr>
+          <tr><td>h. Animaciones, transiciones y transformaciones</td><td class="num">20 %</td><td><span class="tag mdc">MD</span> <code>assets/css/framework/animaciones.css</code></td><td><code>@keyframes</code>, <code>transition</code>, <code>transform</code> 2D/3D, animaciones ligadas al scroll, efectos sobre componentes MD (ripple, elevación, pestañas, diálogos, snackbar).</td></tr>
+          <tr><td>i. Responsive: media queries + multimedia</td><td class="num">20 %</td><td><span class="tag mdc">MD</span> <code>assets/css/framework/responsive.css</code></td><td>Puntos de corte de MD (móvil &lt;600, tablet 600–904, desktop 905–1239, grande ≥1240), <code>&lt;picture&gt;</code>/<code>srcset</code>, video y audio fluidos, <code>aspect-ratio</code>, orientación, <code>prefers-color-scheme</code>, <code>prefers-reduced-motion</code>, impresión.</td></tr>
+          <tr><td>j. Responsive: Flexbox + Grid Layout</td><td class="num">20 %</td><td><span class="tag mdc">MD</span> <code>assets/css/framework/layout.css</code></td><td><code>mdc-layout-grid</code> de 12/8/4 columnas, más nuestras rejillas: bento del inicio, catálogo, galería, horarios, áreas con nombre (<code>grid-template-areas</code>), <code>subgrid</code>, menú y tarjetas con Flexbox.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="small muted">Tamaño previsto: unas 4 000 líneas útiles de estilos propios. El script se corre en cada versión, y su salida (tabla + gráfico) entra en el informe como evidencia.</p>
+  </div>
+</section>
+
+<!-- 5. MAPA -->
+<section class="band alt" id="mapa">
+  <div class="wrap stack">
+    <p class="eyebrow">5 · Mapa del sitio</p>
+    <h2 class="h2">17 páginas + 404</h2>
+    <p class="lead">Todas comparten encabezado con logo y menú, cuerpo y pie de página (punto c), meta tags completos (punto b) y enlaces internos y externos.</p>
+    <div class="tbl">
+      <table>
+        <thead><tr><th class="num">#</th><th>Página</th><th>Contenido principal</th><th>Requisitos que cubre</th></tr></thead>
+        <tbody>
+          <tr><td class="num">1</td><td><code>index.html</code> Inicio</td><td>Hero con video, “lo más destacado” en galería horizontal, rejilla bento, cifras, CTA de matrícula, avance de tienda y blog</td><td>Página de inicio, banners, contenido destacado, CTA, video</td></tr>
+          <tr><td class="num">2</td><td><code>nosotros.html</code></td><td>Historia, misión, visión, valores, organigrama, sede</td><td>Contenido, imágenes, Grid</td></tr>
+          <tr><td class="num">3</td><td><code>academias.html</code></td><td>Centro de programas: tarjetas por disciplina, comparador de niveles</td><td>Tarjetas MD, enlaces internos</td></tr>
+          <tr><td class="num">4</td><td><code>basquet.html</code></td><td>Sección fija con scroll, categorías por edad, video incrustado (iframe)</td><td>iFrame, animación con scroll</td></tr>
+          <tr><td class="num">5</td><td><code>aerobicos.html</code></td><td>Clases (step, zumba, funcional), audio de ejemplo, horario incrustado en un marco interno</td><td>Audio, iFrame interno</td></tr>
+          <tr><td class="num">6</td><td><code>natacion.html</code></td><td>Niveles, piscina, video de fondo, preguntas frecuentes (acordeón)</td><td>Video, transiciones</td></tr>
+          <tr><td class="num">7</td><td><code>horarios.html</code></td><td>Tablas completas: <code>caption</code>, <code>thead</code>/<code>tbody</code>/<code>tfoot</code>, <code>colspan</code>/<code>rowspan</code>, tarifas</td><td>Tablas con CSS + tabla de datos MD</td></tr>
+          <tr><td class="num">8</td><td><code>entrenadores.html</code></td><td>Perfiles con tarjetas que giran en 3D, redes de cada entrenador</td><td>Transformaciones 3D, enlaces externos</td></tr>
+          <tr><td class="num">9</td><td><code>tienda.html</code></td><td>Catálogo con filtros en barra lateral (chips MD), orden, insignias</td><td>Barra lateral, Grid, botones internos</td></tr>
+          <tr><td class="num">10</td><td><code>producto.html</code></td><td>Galería, selector de color con CSS, tallas, tabla de especificaciones</td><td>Controles internos, tabla</td></tr>
+          <tr><td class="num">11</td><td><code>eventos.html</code></td><td>Torneos, calendario, cinta de patrocinadores (<code>&lt;marquee&gt;</code> + versión CSS), mapa de la sede (iframe)</td><td>Marquee, iFrame</td></tr>
+          <tr><td class="num">12</td><td><code>galeria.html</code></td><td>Fotos (mosaico), videos, audio (podcast del club), <i>lightbox</i> con <code>:target</code></td><td>Multimedia completa</td></tr>
+          <tr><td class="num">13</td><td><code>blog.html</code></td><td>Lista de artículos, barra lateral con categorías, etiquetas y boletín</td><td>Blog, barra lateral</td></tr>
+          <tr><td class="num">14</td><td><code>articulo.html</code></td><td>Artículo completo: “Entrenar en altura: qué cambia en tu cuerpo”</td><td>Etiquetas de texto, contenido</td></tr>
+          <tr><td class="num">15</td><td><code>matricula.html</code></td><td>Formulario de clientes: datos del alumno, apoderado, programa, horario, validación HTML5</td><td>Formulario clientes, campos MD</td></tr>
+          <tr><td class="num">16</td><td><code>contacto.html</code></td><td>Formulario de contacto, datos, horario de atención, mapa (iframe), redes</td><td>Formulario contacto, información de contacto</td></tr>
+          <tr><td class="num">17</td><td><code>reclamos.html</code></td><td>Libro de Reclamaciones con el formato de INDECOPI (reclamo/queja, bien contratado, detalle)</td><td>Formulario reclamos</td></tr>
+          <tr><td class="num">—</td><td><code>404.html</code></td><td>Página no encontrada con animación</td><td>Extra</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="small muted">Los formularios no envían datos a ningún servidor (el proyecto es solo frontend): validan en el navegador y muestran un mensaje de confirmación. Lo explicamos en “Fuera del alcance”.</p>
+  </div>
+</section>
+
+<!-- 6. MATRIZ -->
+<section class="band" id="matriz">
+  <div class="wrap stack">
+    <p class="eyebrow">6 · Matriz de cumplimiento</p>
+    <h2 class="h2">Cada punto del documento y dónde se demuestra.</h2>
+    <div class="tbl">
+      <table>
+        <thead><tr><th>Punto</th><th>Requisito</th><th>Evidencia en el proyecto</th></tr></thead>
+        <tbody>
+          <tr><td>a</td><td>Mínimo 14 páginas</td><td>17 páginas + 404</td></tr>
+          <tr><td>b</td><td>Estructura HTML completa, meta tags, etiquetas de texto, enlaces, <code>&lt;br&gt;</code></td><td>Plantilla común: <code>lang="es"</code>, charset, viewport, description, keywords, author, theme-color, Open Graph, favicon. h1–h6, p, strong, em, mark, abbr, blockquote, cite, time, address, br</td></tr>
+          <tr><td>c</td><td>Encabezado con menú, cuerpo y pie</td><td><code>header</code> + <code>nav</code> fijo de vidrio, <code>main</code>, <code>footer</code> con mapa del sitio en todas las páginas</td></tr>
+          <tr><td>d</td><td>Formularios (contacto, clientes, reclamos) y multimedia (imagen, sonido, video)</td><td>matricula, contacto, reclamos, boletín · <code>&lt;picture&gt;</code>, <code>&lt;video&gt;</code> con <code>&lt;track&gt;</code> de subtítulos, <code>&lt;audio&gt;</code>, todo con estilos CSS</td></tr>
+          <tr><td>e</td><td>Selectores, atributos y valores</td><td>base.css con todos los tipos de selector, documentados con comentarios</td></tr>
+          <tr><td>f</td><td>Tablas, Frames, iFrames, Marquees</td><td>horarios, producto, reclamos · iframes de video, mapa y marco interno · <code>&lt;marquee&gt;</code> en eventos e inicio (ver decisión 5 sobre <code>frameset</code>)</td></tr>
+          <tr><td>g</td><td>Tipografía, archivos externos, imágenes, íconos, vectores</td><td>Google Fonts, Material Symbols, logo e íconos SVG propios, imágenes WebP/JPG</td></tr>
+          <tr><td>g.i–iii</td><td>CSS 10 %, LESS 15 %, SASS 15 %</td><td>Sección 4 + salida de <code>npm run metricas</code></td></tr>
+          <tr><td>h</td><td>Animaciones, transiciones, transformaciones con framework (20 %)</td><td><code>animaciones.css</code> + componentes MD</td></tr>
+          <tr><td>i</td><td>Media queries + multimedia con framework (20 %)</td><td><code>responsive.css</code> + puntos de corte MD</td></tr>
+          <tr><td>j</td><td>Flexbox + Grid con framework (20 %)</td><td><code>layout.css</code> + <code>mdc-layout-grid</code></td></tr>
+          <tr><td>k</td><td>SCV: ampliación del alcance, incremento e integración</td><td>Git con ramas por funcionalidad y 4 versiones etiquetadas (v1.0 → v4.0) que coinciden con el “Historial de versiones” del informe; <code>CHANGELOG.md</code></td></tr>
+          <tr><td>l</td><td>Repositorio con el 100 % del código</td><td>Repositorio público en GitHub: HTML, CSS, LESS, SASS, multimedia, script de métricas</td></tr>
+          <tr><td>m</td><td>Despliegue con el SCV</td><td>GitHub Pages publicado desde la rama <code>main</code> mediante GitHub Actions</td></tr>
+          <tr><td>n</td><td>Integración y entrega en la nube</td><td>GitHub (repo + Pages) y, de extra, un <code>Dockerfile</code> con nginx para correrlo como contenedor</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 class="h3" style="margin-top:16px">Punto 14: partes mínimas de la página</h3>
+    <div class="tbl">
+      <table>
+        <thead><tr><th>Parte</th><th>Dónde</th><th>Parte</th><th>Dónde</th></tr></thead>
+        <tbody>
+          <tr><td>Logo o marca</td><td>SVG propio en el encabezado y el pie</td><td>Contenido del sitio</td><td>Todas las páginas</td></tr>
+          <tr><td>Encabezados</td><td>Jerarquía h1–h3 con frase previa</td><td>Contenido destacado</td><td>Galería “lo más destacado” y bento del inicio</td></tr>
+          <tr><td>Menú de opciones</td><td>Barra de vidrio + menú móvil desplegable</td><td>Pie de página</td><td>Mapa del sitio, legales, redes, Libro de Reclamaciones</td></tr>
+          <tr><td>Botones y controles internos/externos</td><td>Botones MD, flechas de galería, pestañas, selector de color</td><td>Página de inicio</td><td><code>index.html</code></td></tr>
+          <tr><td>Botones a redes sociales</td><td>Pie, contacto, entrenadores, artículo (compartir)</td><td>CTA</td><td>“Matricúlate”, “Reserva tu clase de prueba”, “Comprar”</td></tr>
+          <tr><td>Imágenes y videos</td><td>Hero, galería, academias</td><td>Blog</td><td><code>blog.html</code> + <code>articulo.html</code></td></tr>
+          <tr><td>Banners</td><td>Hero de cada página, promo de tienda</td><td>Formularios</td><td>Matrícula, contacto, reclamos, boletín</td></tr>
+          <tr><td>Barras laterales</td><td>Tienda (filtros), blog, artículo</td><td>Información de contacto</td><td>Contacto + pie</td></tr>
+          <tr><td>Enlaces internos</td><td>Menú, anclas, migas de pan</td><td>Enlaces externos</td><td>Redes, mapa, video, Google Fonts, fuentes del blog</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- 7. ARQUITECTURA -->
+<section class="band alt" id="arquitectura">
+  <div class="wrap stack">
+    <p class="eyebrow">7 · Arquitectura técnica</p>
+    <h2 class="h2">Sitio estático, sin frameworks de JavaScript.</h2>
+    <div class="grid2">
+      <div class="stack" style="gap:14px">
+        <div class="tile">
+          <h3>Material Design CSS</h3>
+          <p>Recomendamos <b>Material Components for the Web (MDC Web) v14</b>, el framework oficial de Google, cargado desde unpkg con versión fija (<code>material-components-web@14.0.0</code>). Su CSS y JS van enlazados. Las alternativas están en la decisión 4.</p>
+        </div>
+        <div class="tile">
+          <h3>Compilación</h3>
+          <p>Node 24 (ya instalado). <code>npm i -D less sass</code>. Scripts: <code>build:less</code>, <code>build:sass</code>, <code>watch</code>, <code>metricas</code>. Los .css compilados se suben al repositorio para que GitHub Pages los sirva sin compilar.</p>
+        </div>
+        <div class="tile">
+          <h3>JavaScript mínimo</h3>
+          <p>Un solo <code>main.js</code> sin librerías propias: inicia los componentes MD, activa las apariciones con el scroll, mueve la galería y valida formularios. Sin JS, todo el contenido sigue visible.</p>
+        </div>
+      </div>
+<pre class="tree"><b>altura-sports/</b>
+├─ <b>index.html</b>  404.html
+├─ <b>paginas/</b>            <em># 16 páginas internas</em>
+├─ <b>src/</b>
+│  ├─ <b>less/</b>  _variables · _mixins · _header
+│  │         _footer · _banners · _sidebar · altura.less
+│  └─ <b>scss/</b>  _tokens · _functions · _mixins
+│            _deportes · _mdc-tema · _tienda
+│            _formularios · altura.scss
+├─ <b>assets/</b>
+│  ├─ <b>css/</b>
+│  │  ├─ base.css           <em># 10 % CSS</em>
+│  │  ├─ altura-less.css    <em># compilado</em>
+│  │  ├─ altura-sass.css    <em># compilado</em>
+│  │  └─ <b>framework/</b>
+│  │     ├─ animaciones.css <em># 20 %</em>
+│  │     ├─ responsive.css  <em># 20 %</em>
+│  │     └─ layout.css      <em># 20 %</em>
+│  ├─ <b>js/</b> main.js
+│  ├─ <b>img/</b> logo/ iconos/ academias/
+│  │        tienda/ blog/ galeria/
+│  ├─ <b>video/</b> mp4 + webm + poster + .vtt
+│  └─ <b>audio/</b> mp3 + ogg
+├─ <b>docs/</b> informe/ diagramas/ capturas/
+├─ <b>tools/</b> metricas.mjs
+├─ package.json  Dockerfile
+├─ README.md  CHANGELOG.md
+└─ .github/workflows/pages.yml</pre>
+    </div>
+    <p class="small muted">Orden de carga en cada página: fuentes → MDC (CDN) → base.css → altura-less.css → altura-sass.css → layout.css → responsive.css → animaciones.css. Así nuestras capas mandan sobre el framework sin usar <code>!important</code>.</p>
+  </div>
+</section>
+
+<!-- 8. FASES -->
+<section class="band" id="fases">
+  <div class="wrap stack">
+    <p class="eyebrow">8 · Plan de trabajo</p>
+    <h2 class="h2">Las cinco fases que pide el documento, con una versión etiquetada en cada entrega.</h2>
+    <div class="phases">
+      <div class="phase">
+        <h3>Inicio <span class="tag">tras su visto bueno</span></h3>
+        <ul>
+          <li>Recibir los datos del equipo y cerrar las decisiones de la sección 10.</li>
+          <li>Crear el repositorio en GitHub, <code>package.json</code>, la estructura de carpetas, README.</li>
+          <li>Acta de constitución (Project Charter) y perfil de la empresa.</li>
+        </ul>
+      </div>
+      <div class="phase">
+        <h3>Planificación</h3>
+        <ul>
+          <li>Tokens de diseño (colores, tipos, espacios, radios) en LESS y SASS.</li>
+          <li>Mapa del sitio, wireframes de baja fidelidad de las 17 páginas, mockup de alta fidelidad del inicio.</li>
+          <li>Cronograma (Gantt) e hitos para el informe.</li>
+        </ul>
+      </div>
+      <div class="phase">
+        <h3>Ejecución · v1.0 alcance inicial <span class="tag">git tag v1.0</span></h3>
+        <ul>
+          <li>Plantilla común (encabezado, menú, pie), base.css, LESS y SASS base.</li>
+          <li>8 páginas: inicio, nosotros, academias, básquet, aeróbicos, horarios, contacto, 404.</li>
+        </ul>
+      </div>
+      <div class="phase">
+        <h3>Ejecución · v2.0 ampliación del alcance <span class="tag">git tag v2.0</span></h3>
+        <ul>
+          <li>Las 10 páginas restantes: natación, entrenadores, tienda, producto, eventos, galería, blog, artículo, matrícula, reclamos.</li>
+          <li>Componentes MD re-tematizados: campos, chips, tablas de datos, pestañas, diálogos.</li>
+          <li>Multimedia completa: video con subtítulos, audio, iframes, marquee.</li>
+        </ul>
+      </div>
+      <div class="phase">
+        <h3>Ejecución · v3.0 incremento <span class="tag">git tag v3.0</span></h3>
+        <ul>
+          <li>animaciones.css, responsive.css, layout.css completos.</li>
+          <li>Sección fija con scroll, galería horizontal, selector de color, tarjetas 3D.</li>
+          <li>Ajuste fino en móvil, tablet y escritorio.</li>
+        </ul>
+      </div>
+      <div class="phase">
+        <h3>Supervisión y control</h3>
+        <ul>
+          <li>Correr <code>npm run metricas</code> y corregir hasta quedar en ±2 puntos.</li>
+          <li>Validación W3C (HTML y CSS), Lighthouse, enlaces rotos, contraste, teclado.</li>
+          <li>Capturas en escritorio y móvil para los prototipos UX/UI del informe.</li>
+        </ul>
+      </div>
+      <div class="phase">
+        <h3>Cierre · v4.0 entrega final <span class="tag">git tag v4.0</span></h3>
+        <ul>
+          <li>Publicación en GitHub Pages, ZIP del código fuente.</li>
+          <li>Informe en la plantilla DOCX del docente, exportado a PDF.</li>
+          <li>Opcional: diapositivas para la exposición.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="callout"><b>Fechas:</b> el documento dice “miércoles 15 de julio, semana 16, 08:00”. Hoy es 23 de noviembre, así que necesitamos la fecha real de entrega para el cronograma del informe (decisión 7).</div>
+  </div>
+</section>
+
+<!-- 9. INFORME -->
+<section class="band alt" id="informe">
+  <div class="wrap stack">
+    <p class="eyebrow">9 · Informe</p>
+    <h2 class="h2">Se llena la plantilla del docente, sin cambiar su formato.</h2>
+    <p class="lead">Editamos directamente <code>TEMPLATE - Presentación Informe Proyecto.docx</code> conservando estilos, carátula e índices, y lo exportamos a PDF.</p>
+    <div class="tbl">
+      <table>
+        <thead><tr><th>Sección de la plantilla</th><th>Qué va</th></tr></thead>
+        <tbody>
+          <tr><td>Carátula</td><td>Título, enlace de publicación, enlace del repositorio, ciclo, tabla de integrantes ordenada por apellidos</td></tr>
+          <tr><td>Índices</td><td>Índice general, de figuras y de tablas generados por Word</td></tr>
+          <tr><td>Historial de versiones</td><td>v1.0–v4.0, iguales a las etiquetas de Git</td></tr>
+          <tr><td>Resumen / Abstract</td><td>Empresa, problemas, solución, tecnologías, módulos (español e inglés)</td></tr>
+          <tr><td>Cap. 1 Aspectos generales</td><td>Problema, visión, misión, entorno, objetivos, alcance (dentro, fuera, limitaciones), justificación, equipo con roles y organigrama, recursos y presupuesto, cronograma (Gantt) e hitos</td></tr>
+          <tr><td>Cap. 2 Marco teórico</td><td>HTML5, CSS3, LESS, SASS, Material Design, diseño responsivo, Flexbox, Grid, animaciones, Git y GitHub Pages, con citas APA 7</td></tr>
+          <tr><td>Cap. 3 Desarrollo</td><td>Project Charter, características del sistema (tabla CAR-01…), diagramas, prototipos UX/UI página por página (escritorio y móvil), documentación del código (paquetes, HTML, CSS, multimedia, enlaces del framework)</td></tr>
+          <tr><td>Cierre</td><td>Conclusiones ligadas a cada objetivo, recomendaciones, bibliografía APA 7</td></tr>
+          <tr><td>Anexos</td><td>Encuesta (cuestionario), tabla de métricas, licencias de imágenes</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h3 class="h3" style="margin-top:12px">Diagramas que pide el punto 13</h3>
+    <div class="grid3">
+      <div class="tile"><h3>Mapa conceptual</h3><p>Tecnologías del proyecto y cómo se relacionan.</p></div>
+      <div class="tile"><h3>Procesos (BPMN)</h3><p>Matrícula, compra en tienda y atención de reclamos.</p></div>
+      <div class="tile"><h3>Clases</h3><p>Modelo del dominio: Alumno, Apoderado, Programa, Horario, Entrenador, Producto, Pedido, Reclamo.</p></div>
+      <div class="tile"><h3>Entidad-relación</h3><p>Las mismas entidades con sus claves y cardinalidades.</p></div>
+      <div class="tile"><h3>Diseño del sistema</h3><p>Mapa del sitio, capas de CSS y flujo de compilación hasta el despliegue.</p></div>
+      <div class="tile"><h3>Organigrama y Gantt</h3><p>De la empresa y del equipo del proyecto.</p></div>
+    </div>
+    <p class="small muted">Los diagramas se hacen en Mermaid y se exportan a PNG para Word. La encuesta del anexo va como cuestionario: si ustedes la aplican, ponemos los resultados reales. No inventamos respuestas.</p>
+  </div>
+</section>
+
+<!-- 10. QA -->
+<section class="band" id="qa">
+  <div class="wrap stack">
+    <p class="eyebrow">10 · Verificación antes de entregar</p>
+    <h2 class="h2">Lo que revisamos en cada versión.</h2>
+    <ul class="check">
+      <li><b>Métricas:</b> los 6 porcentajes a ±2 puntos de la meta.</li>
+      <li><b>Sin estilos en línea:</b> búsqueda de <code>style=</code> y <code>&lt;style&gt;</code> = 0 resultados.</li>
+      <li><b>W3C:</b> HTML y CSS sin errores, salvo <code>&lt;marquee&gt;</code> (obsoleto, pero lo pide el documento; se documenta).</li>
+      <li><b>Lighthouse:</b> 90 o más en accesibilidad, buenas prácticas y SEO.</li>
+      <li><b>Responsive:</b> 360, 768, 1024 y 1440 px, sin scroll horizontal.</li>
+      <li><b>Enlaces:</b> ningún enlace interno roto en las 18 páginas.</li>
+      <li><b>Accesibilidad:</b> contraste AA, foco visible, textos alternativos, navegación con teclado.</li>
+      <li><b>Movimiento reducido:</b> con <code>prefers-reduced-motion</code> las animaciones se apagan.</li>
+      <li><b>Publicación:</b> la URL de GitHub Pages carga todo (rutas relativas, CDN con versión fija).</li>
+      <li><b>Pruebas en navegador:</b> recorrido real del sitio con capturas de cada página.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 11. DECISIONES -->
+<section class="band alt" id="decisiones">
+  <div class="wrap stack">
+    <p class="eyebrow">11 · Lo que necesitamos de ustedes</p>
+    <h2 class="h2">Revisen esto y den el visto bueno.</h2>
+    <p class="lead">Las decisiones marcadas como <span class="rec" style="color:var(--ok);font-weight:600">recomendación</span> se aplican por defecto si están de acuerdo. Las demás necesitan un dato suyo.</p>
+    <div>
+      <div class="q"><span class="n">1</span><div><h3>Integrantes del grupo</h3><p>Hasta 3 personas: apellidos, nombres, CUI, correo institucional y ciclo, para la carátula y la tabla de roles. Roles propuestos: líder del proyecto y front-end, diseño UX/UI y contenido, QA y documentación.</p></div></div>
+      <div class="q"><span class="n">2</span><div><h3>Nombre de la empresa</h3><p><span class="rec">Recomendación:</span> “ALTURA Sports Academy”, ficticia, en Arequipa. Si ya tienen otro nombre o temen que otro grupo use algo parecido, lo cambiamos.</p></div></div>
+      <div class="q"><span class="n">3</span><div><h3>Cuenta de GitHub</h3><p>¿De quién será el repositorio público? GitHub CLI no está instalado en esta PC, así que la persona dueña de la cuenta tendrá que crear el repositorio vacío (o instalar <code>gh</code> e iniciar sesión). Nosotros hacemos los commits, las etiquetas y la configuración de Pages.</p></div></div>
+      <div class="q"><span class="n">4</span><div><h3>¿Qué “Material Design CSS” usamos?</h3><p><span class="rec">Recomendación: MDC Web v14</span> (oficial de Google, completo, con rejilla de 12 columnas). Alternativas: <b>Material Design Lite</b> (más simple, pero obsoleto desde 2017) o <b>Beer CSS</b> (Material Design 3, solo CSS, menos conocido). Materialize no, porque es otro punto de la lista (h).</p></div></div>
+      <div class="q"><span class="n">5</span><div><h3>Frames</h3><p><code>&lt;frameset&gt;</code> no existe en HTML5. <span class="rec">Recomendación:</span> cubrir “Frames” con iframes (video, mapa y un marco interno que muestra el horario dentro de aeróbicos) y además una página aparte, <code>marcos.html</code>, con <code>&lt;frameset&gt;</code> en HTML 4.01 solo para demostrarlo, fuera de las 17 páginas. ¿La incluimos?</p></div></div>
+      <div class="q"><span class="n">6</span><div><h3>Imágenes, videos y audio</h3><p><span class="rec">Recomendación:</span> descargar fotos y videos cortos de Unsplash, Pexels y Pixabay (licencias libres), optimizarlos a WebP/MP4 y listar los créditos en el anexo. Si su visto bueno lo incluye, los descargamos a <code>assets/</code>. Si tienen fotos propias, mejor.</p></div></div>
+      <div class="q"><span class="n">7</span><div><h3>Fecha real de entrega</h3><p>Para el cronograma y los hitos del informe, y para el historial de versiones.</p></div></div>
+      <div class="q"><span class="n">8</span><div><h3>Diapositivas para la exposición</h3><p>Opcional. ¿Quieren que preparemos también la presentación?</p></div></div>
+    </div>
+    <div class="callout"><b>Cuando den el visto bueno</b>, empezamos por la fase de Inicio. Cada versión (v1.0 a v4.0) se las mostramos funcionando en el navegador antes de seguir con la siguiente.</div>
+  </div>
+</section>
+</main>
+
+<footer class="wrap end">Plan de desarrollo · Trabajo Final 04 · Hojas de Estilo en Cascada Avanzado · Grupo 04 · Versión del plan 0.1 (23 nov 2026)</footer>
+
+<script>
+(function(){
+  var g=document.getElementById('demoGallery');
+  document.querySelectorAll('.paddles button').forEach(function(b){
+    b.addEventListener('click',function(){
+      var step=(g.querySelector('.card')||{}).offsetWidth||280;
+      g.scrollBy({left:(step+16)*Number(b.dataset.dir),behavior:'smooth'});
+    });
+  });
+})();
+</script>

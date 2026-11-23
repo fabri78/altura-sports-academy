@@ -1,0 +1,87 @@
+// =====================================================================
+// LESS · Mixins reutilizables
+// Demuestra: mixins con parámetros, valores por defecto, guards (when),
+// mixins con !important evitado, operaciones y funciones de color.
+// =====================================================================
+
+// Superficie de vidrio esmerilado (barra de navegación, menús)
+.vidrio(@fondo: @grafito; @opacidad: 0.8; @blur: 20px) {
+  background-color: fade(@fondo, @opacidad * 100%);
+  -webkit-backdrop-filter: saturate(180%) blur(@blur);
+  backdrop-filter: saturate(180%) blur(@blur);
+}
+
+// Botón en forma de píldora con variantes por color
+.pildora(@fondo: @accion; @texto: @blanco; @pad-v: 10px; @pad-h: 22px) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: @pad-v @pad-h;
+  border-radius: @radio-pill;
+  background-color: @fondo;
+  color: @texto;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color @t-rapido linear, transform @t-medio ease-out;
+  &:hover {
+    background-color: lighten(@fondo, 6%);
+    text-decoration: none;
+  }
+  &:active {
+    background-color: darken(@fondo, 6%);
+  }
+}
+
+// Guards: el color del texto depende de la luminosidad del fondo
+.texto-sobre(@fondo) when (lightness(@fondo) >= 60%) {
+  color: @texto-oscuro;
+}
+.texto-sobre(@fondo) when (lightness(@fondo) < 60%) {
+  color: @texto-claro;
+}
+
+// Tema de sección: fondo + texto calculado + color del texto secundario
+.tema-seccion(@fondo) {
+  background-color: @fondo;
+  .texto-sobre(@fondo);
+  .eyebrow when (lightness(@fondo) >= 60%) {
+    color: @gris-2;
+  }
+}
+
+// Ícono circular (redes, botones de flecha)
+.icono-circular(@tam: 40px; @fondo: fade(@blanco, 8%)) {
+  display: inline-grid;
+  place-items: center;
+  width: @tam;
+  height: @tam;
+  border-radius: 50%;
+  background-color: @fondo;
+  svg {
+    width: (@tam * 0.5);
+    height: (@tam * 0.5);
+  }
+}
+
+// Texto con degradado de marca
+.texto-degradado(@desde: @brasa; @medio: @fucsia; @hasta: @borgona) {
+  background-image: linear-gradient(100deg, @desde 0%, @medio 55%, @hasta 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+// Contenedor centrado con márgenes seguros
+.contenedor(@max: @ancho-max) {
+  width: 100%;
+  max-width: @max;
+  margin-inline: auto;
+  padding-left: ~"max(@{gutter}, env(safe-area-inset-left, 0px))";
+  padding-right: ~"max(@{gutter}, env(safe-area-inset-right, 0px))";
+}
+
+// Línea divisoria sutil
+.divisor(@lado: bottom; @alfa: 12%) {
+  border-@{lado}: 1px solid fade(@blanco, @alfa);
+}

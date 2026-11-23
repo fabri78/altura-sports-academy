@@ -1,0 +1,681 @@
+/* =====================================================================
+   ALTURA Sports Academy · framework/animaciones.css
+   Punto h: Animaciones, transiciones y transformaciones sobre los
+   componentes de Material Design (ripple, tabs, snackbar, tarjetas).
+   Ritmo tomado de la referencia: 0.2 s - 0.45 s con ease-out.
+   Meta: 20 % del código de estilos.
+   ===================================================================== */
+
+/* ---------- 1. Fotogramas clave (@keyframes) ---------- */
+@keyframes aparecer-arriba {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 40px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes aparecer-escala {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes deslizar-izquierda {
+  from {
+    opacity: 0;
+    transform: translateX(-32px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes acercar-hero {
+  from {
+    transform: scale(1.18);
+    filter: brightness(0.6);
+  }
+  to {
+    transform: scale(1);
+    filter: brightness(1);
+  }
+}
+
+@keyframes degradado-mover {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes pulso {
+  0% { box-shadow: 0 0 0 0 rgba(255, 46, 99, 0.6); }
+  70% { box-shadow: 0 0 0 12px rgba(255, 46, 99, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 46, 99, 0); }
+}
+
+@keyframes flotar {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes cinta {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes rebote-balon {
+  0%, 100% {
+    transform: translateY(0) scale(1.1, 0.9);
+    animation-timing-function: cubic-bezier(0.5, 0, 0.75, 0);
+  }
+  12% { transform: translateY(0) scale(1, 1); }
+  50% {
+    transform: translateY(-160px) rotate(180deg);
+    animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
+  }
+}
+
+@keyframes sombra-balon {
+  0%, 100% { transform: scaleX(1); opacity: 0.5; }
+  50% { transform: scaleX(0.45); opacity: 0.15; }
+}
+
+@keyframes brillo {
+  from { background-position: -400px 0; }
+  to { background-position: 400px 0; }
+}
+
+@keyframes dibujar {
+  from { stroke-dashoffset: 900; }
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes girar {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes barra-progreso {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+/* ---------- 2. Entrada de la página ---------- */
+.hero__eyebrow,
+.hero__title,
+.hero__lead,
+.hero .acciones,
+.banner__content > * {
+  animation: aparecer-arriba 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.hero__title,
+.banner__content > :nth-child(2) { animation-delay: 0.1s; }
+.hero__lead,
+.banner__content > :nth-child(3) { animation-delay: 0.2s; }
+.hero .acciones,
+.banner__content > :nth-child(4) { animation-delay: 0.3s; }
+
+.hero__media img,
+.hero__media video {
+  animation: acercar-hero 1.6s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.texto-gradiente--vivo {
+  background-image: linear-gradient(100deg, #ff6a2b, #ff2e63, #8c1d2f, #ff6a2b);
+  background-size: 300% 100%;
+  animation: degradado-mover 8s ease-in-out infinite;
+}
+
+/* ---------- 3. Aparición al hacer scroll ---------- */
+/* Sin JavaScript todo queda visible; main.js agrega .js y luego .is-visible */
+.js [data-reveal] {
+  opacity: 0;
+  transform: translate3d(0, 40px, 0);
+  transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.js [data-reveal="escala"] {
+  transform: scale(0.94);
+}
+
+.js [data-reveal="izquierda"] {
+  transform: translate3d(-40px, 0, 0);
+}
+
+.js [data-reveal].is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+.js [data-reveal-delay="1"] { transition-delay: 0.1s; }
+.js [data-reveal-delay="2"] { transition-delay: 0.2s; }
+.js [data-reveal-delay="3"] { transition-delay: 0.3s; }
+
+/* Animaciones ligadas al scroll (CSS Scroll-driven Animations) */
+@supports (animation-timeline: view()) {
+  .scroll-zoom {
+    animation: acercar-hero linear both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 45%;
+  }
+
+  .scroll-aparece {
+    animation: aparecer-escala linear both;
+    animation-timeline: view();
+    animation-range: entry 10% cover 35%;
+  }
+}
+
+@supports (animation-timeline: scroll()) {
+  .progreso-lectura {
+    position: fixed;
+    top: var(--nav-alto);
+    left: 0;
+    right: 0;
+    z-index: 95;
+    height: 3px;
+    background-image: var(--grad-brasa);
+    transform-origin: 0 50%;
+    animation: barra-progreso linear both;
+    animation-timeline: scroll(root);
+  }
+}
+
+/* ---------- 4. Navegación: submenú y menú móvil ---------- */
+.submenu {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px) scale(0.98);
+  transform-origin: top left;
+  transition: opacity 0.25s ease-out, transform 0.3s ease-out, visibility 0s linear 0.3s;
+}
+
+.menu__item--sub:hover > .submenu,
+.menu__item--sub:focus-within > .submenu {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  transition-delay: 0s;
+}
+
+.menu__item--sub > a::after {
+  transition: transform 0.3s ease-out;
+}
+
+.menu__item--sub:hover > a::after {
+  transform: translateY(-1px) rotate(225deg);
+}
+
+.menu-burger span:not(.sr-only) {
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.menu-toggle:checked + .menu-burger span:nth-of-type(2) {
+  transform: translateY(3.25px) rotate(45deg);
+}
+
+.menu-toggle:checked + .menu-burger span:nth-of-type(3) {
+  transform: translateY(-3.25px) rotate(-45deg);
+}
+
+.menu-toggle:focus-visible + .menu-burger {
+  outline: 2px solid var(--c-enlace);
+  border-radius: 8px;
+}
+
+@media (max-width: 904px) {
+  .menu {
+    opacity: 0;
+    transform: translateY(-12px);
+    transition: opacity 0.3s ease-out, transform 0.35s ease-out, visibility 0s linear 0.35s;
+  }
+
+  .menu-toggle:checked ~ .menu {
+    opacity: 1;
+    transform: none;
+    transition-delay: 0s;
+  }
+
+  .submenu {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+
+  .menu-toggle:checked ~ .menu .menu__item {
+    animation: deslizar-izquierda 0.45s ease-out both;
+  }
+
+  .menu-toggle:checked ~ .menu .menu__item:nth-child(2) { animation-delay: 0.04s; }
+  .menu-toggle:checked ~ .menu .menu__item:nth-child(3) { animation-delay: 0.08s; }
+  .menu-toggle:checked ~ .menu .menu__item:nth-child(4) { animation-delay: 0.12s; }
+  .menu-toggle:checked ~ .menu .menu__item:nth-child(5) { animation-delay: 0.16s; }
+  .menu-toggle:checked ~ .menu .menu__item:nth-child(6) { animation-delay: 0.2s; }
+  .menu-toggle:checked ~ .menu .menu__item:nth-child(7) { animation-delay: 0.24s; }
+  .menu-toggle:checked ~ .menu .menu__item:nth-child(8) { animation-delay: 0.28s; }
+}
+
+.globalnav {
+  transition: background-color 0.3s ease-out;
+}
+
+/* ---------- 5. Botones de Material Design ---------- */
+.mdc-button {
+  transition: transform 0.3s ease-out, background-color 0.25s linear, box-shadow 0.3s ease-out;
+}
+
+.btn-pill:hover {
+  transform: scale(1.03);
+}
+
+.btn-pill:active {
+  transform: scale(0.97);
+}
+
+.mdc-button .mdc-button__ripple::before,
+.mdc-button .mdc-button__ripple::after {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.link-mas::after {
+  display: inline-block;
+  transition: transform 0.25s ease-out;
+}
+
+.link-mas:hover::after {
+  transform: translateX(4px);
+}
+
+.social__btn:hover {
+  transform: translateY(-3px) rotate(-6deg);
+}
+
+.to-top:hover .material-symbols-rounded {
+  animation: flotar 1s ease-in-out infinite;
+}
+
+/* ---------- 6. Tarjetas: elevación, zoom y transformaciones ---------- */
+.card-academia__media img,
+.highlight img,
+.bento__tile img,
+.post-card img,
+.producto__img img,
+.mosaico__item img,
+.split__media img {
+  transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.4s ease-out;
+}
+
+.card-academia:hover .card-academia__media img,
+.highlight:hover img,
+.bento__tile:hover img,
+.post-card:hover img,
+.producto:hover .producto__img img,
+.mosaico__item:hover img {
+  transform: scale(1.06);
+}
+
+.card-academia:hover .card-academia__media img {
+  opacity: 0.65;
+}
+
+.card-academia__icono {
+  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.card-academia:hover .card-academia__icono {
+  transform: rotate(-12deg) scale(1.2);
+}
+
+.valor,
+.info-contacto,
+.organigrama__nodo,
+.evento,
+.semana__clase {
+  transition: transform 0.35s ease-out, background-color 0.3s ease-out, border-color 0.3s ease-out;
+}
+
+.valor:hover,
+.info-contacto:hover,
+.organigrama__nodo:hover {
+  transform: translateY(-4px);
+}
+
+.evento:hover {
+  transform: translateX(6px);
+  border-color: rgba(255, 106, 43, 0.5);
+}
+
+.semana__clase:hover {
+  transform: scale(1.04);
+  background-color: var(--c-humo);
+}
+
+.mosaico__item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 50%, rgba(0, 0, 0, 0.6));
+  opacity: 0;
+  transition: opacity 0.35s ease-out;
+}
+
+.mosaico__item:hover::after {
+  opacity: 1;
+}
+
+/* ---------- 7. Tarjeta que gira en 3D (entrenadores) ---------- */
+.flip {
+  perspective: 1200px;
+  min-height: 430px;
+}
+
+.flip__inner {
+  position: relative;
+  height: 100%;
+  min-height: inherit;
+  transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.flip:hover .flip__inner,
+.flip:focus-within .flip__inner {
+  transform: rotateY(180deg);
+}
+
+.flip .coach__cara {
+  position: absolute;
+  inset: 0;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip .coach__cara--reverso {
+  transform: rotateY(180deg);
+}
+
+/* ---------- 8. Galería horizontal: puntos y flechas ---------- */
+.galeria-h__dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: 0;
+  border-radius: var(--radio-pill);
+  background-color: rgba(255, 255, 255, 0.45);
+  cursor: pointer;
+  transition: width 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), background-color 0.3s;
+}
+
+.galeria-h__dot[aria-current="true"] {
+  width: 36px;
+  background-color: var(--c-texto-claro);
+}
+
+.galeria-h__paddle {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 50%;
+  background-color: rgba(66, 66, 69, 0.72);
+  color: var(--c-texto-claro);
+  cursor: pointer;
+  transition: background-color 0.25s linear, transform 0.3s ease-out, opacity 0.3s;
+}
+
+.galeria-h__paddle:hover {
+  background-color: rgba(110, 110, 115, 0.85);
+  transform: scale(1.08);
+}
+
+.galeria-h__paddle:disabled {
+  opacity: 0.35;
+  transform: none;
+}
+
+.galeria-h__item {
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.galeria-h__item:not(.is-activo) {
+  opacity: 0.55;
+}
+
+/* ---------- 9. Sección fija con scroll ---------- */
+.sticky-story__media > * {
+  opacity: 0;
+  transform: scale(1.06);
+  transition: opacity 0.7s ease-out, transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.sticky-story__media > .is-activo,
+.no-js .sticky-story__media > :first-child {
+  opacity: 1;
+  transform: none;
+}
+
+.step {
+  opacity: 0.3;
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.step.is-activo,
+.no-js .step {
+  opacity: 1;
+  transform: translateX(8px);
+}
+
+/* ---------- 10. Ficha de producto: cambio de color ---------- */
+.pdp__vista {
+  opacity: 0;
+  transform: scale(0.96) rotate(-2deg);
+  transition: opacity 0.5s ease-out, transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.swatch {
+  transition: transform 0.25s ease-out, box-shadow 0.25s ease-out;
+}
+
+.swatch:hover {
+  transform: scale(1.15);
+}
+
+.talla label,
+.chip-filtro label,
+.opcion-card label {
+  transition: border-color 0.2s ease-out, background-color 0.2s ease-out, color 0.2s ease-out, transform 0.2s ease-out;
+}
+
+.talla label:hover,
+.chip-filtro label:hover,
+.opcion-card label:hover {
+  transform: translateY(-2px);
+}
+
+.carrito-contador.is-nuevo {
+  animation: aparecer-escala 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* ---------- 11. Componentes MDC: pestañas, campos y snackbar ---------- */
+.mdc-tab-indicator__content {
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.panel {
+  animation: aparecer-arriba 0.5s ease-out both;
+}
+
+.panel[hidden] {
+  display: none;
+}
+
+.mdc-text-field--filled {
+  transition: border-color 0.2s ease-out, box-shadow 0.25s ease-out;
+}
+
+.mdc-snackbar__surface {
+  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.2s;
+}
+
+.form-ok {
+  animation: aparecer-escala 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+/* ---------- 12. Preguntas frecuentes (details) ---------- */
+.faq summary::after {
+  display: inline-block;
+  transition: transform 0.3s ease-out;
+}
+
+.faq[open] summary::after {
+  transform: rotate(180deg);
+}
+
+.faq[open] p {
+  animation: aparecer-arriba 0.45s ease-out both;
+}
+
+/* ---------- 13. Cinta de patrocinadores en CSS (alternativa a marquee) ---------- */
+.cinta {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+}
+
+.cinta__pista {
+  display: flex;
+  width: max-content;
+  gap: 56px;
+  animation: cinta 28s linear infinite;
+}
+
+.cinta:hover .cinta__pista {
+  animation-play-state: paused;
+}
+
+.cinta__pista span {
+  color: var(--c-gris);
+  font-family: var(--f-display);
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+/* ---------- 14. Indicadores en vivo, carga y lightbox ---------- */
+.en-vivo {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--c-fucsia);
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.en-vivo::before {
+  content: "";
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background-color: var(--c-fucsia);
+  animation: pulso 1.8s ease-out infinite;
+}
+
+.esqueleto {
+  border-radius: var(--radio-md);
+  background: linear-gradient(90deg, #2a2a2d 0, #3a3a3d 40%, #2a2a2d 80%);
+  background-size: 800px 100%;
+  animation: brillo 1.4s linear infinite;
+}
+
+.cancha-svg path,
+.cancha-svg rect,
+.cancha-svg circle,
+.cancha-svg line {
+  stroke-dasharray: 900;
+  animation: dibujar 3s ease-out both;
+}
+
+.icono-giro {
+  animation: girar 12s linear infinite;
+}
+
+.lightbox {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.35s ease-out, visibility 0s linear 0.35s;
+}
+
+.lightbox:target {
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0s;
+}
+
+.lightbox img {
+  transform: scale(0.9);
+  transition: transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.lightbox:target img {
+  transform: none;
+}
+
+/* ---------- 15. Página 404: balón que rebota ---------- */
+.balon {
+  width: 110px;
+  height: 110px;
+  animation: rebote-balon 1.4s infinite;
+}
+
+.balon-sombra {
+  width: 100px;
+  height: 14px;
+  margin-top: 8px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.25);
+  animation: sombra-balon 1.4s infinite;
+}
+
+.cifra__num {
+  transition: opacity 0.6s ease-out;
+}
+
+/* ---------- 16. Movimiento reducido ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .js [data-reveal] {
+    opacity: 1;
+    transform: none;
+  }
+
+  .cinta__pista {
+    animation: none;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}

@@ -1,0 +1,212 @@
+// =====================================================================
+// LESS · Encabezado, logo y menú de opciones
+// Barra global de vidrio (52 px, como la referencia) con submenú.
+// =====================================================================
+
+.globalnav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  .vidrio(@grafito; 0.82);
+  .divisor(bottom; 8%);
+
+  &__inner {
+    .contenedor();
+    height: @nav-alto;
+  }
+
+  .logo {
+    flex-shrink: 0;
+    img {
+      height: 26px;
+      width: auto;
+    }
+  }
+}
+
+// --- Menú principal ---
+.menu {
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    position: relative;
+    margin: 0;
+
+    > a {
+      display: block;
+      padding: 8px 2px;
+      color: fade(@texto-claro, 80%);
+      font-size: 13px;
+      letter-spacing: -0.01em;
+      transition: color @t-rapido ease-out;
+
+      &:hover,
+      &:focus-visible {
+        color: @texto-claro;
+        text-decoration: none;
+      }
+
+      &[aria-current="page"] {
+        color: @texto-claro;
+        font-weight: 600;
+      }
+    }
+  }
+
+  // Indicador de submenú
+  &__item--sub > a::after {
+    content: "";
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    margin-left: 6px;
+    border-right: 1.5px solid currentColor;
+    border-bottom: 1.5px solid currentColor;
+    transform: translateY(-3px) rotate(45deg);
+  }
+}
+
+// --- Submenú desplegable ---
+.submenu {
+  position: absolute;
+  top: 100%;
+  left: -14px;
+  min-width: 230px;
+  margin: 0;
+  padding: 8px;
+  list-style: none;
+  border-radius: @radio-lg;
+  .vidrio(@humo; 0.92; 24px);
+  box-shadow: 0 20px 40px fade(@negro, 45%);
+
+  li {
+    margin: 0;
+  }
+
+  a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    border-radius: @radio-md;
+    color: @texto-claro;
+    font-size: 14px;
+
+    .material-symbols-rounded {
+      font-size: 20px;
+      color: @brasa;
+    }
+
+    &:hover,
+    &:focus-visible,
+    &[aria-current="page"] {
+      background-color: fade(@blanco, 8%);
+      text-decoration: none;
+    }
+  }
+}
+
+// --- Botón hamburguesa (solo visible en móvil, ver responsive.css) ---
+.menu-toggle {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.menu-burger {
+  display: none;
+  width: 40px;
+  height: 40px;
+  margin-left: auto;
+  cursor: pointer;
+
+  span:not(.sr-only) {
+    display: block;
+    width: 18px;
+    height: 1.5px;
+    margin: 5px auto;
+    background-color: @texto-claro;
+    border-radius: 2px;
+  }
+}
+
+.nav-cta.mdc-button {
+  flex-shrink: 0;
+}
+
+// --- Subnavegación local (como "iPhone 18 Pro · Overview · Buy") ---
+.localnav {
+  position: sticky;
+  top: @nav-alto;
+  z-index: 90;
+  .vidrio(@negro; 0.72);
+  .divisor(bottom; 10%);
+
+  &__inner {
+    .contenedor();
+    height: 52px;
+  }
+
+  &__title {
+    font-family: @f-display;
+    font-size: 21px;
+    font-weight: 600;
+    color: @texto-claro;
+    white-space: nowrap;
+  }
+
+  &__links {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+      margin: 0;
+    }
+
+    a {
+      color: fade(@texto-claro, 75%);
+      font-size: 12px;
+      white-space: nowrap;
+
+      &:hover {
+        color: @texto-claro;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+// --- Migas de pan ---
+.breadcrumb {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 13px;
+  color: @gris;
+
+  li {
+    margin: 0;
+  }
+
+  li + li::before {
+    content: "›";
+    margin-right: 8px;
+    color: @gris-2;
+  }
+
+  a {
+    color: @gris-3;
+    &:hover {
+      color: @texto-claro;
+    }
+  }
+
+  [aria-current="page"] {
+    color: @texto-claro;
+  }
+}

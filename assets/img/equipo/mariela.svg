@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Ilustración del entrenador">
+  <defs><radialGradient id="g" cx="50%" cy="20%" r="90%"><stop offset="0" stop-color="#ff6a2b"/><stop offset="1" stop-color="#4a1606"/></radialGradient></defs>
+  <circle cx="100" cy="100" r="100" fill="url(#g)"/>
+  <path d="M40 200 C40 150 70 134 100 134 C130 134 160 150 160 200 Z" fill="#f5f5f7" opacity=".92"/>
+  <path d="M84 134 L100 156 L116 134" fill="none" stroke="#4a1606" stroke-width="5"/>
+  <circle cx="100" cy="92" r="32" fill="#e8c4a8"/>
+  <path d="M64 96 C58 50 142 50 136 96 C136 120 128 128 128 128 L128 84 C120 64 80 64 72 84 L72 128 C72 128 64 120 64 96 Z" fill="#1d1d1f"/>
+</svg>

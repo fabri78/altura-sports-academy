@@ -1,0 +1,23 @@
+{
+  "name": "altura-sports",
+  "version": "1.0.0",
+  "description": "ALTURA Sports Academy - Trabajo Final 04 de Hojas de Estilo en Cascada Avanzado (LESS, SASS y Material Design CSS)",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:less": "lessc src/less/altura.less assets/css/altura-less.css",
+    "build:sass": "sass --no-source-map src/scss/altura.scss assets/css/altura-sass.css",
+    "build:html": "node tools/ensamblar.mjs",
+    "build": "npm run build:less && npm run build:sass && npm run build:html",
+    "watch:sass": "sass --watch --no-source-map src/scss/altura.scss assets/css/altura-sass.css",
+    "metricas": "node tools/metricas.mjs",
+    "serve": "npx --yes http-server -p 5173 -c-1 ."
+  },
+  "author": "Quispe Morales, Fabricio Oscar",
+  "license": "MIT",
+  "devDependencies": {
+    "lamejs": "^1.2.1",
+    "less": "^4.2.0",
+    "sass": "^1.77.8"
+  }
+}

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 248 52" role="img" aria-labelledby="t">
+  <title id="t">ALTURA Sports Academy</title>
+  <defs>
+    <linearGradient id="brasa" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#8c1d2f"/>
+      <stop offset=".55" stop-color="#ff2e63"/>
+      <stop offset="1" stop-color="#ff6a2b"/>
+    </linearGradient>
+  </defs>
+  <!-- Isotipo: cumbre del Misti con trayectoria de un balón -->
+  <path d="M4 46 L22 12 L30 26 L36 18 L50 46 Z" fill="url(#brasa)"/>
+  <path d="M22 12 L26.5 20.5 L22 19 L18 21 Z" fill="#f5f5f7"/>
+  <path d="M6 30 C16 6 38 2 48 12" fill="none" stroke="#f5f5f7" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="0.1 5.2"/>
+  <circle cx="48" cy="12" r="3.6" fill="#f5f5f7"/>
+  <text x="60" y="36" font-family="'Inter Tight','Arial Black','Segoe UI',Arial,sans-serif" font-size="29" font-weight="800" letter-spacing="2.5" fill="#f5f5f7">ALTURA</text>
+  <text x="61" y="48" font-family="'Inter','Segoe UI',Arial,sans-serif" font-size="8.4" font-weight="600" letter-spacing="3.1" fill="#a1a1a6">SPORTS ACADEMY</text>
+</svg>

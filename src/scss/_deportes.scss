@@ -1,0 +1,391 @@
+// =====================================================================
+// SASS · Academias, cifras, entrenadores, eventos, tarifas y blog
+// Las variantes por deporte se generan con @each sobre $deportes.
+// =====================================================================
+@use "sass:map";
+@use "sass:color";
+@use "tokens" as *;
+@use "funciones" as *;
+
+// --- Tarjeta de academia ---
+.card-academia {
+  @extend %tarjeta-base;
+  display: flex;
+  flex-direction: column;
+  min-height: 420px;
+  padding: esp(6);
+  color: c("texto-claro");
+  background-color: c("carbon");
+  @include hover-elevar;
+
+  &__media {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.5;
+    }
+  }
+
+  &__body {
+    position: relative;
+    z-index: 1;
+    margin-top: auto;
+  }
+
+  &__icono {
+    font-size: 30px;
+  }
+
+  &__titulo {
+    @include titular(rem(28px), 800);
+    margin-top: esp(3);
+  }
+
+  p {
+    margin-top: esp(2);
+    color: alfa(c("texto-claro"), 0.8);
+  }
+
+  .link-mas {
+    display: inline-block;
+    margin-top: esp(4);
+  }
+}
+
+// Genera .deporte--basquet, .deporte--aerobicos, ... con su color y degradado
+@each $nombre, $datos in $deportes {
+  $color: map.get($datos, color);
+  $oscuro: map.get($datos, oscuro);
+
+  .deporte--#{$nombre} {
+    --deporte-color: #{$color};
+
+    &.card-academia {
+      background: radial-gradient(120% 90% at 85% 0%, $color 0%, $oscuro 55%, c("negro") 100%);
+    }
+
+    .card-academia__icono,
+    .chip-deporte__icono {
+      color: color.adjust($color, $lightness: 12%);
+    }
+  }
+
+  .chip-deporte--#{$nombre} {
+    @extend %insignia;
+    background-color: alfa($color, 0.16);
+    color: color.adjust($color, $lightness: 10%);
+  }
+}
+
+// --- Cifras destacadas ---
+.cifra {
+  &__num {
+    @include titular(clamp(2.2rem, 4.6vw, 4rem), 800);
+    display: block;
+    white-space: nowrap;
+    background-image: linear-gradient(100deg, c("brasa"), c("fucsia"));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-variant-numeric: tabular-nums;
+  }
+
+  &__label {
+    display: block;
+    margin-top: esp(2);
+    color: c("gris-3");
+    font-size: rem(15px);
+  }
+}
+
+// --- Tarjeta de entrenador (frente y reverso) ---
+.coach {
+  &__cara {
+    @include superficie(c("carbon"));
+    padding: esp(5);
+    border: 1px solid alfa(c("blanco"), 0.08);
+  }
+
+  &__cara--reverso {
+    background: linear-gradient(160deg, c("borgona"), color.adjust(c("borgona"), $lightness: -14%));
+  }
+
+  &__foto {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: c("humo");
+  }
+
+  &__nombre {
+    @include titular(rem(22px));
+    margin-top: esp(4);
+  }
+
+  &__rol {
+    margin-top: esp(1);
+    color: var(--deporte-color, c("brasa"));
+    font-weight: 600;
+    font-size: rem(14px);
+  }
+
+  &__bio {
+    margin-top: esp(3);
+    color: c("gris-3");
+    font-size: rem(15px);
+  }
+
+  &__logros {
+    @extend %reset-lista;
+    margin-top: esp(3);
+    font-size: rem(14px);
+
+    li::before {
+      content: "✓ ";
+      color: c("exito");
+    }
+  }
+}
+
+// --- Tarjeta de evento ---
+.evento {
+  @include superficie(c("carbon"), "lg");
+  padding: esp(5);
+  border: 1px solid alfa(c("blanco"), 0.08);
+
+  &__fecha {
+    display: grid;
+    place-items: center;
+    width: 72px;
+    height: 72px;
+    border-radius: radio("lg");
+    background-image: linear-gradient(140deg, c("brasa"), c("borgona"));
+    font-family: $f-display;
+    line-height: 1;
+    text-align: center;
+
+    b {
+      display: block;
+      font-size: rem(28px);
+      font-weight: 800;
+    }
+
+    small {
+      font-size: rem(11px);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+  }
+
+  &__titulo {
+    @include titular(rem(20px));
+  }
+
+  &__meta {
+    margin-top: esp(1);
+    color: c("gris");
+    font-size: rem(14px);
+  }
+
+  &__estado {
+    @extend %insignia;
+    background-color: alfa(c("exito"), 0.16);
+    color: c("exito");
+  }
+
+  &__estado--lleno {
+    background-color: alfa(c("error"), 0.16);
+    color: c("error");
+  }
+}
+
+// --- Planes y tarifas ---
+.plan {
+  @include superficie(c("carbon"));
+  padding: esp(6);
+  border: 1px solid alfa(c("blanco"), 0.1);
+
+  &--destacado {
+    border: 2px solid c("brasa");
+    background: linear-gradient(180deg, alfa(c("brasa"), 0.12), c("carbon") 40%);
+  }
+
+  &__nombre {
+    @include titular(rem(22px));
+  }
+
+  &__precio {
+    @include titular(rem(48px), 800);
+    margin-top: esp(3);
+
+    small {
+      font-size: rem(16px);
+      font-weight: 500;
+      color: c("gris");
+    }
+  }
+
+  &__lista {
+    @extend %reset-lista;
+    margin-top: esp(5);
+    color: c("gris-3");
+    font-size: rem(15px);
+
+    li {
+      padding: esp(2) 0;
+      border-bottom: 1px solid alfa(c("blanco"), 0.08);
+    }
+  }
+
+  &__insignia {
+    @extend %insignia;
+    background-color: c("brasa");
+    color: c("negro");
+  }
+}
+
+// --- Tarjeta de artículo del blog ---
+.post-card {
+  @extend %tarjeta-base;
+  background-color: c("blanco");
+  color: c("texto-oscuro");
+  @include hover-elevar(-4px, 1.01);
+
+  .tema-oscuro & {
+    background-color: c("carbon");
+    color: c("texto-claro");
+  }
+
+  img {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+  }
+
+  &__body {
+    padding: esp(5);
+  }
+
+  &__titulo {
+    @include titular(rem(21px));
+    margin-top: esp(2);
+
+    a {
+      color: inherit;
+    }
+  }
+
+  &__extracto {
+    margin-top: esp(2);
+    color: c("gris-2");
+    font-size: rem(15px);
+
+    .tema-oscuro & {
+      color: c("gris-3");
+    }
+  }
+}
+
+// --- Destacados del inicio (tarjetas de la galería horizontal) ---
+.highlight {
+  @extend %tarjeta-base;
+  background-color: c("carbon");
+  color: c("texto-claro");
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__caption {
+    position: absolute;
+    inset: auto 0 0 0;
+    padding: esp(6);
+    background: linear-gradient(180deg, transparent, alfa(c("negro"), 0.85));
+    font-family: $f-display;
+    font-size: rem(24px);
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  &__caption small {
+    display: block;
+    margin-bottom: esp(2);
+    color: c("brasa");
+    font-family: $f-texto;
+    font-size: rem(13px);
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+}
+
+// --- Bloques del bento ---
+.bento__tile {
+  @extend %tarjeta-base;
+  padding: esp(6);
+  background-color: c("carbon");
+  color: c("texto-claro");
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  .material-symbols-rounded {
+    font-size: 34px;
+    color: c("brasa");
+  }
+
+  h3 {
+    @include titular(rem(26px), 800);
+  }
+
+  p {
+    margin-top: esp(2);
+    color: c("gris-3");
+  }
+
+  img {
+    border-radius: radio("lg");
+  }
+}
+
+// --- Preguntas frecuentes ---
+.faq {
+  border-bottom: 1px solid alfa(c("blanco"), 0.12);
+
+  summary {
+    @include titular(rem(19px), 600);
+    padding: esp(5) 0;
+    cursor: pointer;
+    list-style: none;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+
+    &::after {
+      content: "+";
+      float: right;
+      color: c("enlace");
+      font-weight: 400;
+    }
+  }
+
+  &[open] summary::after {
+    content: "–";
+  }
+
+  p {
+    padding-bottom: esp(5);
+    color: c("gris-3");
+  }
+}

@@ -1,0 +1,171 @@
+<!--{"titulo":"Horarios y tarifas","descripcion":"Horarios semanales y tarifas de las academias de básquet, aeróbicos y natación de ALTURA Sports Academy.","activo":"horarios","clase":"tema-oscuro"}-->
+<main id="contenido">
+  <section class="banner" aria-labelledby="titulo-pagina">
+    <div class="banner__content">
+      <ol class="breadcrumb" aria-label="Ruta de navegación">
+        <li><a href="{{R}}index.html">Inicio</a></li>
+        <li aria-current="page">Horarios y tarifas</li>
+      </ol>
+      <p class="eyebrow">Horarios y tarifas</p>
+      <h1 class="banner__title" id="titulo-pagina">De 6:00 a 22:00.</h1>
+      <p class="lead">Lunes a sábado. Los domingos abrimos la piscina y la cancha libre de 8:00 a 13:00.</p>
+    </div>
+  </section>
+
+  <!-- Horario semanal en CSS Grid -->
+  <section class="seccion seccion--negro seccion--compacta" id="semana" aria-labelledby="semana-titulo">
+    <div class="contenedor">
+      <header class="seccion__head">
+        <h2 id="semana-titulo">Semana tipo</h2>
+        <p class="lead">Desliza horizontalmente en el celular para ver todos los días.</p>
+      </header>
+      <div class="desplazable" tabindex="0" aria-label="Horario semanal">
+        <div class="semana" role="table" aria-label="Clases por día y hora">
+          <div class="semana__hora" role="columnheader">Hora</div>
+          <div class="semana__dia" role="columnheader">Lun</div><div class="semana__dia" role="columnheader">Mar</div><div class="semana__dia" role="columnheader">Mié</div><div class="semana__dia" role="columnheader">Jue</div><div class="semana__dia" role="columnheader">Vie</div><div class="semana__dia" role="columnheader">Sáb</div>
+
+          <div class="semana__hora" role="rowheader">6:30</div>
+          <div class="semana__clase deporte--aerobicos" role="cell">Step<small>Lucía</small></div>
+          <div class="semana__clase deporte--funcional" role="cell">Funcional<small>Diego</small></div>
+          <div class="semana__clase deporte--aerobicos" role="cell">Step<small>Lucía</small></div>
+          <div class="semana__clase deporte--funcional" role="cell">Funcional<small>Diego</small></div>
+          <div class="semana__clase deporte--aerobicos" role="cell">Zumba<small>Lucía</small></div>
+          <div class="semana__clase deporte--natacion" role="cell">Natación máster<small>Andrea</small></div>
+
+          <div class="semana__hora" role="rowheader">9:00</div>
+          <div class="semana__clase deporte--natacion" role="cell">Bebés<small>Andrea</small></div>
+          <div class="semana__clase deporte--aerobicos" role="cell">Zumba<small>Lucía</small></div>
+          <div class="semana__clase deporte--natacion" role="cell">Bebés<small>Andrea</small></div>
+          <div class="semana__clase deporte--aerobicos" role="cell">Zumba<small>Lucía</small></div>
+          <div class="semana__clase deporte--natacion" role="cell">Bebés<small>Andrea</small></div>
+          <div class="semana__clase deporte--basquet" role="cell">Mini básquet<small>Mariela</small></div>
+
+          <div class="semana__hora" role="rowheader">16:00</div>
+          <div class="semana__clase deporte--basquet" role="cell">U13<small>Mariela</small></div>
+          <div class="semana__clase deporte--basquet" role="cell">Mini básquet<small>Mariela</small></div>
+          <div class="semana__clase deporte--basquet" role="cell">U13<small>Mariela</small></div>
+          <div class="semana__clase deporte--basquet" role="cell">Mini básquet<small>Mariela</small></div>
+          <div class="semana__clase deporte--basquet" role="cell">U13<small>Mariela</small></div>
+          <div class="semana__clase deporte--basquet" role="cell">U17<small>Renzo</small></div>
+
+          <div class="semana__hora" role="rowheader">18:00</div>
+          <div class="semana__clase deporte--basquet" role="cell">U15<small>Renzo</small></div>
+          <div class="semana__clase deporte--basquet" role="cell">U17<small>Renzo</small></div>
+          <div class="semana__clase deporte--basquet" role="cell">U15<small>Renzo</small></div>
+          <div class="semana__clase deporte--basquet" role="cell">U17<small>Renzo</small></div>
+          <div class="semana__clase deporte--basquet" role="cell">U15<small>Renzo</small></div>
+          <div class="semana__clase deporte--natacion" role="cell">Natación niños<small>Andrea</small></div>
+
+          <div class="semana__hora" role="rowheader">19:30</div>
+          <div class="semana__clase deporte--aerobicos" role="cell">Step<small>Lucía</small></div>
+          <div class="semana__clase deporte--funcional" role="cell">Ciclismo<small>Diego</small></div>
+          <div class="semana__clase deporte--aerobicos" role="cell">Step<small>Lucía</small></div>
+          <div class="semana__clase deporte--funcional" role="cell">Ciclismo<small>Diego</small></div>
+          <div class="semana__clase deporte--aerobicos" role="cell">Zumba<small>Lucía</small></div>
+          <div class="semana__clase deporte--voley" role="cell">Cancha libre<small>Todos</small></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tablas completas con pestañas de Material Design -->
+  <section class="seccion seccion--carbon" aria-labelledby="tarifas-titulo">
+    <div class="contenedor" data-pestanas>
+      <header class="seccion__head">
+        <p class="eyebrow">Tarifas 2027</p>
+        <h2 id="tarifas-titulo">Precios por disciplina.</h2>
+      </header>
+
+      <div class="mdc-tab-bar" role="tablist" data-mdc-auto-init="MDCTabBar">
+        <div class="mdc-tab-scroller">
+          <div class="mdc-tab-scroller__scroll-area">
+            <div class="mdc-tab-scroller__scroll-content">
+              <button class="mdc-tab mdc-tab--active" role="tab" aria-selected="true" tabindex="0" type="button">
+                <span class="mdc-tab__content"><span class="mdc-tab__text-label">Básquet</span></span>
+                <span class="mdc-tab-indicator mdc-tab-indicator--active"><span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span></span>
+                <span class="mdc-tab__ripple"></span>
+              </button>
+              <button class="mdc-tab" role="tab" aria-selected="false" tabindex="-1" type="button">
+                <span class="mdc-tab__content"><span class="mdc-tab__text-label">Aeróbicos</span></span>
+                <span class="mdc-tab-indicator"><span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span></span>
+                <span class="mdc-tab__ripple"></span>
+              </button>
+              <button class="mdc-tab" role="tab" aria-selected="false" tabindex="-1" type="button">
+                <span class="mdc-tab__content"><span class="mdc-tab__text-label">Natación</span></span>
+                <span class="mdc-tab-indicator"><span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span></span>
+                <span class="mdc-tab__ripple"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel" role="tabpanel">
+        <div class="tabla-contenedor">
+          <table class="tabla">
+            <caption>Básquet: mensualidad por categoría</caption>
+            <thead>
+              <tr><th scope="col">Categoría</th><th scope="col">Turno</th><th scope="col">Clases al mes</th><th scope="col">Mensualidad</th></tr>
+            </thead>
+            <tbody>
+              <tr><td rowspan="2">Mini básquet</td><td>Mañana (sáb)</td><td>4</td><td>S/ 90</td></tr>
+              <tr><td>Tarde (mar y jue)</td><td>8</td><td>S/ 150</td></tr>
+              <tr><td rowspan="2">U13 y U15</td><td>Tarde (lun, mié, vie)</td><td>12</td><td>S/ 180</td></tr>
+              <tr><td>Noche (lun, mié, vie)</td><td>12</td><td>S/ 180</td></tr>
+              <tr><td>U17</td><td>Noche (mar, jue, sáb)</td><td>12</td><td>S/ 200</td></tr>
+            </tbody>
+            <tfoot>
+              <tr><th scope="row" colspan="3">Matrícula única (incluye camiseta de entrenamiento)</th><td>S/ 60</td></tr>
+            </tfoot>
+          </table>
+        </div>
+      </div>
+
+      <div class="panel" role="tabpanel" hidden>
+        <div class="tabla-contenedor">
+          <table class="tabla">
+            <caption>Aeróbicos y fitness</caption>
+            <thead>
+              <tr><th scope="col">Plan</th><th scope="col">Acceso</th><th scope="col">Vigencia</th><th scope="col">Precio</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Pase diario</td><td>1 clase</td><td>1 día</td><td>S/ 20</td></tr>
+              <tr><td>Paquete 10</td><td>10 clases</td><td>45 días</td><td>S/ 150</td></tr>
+              <tr><td>Mensual libre</td><td>Ilimitado</td><td>30 días</td><td>S/ 140</td></tr>
+              <tr><td>Trimestral</td><td>Ilimitado + nutrición</td><td>90 días</td><td>S/ 360</td></tr>
+            </tbody>
+            <tfoot>
+              <tr><td colspan="4">Precios con IGV incluido.</td></tr>
+            </tfoot>
+          </table>
+        </div>
+      </div>
+
+      <div class="panel" role="tabpanel" hidden>
+        <div class="tabla-contenedor">
+          <table class="tabla">
+            <caption>Natación por nivel</caption>
+            <thead>
+              <tr><th scope="col">Nivel</th><th scope="col">Edad</th><th scope="col">Frecuencia</th><th scope="col">Mensualidad</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Estimulación acuática</td><td>6 a 36 meses</td><td>2 por semana</td><td>S/ 170</td></tr>
+              <tr><td>Iniciación</td><td>4 a 12 años</td><td>2 por semana</td><td>S/ 160</td></tr>
+              <tr><td>Perfeccionamiento</td><td>8 a 17 años</td><td>3 por semana</td><td>S/ 200</td></tr>
+              <tr><td>Máster</td><td>18 a más</td><td>3 por semana</td><td>S/ 190</td></tr>
+            </tbody>
+            <tfoot>
+              <tr><td colspan="4">Gorro y lentes obligatorios. Los encuentras en la tienda.</td></tr>
+            </tfoot>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="seccion seccion--negro seccion--compacta">
+    <div class="contenedor">
+      <p class="aviso"><strong>Descuento familiar:</strong> si matriculas a dos o más miembros de la familia, cada uno paga 10 % menos.</p>
+    </div>
+  </section>
+</main>

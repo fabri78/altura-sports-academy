@@ -1,0 +1,172 @@
+// =====================================================================
+// SASS · Formularios: matrícula (clientes), contacto y reclamos
+// =====================================================================
+@use "tokens" as *;
+@use "funciones" as *;
+
+.form-card {
+  @include superficie(c("blanco"));
+  padding: clamp(24px, 4vw, 48px);
+  box-shadow: 0 2px 30px rgba(0, 0, 0, 0.06);
+
+  &__titulo {
+    @include titular(rem(28px), 800);
+  }
+
+  &__intro {
+    margin-top: esp(2);
+    color: c("gris-2");
+  }
+}
+
+.form-bloque {
+  margin: esp(7) 0 0;
+  padding: 0;
+  border: 0;
+
+  legend {
+    @include titular(rem(19px));
+    display: flex;
+    align-items: center;
+    gap: esp(3);
+    margin-bottom: esp(5);
+    padding: 0;
+  }
+
+  // Número de paso dentro de un círculo
+  &__paso {
+    display: inline-grid;
+    place-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: c("texto-oscuro");
+    color: c("blanco");
+    font-size: rem(14px);
+  }
+}
+
+.campo {
+  &__label {
+    display: block;
+    margin-bottom: esp(2);
+    color: c("texto-oscuro");
+    font-size: rem(14px);
+    font-weight: 600;
+
+    abbr {
+      color: #d70015;
+      text-decoration: none;
+    }
+  }
+
+  &__ayuda {
+    margin-top: esp(1);
+    color: c("gris-2");
+    font-size: rem(13px);
+  }
+}
+
+// Opciones como tarjetas seleccionables (programa / tipo de reclamo)
+.opcion-card {
+  position: relative;
+
+  input {
+    position: absolute;
+    opacity: 0;
+  }
+
+  label {
+    display: block;
+    height: 100%;
+    padding: esp(4) esp(5);
+    border: 1px solid c("linea");
+    border-radius: radio("lg");
+    background-color: c("blanco");
+    cursor: pointer;
+
+    strong {
+      display: block;
+      font-family: $f-display;
+      font-size: rem(17px);
+    }
+
+    span {
+      display: block;
+      margin-top: esp(1);
+      color: c("gris-2");
+      font-size: rem(14px);
+    }
+  }
+
+  input:checked + label {
+    border: 2px solid c("accion");
+    background-color: alfa(c("accion"), 0.04);
+  }
+
+  input:focus-visible + label {
+    @include enfoque;
+  }
+}
+
+.form-legal {
+  margin-top: esp(5);
+  color: c("gris-2");
+  font-size: rem(13px);
+}
+
+.form-acciones {
+  margin-top: esp(6);
+}
+
+// Mensaje de éxito (se muestra al enviar)
+.form-ok {
+  padding: esp(5);
+  border-radius: radio("lg");
+  background-color: alfa(c("exito"), 0.12);
+  color: #0a6b2a;
+  font-weight: 600;
+}
+
+// Hoja de reclamación: cabecera oficial
+.hoja-reclamo {
+  &__cabecera {
+    padding: esp(5);
+    border-radius: radio("lg");
+    background-color: c("niebla");
+    color: c("texto-oscuro");
+    font-size: rem(14px);
+
+    strong {
+      font-family: $f-display;
+      font-size: rem(18px);
+    }
+  }
+
+  &__numero {
+    font-variant-numeric: tabular-nums;
+    color: c("fucsia");
+    font-weight: 700;
+  }
+}
+
+// Tarjeta de información de contacto
+.info-contacto {
+  @include superficie(c("carbon"));
+  padding: esp(6);
+
+  .material-symbols-rounded {
+    color: c("brasa");
+    font-size: 28px;
+  }
+
+  h3 {
+    @include titular(rem(19px));
+    margin-top: esp(3);
+  }
+
+  p {
+    margin-top: esp(1);
+    color: c("gris-3");
+  }
+}

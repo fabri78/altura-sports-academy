@@ -1,0 +1,1028 @@
+@charset "UTF-8";
+.producto__insignia, .carrito-contador, .chip-deporte--basquet, .chip-deporte--aerobicos, .chip-deporte--natacion, .chip-deporte--funcional, .chip-deporte--voley, .evento__estado, .plan__insignia {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 10px;
+  border-radius: 980px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.producto, .card-academia, .post-card, .highlight, .bento__tile, .mdc-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 28px;
+}
+
+.coach__logros, .plan__lista {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+:root {
+  --mdc-theme-primary: #0071e3;
+  --mdc-theme-secondary: #0071e3;
+  --mdc-theme-on-primary: #ffffff;
+  --mdc-theme-on-secondary: #ffffff;
+  --mdc-theme-surface: #1d1d1f;
+  --mdc-theme-on-surface: #f5f5f7;
+  --mdc-theme-background: #000000;
+  --mdc-theme-error: #ff453a;
+  --mdc-typography-font-family: Inter, system-ui, -apple-system, Segoe UI, sans-serif;
+  --mdc-typography-button-font-family: Inter, system-ui, -apple-system, Segoe UI, sans-serif;
+  --mdc-typography-button-text-transform: none;
+  --mdc-typography-button-letter-spacing: -0.01em;
+}
+
+.mdc-button {
+  height: auto;
+  min-height: 44px;
+  padding: 0 22px;
+  border-radius: 980px;
+  font-size: 1.0625rem;
+  font-weight: 500;
+  text-transform: none;
+  letter-spacing: -0.01em;
+}
+.mdc-button .mdc-button__ripple {
+  border-radius: inherit;
+}
+
+.btn-pill.mdc-button--unelevated {
+  background-color: #0071e3;
+  color: #ffffff;
+}
+.btn-pill.mdc-button--unelevated:hover {
+  background-color: #0077ed;
+}
+
+.btn-pill--sm.mdc-button {
+  min-height: 28px;
+  padding: 0 14px;
+  font-size: 0.75rem;
+}
+
+.btn-pill--lg.mdc-button {
+  min-height: 52px;
+  padding: 0 30px;
+  font-size: 1.125rem;
+}
+
+.btn-pill--claro.mdc-button {
+  background-color: #f5f5f7;
+  color: #1d1d1f;
+}
+
+.btn-pill--contorno.mdc-button--outlined {
+  border-color: currentColor;
+  color: #2997ff;
+}
+.seccion--niebla .btn-pill--contorno.mdc-button--outlined, .seccion--blanco .btn-pill--contorno.mdc-button--outlined, .tema-claro .btn-pill--contorno.mdc-button--outlined {
+  color: #0071e3;
+}
+
+.mdc-card {
+  background-color: #1d1d1f;
+  color: #f5f5f7;
+  box-shadow: none;
+}
+.seccion--niebla .mdc-card, .seccion--blanco .mdc-card, .tema-claro .mdc-card {
+  background-color: #ffffff;
+  color: #1d1d1f;
+}
+
+.mdc-text-field--filled {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid #d2d2d7;
+  background-color: #ffffff;
+  overflow: hidden;
+}
+.mdc-text-field--filled:not(.mdc-text-field--disabled) {
+  background-color: #ffffff;
+}
+.mdc-text-field--filled.mdc-text-field--focused {
+  border-color: #0071e3;
+  box-shadow: 0 0 0 4px rgba(0, 113, 227, 0.16);
+}
+.mdc-text-field--filled.mdc-text-field--invalid {
+  border-color: #d70015;
+}
+.mdc-text-field--filled .mdc-line-ripple {
+  display: none;
+}
+.mdc-text-field--filled .mdc-floating-label {
+  color: #6e6e73;
+}
+.mdc-text-field--filled .mdc-text-field__input {
+  color: #1d1d1f;
+  caret-color: #0071e3;
+}
+.mdc-text-field--filled.mdc-text-field--focused .mdc-floating-label {
+  color: #0071e3;
+}
+
+.mdc-text-field--textarea.mdc-text-field--filled {
+  border-radius: 12px;
+}
+
+.mdc-text-field-helper-text {
+  color: #6e6e73;
+}
+
+.mdc-checkbox,
+.mdc-radio {
+  --mdc-checkbox-selected-icon-color: #0071e3;
+}
+
+.mdc-form-field {
+  color: inherit;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 0.9375rem;
+  letter-spacing: -0.01em;
+}
+
+.mdc-tab-bar {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.mdc-tab {
+  text-transform: none;
+  letter-spacing: -0.01em;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 0.9375rem;
+}
+.mdc-tab .mdc-tab__text-label {
+  color: #a1a1a6;
+}
+.mdc-tab--active .mdc-tab__text-label {
+  color: #f5f5f7;
+}
+
+.mdc-tab-indicator .mdc-tab-indicator__content--underline {
+  border-color: #ff6a2b;
+  border-top-width: 3px;
+  border-radius: 3px;
+}
+
+.mdc-data-table {
+  width: 100%;
+  border-color: rgba(255, 255, 255, 0.12);
+  border-radius: 18px;
+  background-color: #1d1d1f;
+}
+.mdc-data-table__header-cell {
+  background-color: #161617;
+  color: #86868b;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.mdc-data-table__cell {
+  color: #f5f5f7;
+  border-top-color: rgba(255, 255, 255, 0.08);
+}
+.mdc-data-table__row:not(.mdc-data-table__row--selected):hover {
+  background-color: rgba(41, 151, 255, 0.08);
+}
+.mdc-data-table__cell--numeric {
+  font-variant-numeric: tabular-nums;
+}
+
+.mdc-snackbar__surface {
+  border-radius: 18px;
+  background-color: #2a2a2d;
+}
+
+.mdc-snackbar__label {
+  color: #f5f5f7;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.mdc-snackbar__action:not(:disabled) {
+  color: #2997ff;
+}
+
+.card-academia {
+  display: flex;
+  flex-direction: column;
+  min-height: 420px;
+  padding: 32px;
+  color: #f5f5f7;
+  background-color: #1d1d1f;
+  transition: transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1), box-shadow 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+.card-academia:hover {
+  transform: translateY(-6px) scale(1.015);
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.28);
+}
+.card-academia__media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.card-academia__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.5;
+}
+.card-academia__body {
+  position: relative;
+  z-index: 1;
+  margin-top: auto;
+}
+.card-academia__icono {
+  font-size: 30px;
+}
+.card-academia__titulo {
+  font-family: "Inter Tight", "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 1.75rem;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  margin-top: 12px;
+}
+.card-academia p {
+  margin-top: 8px;
+  color: rgba(245, 245, 247, 0.8);
+}
+.card-academia .link-mas {
+  display: inline-block;
+  margin-top: 16px;
+}
+
+.deporte--basquet {
+  --deporte-color: #ff6a2b;
+}
+.deporte--basquet.card-academia {
+  background: radial-gradient(120% 90% at 85% 0%, #ff6a2b 0%, #4a1606 55%, #000000 100%);
+}
+.deporte--basquet .card-academia__icono,
+.deporte--basquet .chip-deporte__icono {
+  color: #ff9568;
+}
+
+.chip-deporte--basquet {
+  background-color: rgba(255, 106, 43, 0.16);
+  color: #ff8e5e;
+}
+
+.deporte--aerobicos {
+  --deporte-color: #ff2e63;
+}
+.deporte--aerobicos.card-academia {
+  background: radial-gradient(120% 90% at 85% 0%, #ff2e63 0%, #4d0a1f 55%, #000000 100%);
+}
+.deporte--aerobicos .card-academia__icono,
+.deporte--aerobicos .chip-deporte__icono {
+  color: #ff6b91;
+}
+
+.chip-deporte--aerobicos {
+  background-color: rgba(255, 46, 99, 0.16);
+  color: #ff6189;
+}
+
+.deporte--natacion {
+  --deporte-color: #2997ff;
+}
+.deporte--natacion.card-academia {
+  background: radial-gradient(120% 90% at 85% 0%, #2997ff 0%, #062a52 55%, #000000 100%);
+}
+.deporte--natacion .card-academia__icono,
+.deporte--natacion .chip-deporte__icono {
+  color: #66b5ff;
+}
+
+.chip-deporte--natacion {
+  background-color: rgba(41, 151, 255, 0.16);
+  color: #5cb0ff;
+}
+
+.deporte--funcional {
+  --deporte-color: #30d158;
+}
+.deporte--funcional.card-academia {
+  background: radial-gradient(120% 90% at 85% 0%, #30d158 0%, #0a3a1b 55%, #000000 100%);
+}
+.deporte--funcional .card-academia__icono,
+.deporte--funcional .chip-deporte__icono {
+  color: #62dc80;
+}
+
+.chip-deporte--funcional {
+  background-color: rgba(48, 209, 88, 0.16);
+  color: #5ada7a;
+}
+
+.deporte--voley {
+  --deporte-color: #bf5af2;
+}
+.deporte--voley.card-academia {
+  background: radial-gradient(120% 90% at 85% 0%, #bf5af2 0%, #33104a 55%, #000000 100%);
+}
+.deporte--voley .card-academia__icono,
+.deporte--voley .chip-deporte__icono {
+  color: #d593f6;
+}
+
+.chip-deporte--voley {
+  background-color: rgba(191, 90, 242, 0.16);
+  color: #d189f6;
+}
+
+.cifra__num {
+  font-family: "Inter Tight", "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: clamp(2.2rem, 4.6vw, 4rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  display: block;
+  white-space: nowrap;
+  background-image: linear-gradient(100deg, #ff6a2b, #ff2e63);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-variant-numeric: tabular-nums;
+}
+.cifra__label {
+  display: block;
+  margin-top: 8px;
+  color: #a1a1a6;
+  font-size: 0.9375rem;
+}
+
+.coach__cara {
+  background-color: #1d1d1f;
+  color: #f5f5f7;
+  border-radius: 28px;
+  padding: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.coach__cara--reverso {
+  background: linear-gradient(160deg, #8c1d2f, #51111b);
+}
+.coach__foto {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: #2a2a2d;
+}
+.coach__nombre {
+  font-family: "Inter Tight", "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 1.375rem;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  margin-top: 16px;
+}
+.coach__rol {
+  margin-top: 4px;
+  color: var(--deporte-color, #ff6a2b);
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+.coach__bio {
+  margin-top: 12px;
+  color: #a1a1a6;
+  font-size: 0.9375rem;
+}
+.coach__logros {
+  margin-top: 12px;
+  font-size: 0.875rem;
+}
+.coach__logros li::before {
+  content: "✓ ";
+  color: #30d158;
+}
+
+.evento {
+  background-color: #1d1d1f;
+  color: #f5f5f7;
+  border-radius: 18px;
+  padding: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.evento__fecha {
+  display: grid;
+  place-items: center;
+  width: 72px;
+  height: 72px;
+  border-radius: 18px;
+  background-image: linear-gradient(140deg, #ff6a2b, #8c1d2f);
+  font-family: "Inter Tight", "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  line-height: 1;
+  text-align: center;
+}
+.evento__fecha b {
+  display: block;
+  font-size: 1.75rem;
+  font-weight: 800;
+}
+.evento__fecha small {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.evento__titulo {
+  font-family: "Inter Tight", "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+}
+.evento__meta {
+  margin-top: 4px;
+  color: #86868b;
+  font-size: 0.875rem;
+}
+.evento__estado {
+  background-color: rgba(48, 209, 88, 0.16);
+  color: #30d158;
+}
+.evento__estado--lleno {
+  background-color: rgba(255, 69, 58, 0.16);
+  color: #ff453a;
+}
+
+.plan {
+  background-color: #1d1d1f;
+  color: #f5f5f7;
+  border-radius: 28px;
+  padding: 32px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.plan--destacado {
+  border: 2px solid #ff6a2b;
+  background: linear-gradient(180deg, rgba(255, 106, 43, 0.12), #1d1d1f 40%);
+}
+.plan__nombre {
+  font-family: "Inter Tight", "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 1.375rem;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+}
+.plan__precio {
+  font-family: "Inter Tight", "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  margin-top: 12px;
+}
+.plan__precio small {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #86868b;
+}
+.plan__lista {
+  margin-top: 24px;
+  color: #a1a1a6;
+  font-size: 0.9375rem;
+}
+.plan__lista li {
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+.plan__insignia {
+  background-color: #ff6a2b;
+  color: #000000;
+}
+
+.post-card {
+  background-color: #ffffff;
+  color: #1d1d1f;
+  transition: transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1), box-shadow 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+.post-card:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.28);
+}
+.tema-oscuro .post-card {
+  background-color: #1d1d1f;
+  color: #f5f5f7;
+}
+.post-card img {
+  width: 100%;
+  aspect-ratio: 16/10;
+  object-fit: cover;
+}
+.post-card__body {
+  padding: 24px;
+}
+.post-card__titulo {
+  font-family: "Inter Tight", "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 1.3125rem;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  margin-top: 8px;
+}
+.post-card__titulo a {
+  color: inherit;
+}
+.post-card__extracto {
+  margin-top: 8px;
+  color: #6e6e73;
+  font-size: 0.9375rem;
+}
+.tema-oscuro .post-card__extracto {
+  color: #a1a1a6;
+}
+
+.highlight {
+  background-color: #1d1d1f;
+  color: #f5f5f7;
+}
+.highlight img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.highlight__caption {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 32px;
+  background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.85));
+  font-family: "Inter Tight", "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.highlight__caption small {
+  display: block;
+  margin-bottom: 8px;
+  color: #ff6a2b;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.bento__tile {
+  padding: 32px;
+  background-color: #1d1d1f;
+  color: #f5f5f7;
+  text-decoration: none;
+}
+.bento__tile:hover {
+  text-decoration: none;
+}
+.bento__tile .material-symbols-rounded {
+  font-size: 34px;
+  color: #ff6a2b;
+}
+.bento__tile h3 {
+  font-family: "Inter Tight", "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 1.625rem;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+}
+.bento__tile p {
+  margin-top: 8px;
+  color: #a1a1a6;
+}
+.bento__tile img {
+  border-radius: 18px;
+}
+
+.faq {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+.faq summary {
+  font-family: "Inter Tight", "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 1.1875rem;
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  padding: 24px 0;
+  cursor: pointer;
+  list-style: none;
+}
+.faq summary::-webkit-details-marker {
+  display: none;
+}
+.faq summary::after {
+  content: "+";
+  float: right;
+  color: #2997ff;
+  font-weight: 400;
+}
+.faq[open] summary::after {
+  content: "–";
+}
+.faq p {
+  padding-bottom: 24px;
+  color: #a1a1a6;
+}
+
+.producto {
+  display: flex;
+  flex-direction: column;
+  border-radius: 18px;
+  background-color: #ffffff;
+  color: #1d1d1f;
+  transition: transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1), box-shadow 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+.producto:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.28);
+}
+.producto__img {
+  aspect-ratio: 1;
+  background-color: #f0f0f3;
+}
+.producto__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  mix-blend-mode: multiply;
+}
+.producto__body {
+  padding: 16px 24px 24px;
+}
+.producto__cat {
+  color: #6e6e73;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.producto__nombre {
+  font-family: "Inter Tight", "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  margin-top: 4px;
+}
+.producto__precio {
+  margin-top: 8px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+.producto__precio del {
+  margin-left: 8px;
+  color: #86868b;
+  font-weight: 400;
+}
+.producto__insignia {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 1;
+  background-color: #ff6a2b;
+  color: #000000;
+}
+.producto__insignia--nuevo {
+  background-color: #0071e3;
+  color: #ffffff;
+}
+.producto .mdc-button {
+  margin-top: 16px;
+  width: 100%;
+}
+
+.chip-filtro input {
+  position: absolute;
+  opacity: 0;
+}
+.chip-filtro label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border: 1px solid #d2d2d7;
+  border-radius: 980px;
+  background-color: #ffffff;
+  color: #1d1d1f;
+  font-size: 0.875rem;
+  cursor: pointer;
+  user-select: none;
+}
+.chip-filtro input:checked + label {
+  border-color: #1d1d1f;
+  background-color: #1d1d1f;
+  color: #ffffff;
+}
+.chip-filtro input:focus-visible + label {
+  outline: 2px solid #0071e3;
+  outline-offset: 3px;
+}
+
+.pdp__nombre {
+  font-family: "Inter Tight", "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+}
+.pdp__precio {
+  margin-top: 12px;
+  font-size: 1.375rem;
+  font-weight: 600;
+}
+.pdp__desc {
+  margin-top: 16px;
+  color: #6e6e73;
+}
+.pdp__etiqueta {
+  display: block;
+  margin: 32px 0 12px;
+  font-weight: 600;
+}
+.pdp__escena {
+  border-radius: 28px;
+  background: radial-gradient(70% 70% at 50% 40%, #ffffff 0%, #ececf0 100%);
+  overflow: hidden;
+}
+
+.swatch {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+}
+
+.swatch--brasa {
+  background: radial-gradient(circle at 35% 30%, #ffab87, #ff6a2b 60%);
+}
+
+#color-brasa:checked ~ .pdp__visor .pdp__vista--brasa {
+  opacity: 1;
+  transform: none;
+}
+
+#color-brasa:checked ~ .pdp__opciones .swatch--brasa {
+  box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px #0071e3;
+}
+
+#color-brasa:checked ~ .pdp__opciones .pdp__nombre-color--brasa {
+  display: inline;
+}
+
+.swatch--glaciar {
+  background: radial-gradient(circle at 35% 30%, #fdfefe, #b9d3e6 60%);
+}
+
+#color-glaciar:checked ~ .pdp__visor .pdp__vista--glaciar {
+  opacity: 1;
+  transform: none;
+}
+
+#color-glaciar:checked ~ .pdp__opciones .swatch--glaciar {
+  box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px #0071e3;
+}
+
+#color-glaciar:checked ~ .pdp__opciones .pdp__nombre-color--glaciar {
+  display: inline;
+}
+
+.swatch--grafito {
+  background: radial-gradient(circle at 35% 30%, #67676b, #3a3a3c 60%);
+}
+
+#color-grafito:checked ~ .pdp__visor .pdp__vista--grafito {
+  opacity: 1;
+  transform: none;
+}
+
+#color-grafito:checked ~ .pdp__opciones .swatch--grafito {
+  box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px #0071e3;
+}
+
+#color-grafito:checked ~ .pdp__opciones .pdp__nombre-color--grafito {
+  display: inline;
+}
+
+.swatch--borgona {
+  background: radial-gradient(circle at 35% 30%, #bb2540, #6e1626 60%);
+}
+
+#color-borgona:checked ~ .pdp__visor .pdp__vista--borgona {
+  opacity: 1;
+  transform: none;
+}
+
+#color-borgona:checked ~ .pdp__opciones .swatch--borgona {
+  box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px #0071e3;
+}
+
+#color-borgona:checked ~ .pdp__opciones .pdp__nombre-color--borgona {
+  display: inline;
+}
+
+.pdp__nombre-color {
+  display: none;
+  color: #6e6e73;
+  font-weight: 400;
+}
+
+.pdp__radio {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.talla input {
+  position: absolute;
+  opacity: 0;
+}
+.talla label {
+  display: grid;
+  place-items: center;
+  min-width: 56px;
+  height: 48px;
+  border: 1px solid #d2d2d7;
+  border-radius: 12px;
+  background-color: #ffffff;
+  color: #1d1d1f;
+  font-weight: 600;
+  cursor: pointer;
+}
+.talla input:checked + label {
+  border: 2px solid #0071e3;
+}
+.talla input:disabled + label {
+  color: #86868b;
+  text-decoration: line-through;
+  cursor: not-allowed;
+}
+
+.carrito-contador {
+  min-width: 20px;
+  justify-content: center;
+  padding: 1px 6px;
+  background-color: #ff2e63;
+  color: #ffffff;
+}
+
+.form-card {
+  background-color: #ffffff;
+  color: #1d1d1f;
+  border-radius: 28px;
+  padding: clamp(24px, 4vw, 48px);
+  box-shadow: 0 2px 30px rgba(0, 0, 0, 0.06);
+}
+.form-card__titulo {
+  font-family: "Inter Tight", "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 1.75rem;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+}
+.form-card__intro {
+  margin-top: 8px;
+  color: #6e6e73;
+}
+
+.form-bloque {
+  margin: 48px 0 0;
+  padding: 0;
+  border: 0;
+}
+.form-bloque legend {
+  font-family: "Inter Tight", "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 1.1875rem;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+  padding: 0;
+}
+.form-bloque__paso {
+  display: inline-grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #1d1d1f;
+  color: #ffffff;
+  font-size: 0.875rem;
+}
+
+.campo__label {
+  display: block;
+  margin-bottom: 8px;
+  color: #1d1d1f;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+.campo__label abbr {
+  color: #d70015;
+  text-decoration: none;
+}
+.campo__ayuda {
+  margin-top: 4px;
+  color: #6e6e73;
+  font-size: 0.8125rem;
+}
+
+.opcion-card {
+  position: relative;
+}
+.opcion-card input {
+  position: absolute;
+  opacity: 0;
+}
+.opcion-card label {
+  display: block;
+  height: 100%;
+  padding: 16px 24px;
+  border: 1px solid #d2d2d7;
+  border-radius: 18px;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+.opcion-card label strong {
+  display: block;
+  font-family: "Inter Tight", "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 1.0625rem;
+}
+.opcion-card label span {
+  display: block;
+  margin-top: 4px;
+  color: #6e6e73;
+  font-size: 0.875rem;
+}
+.opcion-card input:checked + label {
+  border: 2px solid #0071e3;
+  background-color: rgba(0, 113, 227, 0.04);
+}
+.opcion-card input:focus-visible + label {
+  outline: 2px solid #0071e3;
+  outline-offset: 3px;
+}
+
+.form-legal {
+  margin-top: 24px;
+  color: #6e6e73;
+  font-size: 0.8125rem;
+}
+
+.form-acciones {
+  margin-top: 32px;
+}
+
+.form-ok {
+  padding: 24px;
+  border-radius: 18px;
+  background-color: rgba(48, 209, 88, 0.12);
+  color: #0a6b2a;
+  font-weight: 600;
+}
+
+.hoja-reclamo__cabecera {
+  padding: 24px;
+  border-radius: 18px;
+  background-color: #f5f5f7;
+  color: #1d1d1f;
+  font-size: 0.875rem;
+}
+.hoja-reclamo__cabecera strong {
+  font-family: "Inter Tight", "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 1.125rem;
+}
+.hoja-reclamo__numero {
+  font-variant-numeric: tabular-nums;
+  color: #ff2e63;
+  font-weight: 700;
+}
+
+.info-contacto {
+  background-color: #1d1d1f;
+  color: #f5f5f7;
+  border-radius: 28px;
+  padding: 32px;
+}
+.info-contacto .material-symbols-rounded {
+  color: #ff6a2b;
+  font-size: 28px;
+}
+.info-contacto h3 {
+  font-family: "Inter Tight", "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 1.1875rem;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  margin-top: 12px;
+}
+.info-contacto p {
+  margin-top: 4px;
+  color: #a1a1a6;
+}

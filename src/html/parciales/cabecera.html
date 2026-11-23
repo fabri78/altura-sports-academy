@@ -1,0 +1,39 @@
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+<!-- ENCABEZADO con logo y menú de opciones -->
+<header class="globalnav" role="banner">
+  <div class="globalnav__inner">
+    <a class="logo" href="{{R}}index.html" data-menu="inicio" aria-label="ALTURA Sports Academy, ir al inicio">
+      <img src="{{R}}assets/img/logo/altura-logo.svg" alt="ALTURA Sports Academy" width="124" height="26">
+    </a>
+
+    <!-- Menú móvil sin JavaScript: el checkbox abre y cierra la lista (patrón "checkbox hack") -->
+    <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-controls="menu-principal">
+    <label for="menu-toggle" class="menu-burger"><span class="sr-only">Abrir o cerrar el menú</span><span></span><span></span></label>
+
+    <nav class="menu" id="menu-principal" aria-label="Menú principal">
+      <ul class="menu__list">
+        <li class="menu__item menu__item--sub">
+          <a href="{{P}}academias.html" data-menu="academias">Academias</a>
+          <ul class="submenu" aria-label="Academias">
+            <li><a href="{{P}}basquet.html" data-menu="basquet"><span class="material-symbols-rounded" aria-hidden="true">sports_basketball</span>Básquet</a></li>
+            <li><a href="{{P}}aerobicos.html" data-menu="aerobicos"><span class="material-symbols-rounded" aria-hidden="true">directions_run</span>Aeróbicos y fitness</a></li>
+            <li><a href="{{P}}natacion.html" data-menu="natacion"><span class="material-symbols-rounded" aria-hidden="true">pool</span>Natación</a></li>
+            <li><a href="{{P}}entrenadores.html" data-menu="entrenadores"><span class="material-symbols-rounded" aria-hidden="true">sports</span>Entrenadores</a></li>
+          </ul>
+        </li>
+        <li class="menu__item"><a href="{{P}}horarios.html" data-menu="horarios">Horarios</a></li>
+        <li class="menu__item"><a href="{{P}}tienda.html" data-menu="tienda">Tienda</a></li>
+        <li class="menu__item"><a href="{{P}}eventos.html" data-menu="eventos">Eventos</a></li>
+        <li class="menu__item"><a href="{{P}}galeria.html" data-menu="galeria">Galería</a></li>
+        <li class="menu__item"><a href="{{P}}blog.html" data-menu="blog">Blog</a></li>
+        <li class="menu__item"><a href="{{P}}nosotros.html" data-menu="nosotros">Nosotros</a></li>
+        <li class="menu__item"><a href="{{P}}contacto.html" data-menu="contacto">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <a class="mdc-button mdc-button--unelevated btn-pill btn-pill--sm nav-cta" href="{{P}}matricula.html" data-mdc-auto-init="MDCRipple">
+      <span class="mdc-button__ripple"></span><span class="mdc-button__label">Matricúlate</span>
+    </a>
+  </div>
+</header>

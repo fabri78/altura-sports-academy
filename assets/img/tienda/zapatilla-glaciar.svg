@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Zapatilla Cumbre Pro color glaciar">
+  <defs>
+    <radialGradient id="sombra" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#000" stop-opacity=".28"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient>
+    <linearGradient id="u" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e3f0fa"/><stop offset=".55" stop-color="#b9d3e6"/><stop offset="1" stop-color="#7f9fb8"/></linearGradient>
+    <linearGradient id="s" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#d8d8de"/></linearGradient>
+  </defs>
+  <ellipse cx="205" cy="248" rx="160" ry="14" fill="url(#sombra)"/>
+  <!-- Suela -->
+  <path d="M52 208 C52 198 62 196 72 197 L330 192 C352 191 366 200 364 214 C362 228 350 234 332 235 L82 240 C62 240 50 226 52 208 Z" fill="url(#s)"/>
+  <path d="M60 224 L360 216" stroke="#bfc0c6" stroke-width="3"/>
+  <!-- Capellada -->
+  <path d="M66 200 C66 160 92 128 132 120 L196 102 C222 94 244 104 256 124 C276 156 312 166 338 176 C356 183 358 196 344 198 L80 206 C70 206 66 204 66 200 Z" fill="url(#u)"/>
+  <!-- Talón reforzado -->
+  <path d="M66 200 C64 168 78 140 104 128 L112 196 Z" fill="#7f9fb8" opacity=".55"/>
+  <!-- Franja con la cumbre de la marca -->
+  <path d="M128 196 L176 146 L198 170 L214 154 L262 194 Z" fill="#ffffff" opacity=".9"/>
+  <!-- Cordones -->
+  <g stroke="#ffffff" stroke-width="4" stroke-linecap="round" opacity=".95">
+    <path d="M206 112 L226 126"/><path d="M220 120 L240 136"/><path d="M234 130 L254 146"/><path d="M248 142 L266 156"/>
+  </g>
+  <path d="M190 104 C200 96 214 94 222 100" stroke="#7f9fb8" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <circle cx="96" cy="176" r="5" fill="#ffffff" opacity=".8"/>
+</svg>

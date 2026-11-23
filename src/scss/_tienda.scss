@@ -1,0 +1,232 @@
+// =====================================================================
+// SASS · Tienda: catálogo, filtros, ficha de producto y selector de color
+// =====================================================================
+@use "sass:map";
+@use "sass:color";
+@use "tokens" as *;
+@use "funciones" as *;
+
+// Colores disponibles del producto destacado (selector solo con CSS)
+$acabados: (
+  "brasa": #ff6a2b,
+  "glaciar": #b9d3e6,
+  "grafito": #3a3a3c,
+  "borgona": #6e1626,
+);
+
+// --- Tarjeta de producto ---
+.producto {
+  @extend %tarjeta-base;
+  display: flex;
+  flex-direction: column;
+  border-radius: radio("lg");
+  background-color: c("blanco");
+  color: c("texto-oscuro");
+  @include hover-elevar(-4px, 1.01);
+
+  &__img {
+    aspect-ratio: 1;
+    background-color: #f0f0f3;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      mix-blend-mode: multiply;
+    }
+  }
+
+  &__body {
+    padding: esp(4) esp(5) esp(5);
+  }
+
+  &__cat {
+    color: c("gris-2");
+    font-size: rem(12px);
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  &__nombre {
+    @include titular(rem(18px), 600);
+    margin-top: esp(1);
+  }
+
+  &__precio {
+    margin-top: esp(2);
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+
+    del {
+      margin-left: esp(2);
+      color: c("gris");
+      font-weight: 400;
+    }
+  }
+
+  &__insignia {
+    @extend %insignia;
+    position: absolute;
+    top: esp(4);
+    left: esp(4);
+    z-index: 1;
+    background-color: c("brasa");
+    color: c("negro");
+  }
+
+  &__insignia--nuevo {
+    background-color: c("accion");
+    color: c("blanco");
+  }
+
+  .mdc-button {
+    margin-top: esp(4);
+    width: 100%;
+  }
+}
+
+// --- Chips de filtro (checkbox + label) ---
+.chip-filtro {
+  input {
+    position: absolute;
+    opacity: 0;
+  }
+
+  label {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    border: 1px solid c("linea");
+    border-radius: radio("pill");
+    background-color: c("blanco");
+    color: c("texto-oscuro");
+    font-size: rem(14px);
+    cursor: pointer;
+    user-select: none;
+  }
+
+  input:checked + label {
+    border-color: c("texto-oscuro");
+    background-color: c("texto-oscuro");
+    color: c("blanco");
+  }
+
+  input:focus-visible + label {
+    @include enfoque;
+  }
+}
+
+// --- Ficha de producto ---
+.pdp {
+  &__nombre {
+    @include titular(clamp(2rem, 4vw, 3rem), 800);
+  }
+
+  &__precio {
+    margin-top: esp(3);
+    font-size: rem(22px);
+    font-weight: 600;
+  }
+
+  &__desc {
+    margin-top: esp(4);
+    color: c("gris-2");
+  }
+
+  &__etiqueta {
+    display: block;
+    margin: esp(6) 0 esp(3);
+    font-weight: 600;
+  }
+
+  &__escena {
+    border-radius: radio("xl");
+    background: radial-gradient(70% 70% at 50% 40%, #ffffff 0%, #ececf0 100%);
+    overflow: hidden;
+  }
+}
+
+// Selector de color: los <input type="radio"> están antes de la escena,
+// y con el combinador ~ se muestra la imagen del color elegido.
+.swatch {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+}
+
+@each $nombre, $color in $acabados {
+  .swatch--#{$nombre} {
+    background: radial-gradient(circle at 35% 30%, color.adjust($color, $lightness: 18%), $color 60%);
+  }
+
+  #color-#{$nombre}:checked ~ .pdp__visor .pdp__vista--#{$nombre} {
+    opacity: 1;
+    transform: none;
+  }
+
+  #color-#{$nombre}:checked ~ .pdp__opciones .swatch--#{$nombre} {
+    box-shadow: 0 0 0 2px c("blanco"), 0 0 0 4px c("accion");
+  }
+
+  #color-#{$nombre}:checked ~ .pdp__opciones .pdp__nombre-color--#{$nombre} {
+    display: inline;
+  }
+}
+
+.pdp__nombre-color {
+  display: none;
+  color: c("gris-2");
+  font-weight: 400;
+}
+
+.pdp__radio {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+// Tallas
+.talla {
+  input {
+    position: absolute;
+    opacity: 0;
+  }
+
+  label {
+    display: grid;
+    place-items: center;
+    min-width: 56px;
+    height: 48px;
+    border: 1px solid c("linea");
+    border-radius: radio("md");
+    background-color: c("blanco");
+    color: c("texto-oscuro");
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  input:checked + label {
+    border: 2px solid c("accion");
+  }
+
+  input:disabled + label {
+    color: c("gris");
+    text-decoration: line-through;
+    cursor: not-allowed;
+  }
+}
+
+// Carrito (contador en la barra local)
+.carrito-contador {
+  @extend %insignia;
+  min-width: 20px;
+  justify-content: center;
+  padding: 1px 6px;
+  background-color: c("fucsia");
+  color: c("blanco");
+}

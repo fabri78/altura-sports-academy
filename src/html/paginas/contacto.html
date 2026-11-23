@@ -1,0 +1,106 @@
+<!--{"titulo":"Contacto","descripcion":"Escríbenos, llámanos o visítanos en Av. Ejército 1020, Yanahuara, Arequipa. Respondemos en menos de 24 horas.","activo":"contacto","clase":"tema-oscuro"}-->
+<main id="contenido">
+  <section class="banner" aria-labelledby="titulo-pagina">
+    <div class="banner__content">
+      <ol class="breadcrumb" aria-label="Ruta de navegación">
+        <li><a href="{{R}}index.html">Inicio</a></li>
+        <li aria-current="page">Contacto</li>
+      </ol>
+      <p class="eyebrow">Contacto</p>
+      <h1 class="banner__title" id="titulo-pagina">Hablemos.</h1>
+      <p class="lead">Respondemos en menos de 24 horas hábiles. Para matricularte directamente, usa el <a href="{{P}}matricula.html">formulario de matrícula</a>.</p>
+    </div>
+  </section>
+
+  <section class="seccion seccion--niebla seccion--compacta" aria-label="Formulario e información de contacto">
+    <div class="contenedor contacto-layout">
+      <!-- FORMULARIO DE CONTACTO con campos de Material Design -->
+      <form class="form-card contacto-layout__form" data-form="contacto" data-ok="Gracias. Te responderemos en menos de 24 horas." novalidate>
+        <h2 class="form-card__titulo">Envíanos un mensaje</h2>
+        <p class="form-card__intro">Los campos con <abbr title="obligatorio">*</abbr> son obligatorios.</p>
+        <p class="form-ok" tabindex="-1" hidden></p>
+
+        <div class="form-grid">
+          <div class="campo">
+            <label class="mdc-text-field mdc-text-field--filled" data-mdc-auto-init="MDCTextField">
+              <span class="mdc-text-field__ripple"></span>
+              <span class="mdc-floating-label" id="lbl-nombre">Nombre completo</span>
+              <input class="mdc-text-field__input" type="text" id="c-nombre" name="nombre" aria-labelledby="lbl-nombre" required minlength="3" autocomplete="name">
+              <span class="mdc-line-ripple"></span>
+            </label>
+          </div>
+          <div class="campo">
+            <label class="mdc-text-field mdc-text-field--filled" data-mdc-auto-init="MDCTextField">
+              <span class="mdc-text-field__ripple"></span>
+              <span class="mdc-floating-label" id="lbl-correo">Correo electrónico</span>
+              <input class="mdc-text-field__input" type="email" id="c-correo" name="correo" aria-labelledby="lbl-correo" required autocomplete="email">
+              <span class="mdc-line-ripple"></span>
+            </label>
+          </div>
+          <div class="campo">
+            <label class="mdc-text-field mdc-text-field--filled" data-mdc-auto-init="MDCTextField">
+              <span class="mdc-text-field__ripple"></span>
+              <span class="mdc-floating-label" id="lbl-tel">Celular</span>
+              <input class="mdc-text-field__input" type="tel" id="c-tel" name="telefono" aria-labelledby="lbl-tel" pattern="9[0-9]{8}" autocomplete="tel">
+              <span class="mdc-line-ripple"></span>
+            </label>
+            <p class="campo__ayuda">9 dígitos, empieza con 9.</p>
+          </div>
+          <div class="campo">
+            <label class="campo__label" for="c-asunto">Asunto *</label>
+            <select class="campo-nativo" id="c-asunto" name="asunto" required>
+              <option value="">Elige una opción</option>
+              <option>Información de academias</option>
+              <option>Tienda y pedidos</option>
+              <option>Eventos y alquiler de cancha</option>
+              <option>Trabaja con nosotros</option>
+              <option>Otro</option>
+            </select>
+          </div>
+          <div class="campo campo--full">
+            <label class="mdc-text-field mdc-text-field--filled mdc-text-field--textarea mdc-text-field--no-label" data-mdc-auto-init="MDCTextField">
+              <span class="mdc-text-field__ripple"></span>
+              <span class="mdc-text-field__resizer">
+                <textarea class="mdc-text-field__input" id="c-mensaje" name="mensaje" rows="5" required minlength="10" aria-label="Mensaje" placeholder="Escribe tu mensaje *"></textarea>
+              </span>
+              <span class="mdc-line-ripple"></span>
+            </label>
+          </div>
+          <div class="campo campo--full">
+            <div class="mdc-form-field">
+              <div class="mdc-checkbox" data-mdc-auto-init="MDCCheckbox">
+                <input type="checkbox" class="mdc-checkbox__native-control" id="c-acepto" name="acepto" required>
+                <div class="mdc-checkbox__background">
+                  <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24"><path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"/></svg>
+                  <div class="mdc-checkbox__mixedmark"></div>
+                </div>
+                <div class="mdc-checkbox__ripple"></div>
+              </div>
+              <label for="c-acepto">Acepto el tratamiento de mis datos según la Ley N.° 29733.</label>
+            </div>
+          </div>
+        </div>
+        <div class="form-acciones">
+          <button class="mdc-button mdc-button--unelevated btn-pill" type="submit" data-mdc-auto-init="MDCRipple"><span class="mdc-button__ripple"></span><span class="mdc-button__label">Enviar mensaje</span></button>
+          <button class="mdc-button" type="reset" data-mdc-auto-init="MDCRipple"><span class="mdc-button__ripple"></span><span class="mdc-button__label">Limpiar</span></button>
+        </div>
+      </form>
+
+      <!-- INFORMACIÓN DE CONTACTO -->
+      <div class="contacto-layout__info">
+        <div class="info-contacto"><span class="material-symbols-rounded" aria-hidden="true">location_on</span><h3>Dirección</h3><address><p>Av. Ejército 1020, Yanahuara<br>Arequipa 04013</p></address></div>
+        <div class="info-contacto"><span class="material-symbols-rounded" aria-hidden="true">call</span><h3>Teléfono</h3><p><a href="tel:+51954000123">+51 954 000 123</a><br><a href="tel:+5154250000">(054) 25 0000</a></p></div>
+        <div class="info-contacto"><span class="material-symbols-rounded" aria-hidden="true">mail</span><h3>Correo</h3><p><a href="mailto:hola@alturasports.pe">hola@alturasports.pe</a></p></div>
+        <div class="info-contacto"><span class="material-symbols-rounded" aria-hidden="true">schedule</span><h3>Atención</h3><p>Lun a sáb: 6:00 a 22:00<br>Dom: 8:00 a 13:00</p></div>
+      </div>
+
+      <!-- MAPA (iframe de OpenStreetMap) -->
+      <div class="contacto-layout__mapa">
+        <div class="iframe-marco iframe-marco--mapa">
+          <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-71.5560%2C-16.4060%2C-71.5380%2C-16.3940&amp;layer=mapnik&amp;marker=-16.4000%2C-71.5470" title="Mapa de la ubicación de ALTURA Sports Academy en Yanahuara, Arequipa" loading="lazy"></iframe>
+        </div>
+        <p class="nota"><a href="https://www.openstreetmap.org/?mlat=-16.4000&amp;mlon=-71.5470#map=16/-16.4000/-71.5470" target="_blank" rel="noopener noreferrer">Ver mapa más grande</a></p>
+      </div>
+    </div>
+  </section>
+</main>

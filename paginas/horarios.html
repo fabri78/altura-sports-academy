@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="es-PE" class="no-js">
+<head>
+  <!-- Metadatos básicos -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Horarios y tarifas | ALTURA Sports Academy</title>
+  <meta name="description" content="Horarios semanales y tarifas de las academias de básquet, aeróbicos y natación de ALTURA Sports Academy.">
+  <meta name="keywords" content="academia deportiva, Arequipa, básquet, aeróbicos, natación, artículos deportivos">
+  <meta name="author" content="Quispe Morales, Fabricio Oscar - Grupo 04">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#000000">
+  <meta name="color-scheme" content="dark light">
+  <!-- Open Graph: vista previa al compartir en redes -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="ALTURA Sports Academy">
+  <meta property="og:title" content="Horarios y tarifas | ALTURA Sports Academy">
+  <meta property="og:description" content="Horarios semanales y tarifas de las academias de básquet, aeróbicos y natación de ALTURA Sports Academy.">
+  <meta property="og:image" content="../assets/img/hero/hero-basquet.webp">
+  <meta property="og:locale" content="es_PE">
+  <link rel="icon" href="../assets/img/logo/favicon.svg" type="image/svg+xml">
+
+  <!-- Tipografías e íconos externos (Google Fonts + Material Symbols) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Inter+Tight:wght@600;700;800&amp;display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,300..600,0..1,0&amp;display=swap">
+
+  <!-- Framework Material Design CSS (MDC Web 14) por enlace externo -->
+  <link rel="stylesheet" href="https://unpkg.com/material-components-web@14.0.0/dist/material-components-web.min.css">
+
+  <!-- Hojas de estilo propias, en orden de cascada -->
+  <link rel="stylesheet" href="../assets/css/base.css">              <!-- g.i   CSS externo (10 %) -->
+  <link rel="stylesheet" href="../assets/css/altura-less.css">       <!-- g.ii  LESS compilado (15 %) -->
+  <link rel="stylesheet" href="../assets/css/altura-sass.css">       <!-- g.iii SASS compilado (15 %) -->
+  <link rel="stylesheet" href="../assets/css/framework/layout.css">      <!-- j. Flexbox + Grid (20 %) -->
+  <link rel="stylesheet" href="../assets/css/framework/responsive.css">  <!-- i. Media queries + multimedia (20 %) -->
+  <link rel="stylesheet" href="../assets/css/framework/animaciones.css"> <!-- h. Animaciones (20 %) -->
+
+  <!-- JavaScript: framework MDC + interacciones propias (diferidos) -->
+  <script src="https://unpkg.com/material-components-web@14.0.0/dist/material-components-web.min.js" defer></script>
+  <script src="../assets/js/main.js" defer></script>
+</head>
+<body class="tema-oscuro" id="arriba">
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+<!-- ENCABEZADO con logo y menú de opciones -->
+<header class="globalnav" role="banner">
+  <div class="globalnav__inner">
+    <a class="logo" href="../index.html" data-menu="inicio" aria-label="ALTURA Sports Academy, ir al inicio">
+      <img src="../assets/img/logo/altura-logo.svg" alt="ALTURA Sports Academy" width="124" height="26">
+    </a>
+
+    <!-- Menú móvil sin JavaScript: el checkbox abre y cierra la lista (patrón "checkbox hack") -->
+    <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-controls="menu-principal">
+    <label for="menu-toggle" class="menu-burger"><span class="sr-only">Abrir o cerrar el menú</span><span></span><span></span></label>
+
+    <nav class="menu" id="menu-principal" aria-label="Menú principal">
+      <ul class="menu__list">
+        <li class="menu__item menu__item--sub">
+          <a href="academias.html" data-menu="academias">Academias</a>
+          <ul class="submenu" aria-label="Academias">
+            <li><a href="basquet.html" data-menu="basquet"><span class="material-symbols-rounded" aria-hidden="true">sports_basketball</span>Básquet</a></li>
+            <li><a href="aerobicos.html" data-menu="aerobicos"><span class="material-symbols-rounded" aria-hidden="true">directions_run</span>Aeróbicos y fitness</a></li>
+            <li><a href="natacion.html" data-menu="natacion"><span class="material-symbols-rounded" aria-hidden="true">pool</span>Natación</a></li>
+            <li><a href="entrenadores.html" data-menu="entrenadores"><span class="material-symbols-rounded" aria-hidden="true">sports</span>Entrenadores</a></li>
+          </ul>
+        </li>
+        <li class="menu__item"><a href="horarios.html" data-menu="horarios" aria-current="page">Horarios</a></li>
+        <li class="menu__item"><a href="tienda.html" data-menu="tienda">Tienda</a></li>
+        <li class="menu__item"><a href="eventos.html" data-menu="eventos">Eventos</a></li>
+        <li class="menu__item"><a href="galeria.html" data-menu="galeria">Galería</a></li>
+        <li class="menu__item"><a href="blog.html" data-menu="blog">Blog</a></li>
+        <li class="menu__item"><a href="nosotros.html" data-menu="nosotros">Nosotros</a></li>
+        <li class="menu__item"><a href="contacto.html" data-menu="contacto">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <a class="mdc-button mdc-button--unelevated btn-pill btn-pill--sm nav-cta" href="matricula.html" data-mdc-auto-init="MDCRipple">
+      <span class="mdc-button__ripple"></span><span class="mdc-button__label">Matricúlate</span>
+    </a>
+  </div>
+</header>
+
+<main id="contenido">
+  <section class="banner" aria-labelledby="titulo-pagina">
+    <div class="banner__content">
+      <ol class="breadcrumb" aria-label="Ruta de navegación">
+        <li><a href="../index.html">Inicio</a></li>
+        <li aria-current="page">Horarios y tarifas</li>
+      </ol>
+      <p class="eyebrow">Horarios y tarifas</p>
+      <h1 class="banner__title" id="titulo-pagina">De 6:00 a 22:00.</h1>
+      <p class="lead">Lunes a sábado. Los domingos abrimos la piscina y la cancha libre de 8:00 a 13:00.</p>
+    </div>
+  </section>
+
+  <!-- Horario semanal en CSS Grid -->
+  <section class="seccion seccion--negro seccion--compacta" id="semana" aria-labelledby="semana-titulo">
+    <div class="contenedor">
+      <header class="seccion__head">
+        <h2 id="semana-titulo">Semana tipo</h2>
+        <p class="lead">Desliza horizontalmente en el celular para ver todos los días.</p>
+      </header>
+      <div class="desplazable" tabindex="0" aria-label="Horario semanal">
+        <div class="semana" role="table" aria-label="Clases por día y hora">
+          <div class="semana__hora" role="columnheader">Hora</div>
+          <div class="semana__dia" role="columnheader">Lun</div><div class="semana__dia" role="columnheader">Mar</div><div class="semana__dia" role="columnheader">Mié</div><div class="semana__dia" role="columnheader">Jue</div><div class="semana__dia" role="columnheader">Vie</div><div class="semana__dia" role="columnheader">Sáb</div>
+
+          <div class="semana__hora" role="rowheader">6:30</div>
+          <div class="semana__clase deporte--aerobicos" role="cell">Step<small>Lucía</small></div>
+          <div class="semana__clase deporte--funcional" role="cell">Funcional<small>Diego</small></div>
+          <div class="semana__clase deporte--aerobicos" role="cell">Step<small>Lucía</small></div>
+          <div class="semana__clase deporte--funcional" role="cell">Funcional<small>Diego</small></div>
+          <div class="semana__clase deporte--aerobicos" role="cell">Zumba<small>Lucía</small></div>
+          <div class="semana__clase deporte--natacion" role="cell">Natación máster<small>Andrea</small></div>
+
+          <div class="semana__hora" role="rowheader">9:00</div>
+          <div class="semana__clase deporte--natacion" role="cell">Bebés<small>Andrea</small></div>
+          <div class="semana__clase deporte--aerobicos" role="cell">Zumba<small>Lucía</small></div>
+          <div class="semana__clase deporte--natacion" role="cell">Bebés<small>Andrea</small></div>
+          <div class="semana__clase deporte--aerobicos" role="cell">Zumba<small>Lucía</small></div>
+          <div class="semana__clase deporte--natacion" role="cell">Bebés<small>Andrea</small></div>
+          <div class="semana__clase deporte--basquet" role="cell">Mini básquet<small>Mariela</small></div>
+
+          <div class="semana__hora" role="rowheader">16:00</div>
+          <div class="semana__clase deporte--basquet" role="cell">U13<small>Mariela</small></div>
+          <div class="semana__clase deporte--basquet" role="cell">Mini básquet<small>Mariela</small></div>
+          <div class="semana__clase deporte--basquet" role="cell">U13<small>Mariela</small></div>
+          <div class="semana__clase deporte--basquet" role="cell">Mini básquet<small>Mariela</small></div>
+          <div class="semana__clase deporte--basquet" role="cell">U13<small>Mariela</small></div>
+          <div class="semana__clase deporte--basquet" role="cell">U17<small>Renzo</small></div>
+
+          <div class="semana__hora" role="rowheader">18:00</div>
+          <div class="semana__clase deporte--basquet" role="cell">U15<small>Renzo</small></div>
+          <div class="semana__clase deporte--basquet" role="cell">U17<small>Renzo</small></div>
+          <div class="semana__clase deporte--basquet" role="cell">U15<small>Renzo</small></div>
+          <div class="semana__clase deporte--basquet" role="cell">U17<small>Renzo</small></div>
+          <div class="semana__clase deporte--basquet" role="cell">U15<small>Renzo</small></div>
+          <div class="semana__clase deporte--natacion" role="cell">Natación niños<small>Andrea</small></div>
+
+          <div class="semana__hora" role="rowheader">19:30</div>
+          <div class="semana__clase deporte--aerobicos" role="cell">Step<small>Lucía</small></div>
+          <div class="semana__clase deporte--funcional" role="cell">Ciclismo<small>Diego</small></div>
+          <div class="semana__clase deporte--aerobicos" role="cell">Step<small>Lucía</small></div>
+          <div class="semana__clase deporte--funcional" role="cell">Ciclismo<small>Diego</small></div>
+          <div class="semana__clase deporte--aerobicos" role="cell">Zumba<small>Lucía</small></div>
+          <div class="semana__clase deporte--voley" role="cell">Cancha libre<small>Todos</small></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tablas completas con pestañas de Material Design -->
+  <section class="seccion seccion--carbon" aria-labelledby="tarifas-titulo">
+    <div class="contenedor" data-pestanas>
+      <header class="seccion__head">
+        <p class="eyebrow">Tarifas 2027</p>
+        <h2 id="tarifas-titulo">Precios por disciplina.</h2>
+      </header>
+
+      <div class="mdc-tab-bar" role="tablist" data-mdc-auto-init="MDCTabBar">
+        <div class="mdc-tab-scroller">
+          <div class="mdc-tab-scroller__scroll-area">
+            <div class="mdc-tab-scroller__scroll-content">
+              <button class="mdc-tab mdc-tab--active" role="tab" aria-selected="true" tabindex="0" type="button">
+                <span class="mdc-tab__content"><span class="mdc-tab__text-label">Básquet</span></span>
+                <span class="mdc-tab-indicator mdc-tab-indicator--active"><span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span></span>
+                <span class="mdc-tab__ripple"></span>
+              </button>
+              <button class="mdc-tab" role="tab" aria-selected="false" tabindex="-1" type="button">
+                <span class="mdc-tab__content"><span class="mdc-tab__text-label">Aeróbicos</span></span>
+                <span class="mdc-tab-indicator"><span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span></span>
+                <span class="mdc-tab__ripple"></span>
+              </button>
+              <button class="mdc-tab" role="tab" aria-selected="false" tabindex="-1" type="button">
+                <span class="mdc-tab__content"><span class="mdc-tab__text-label">Natación</span></span>
+                <span class="mdc-tab-indicator"><span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span></span>
+                <span class="mdc-tab__ripple"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel" role="tabpanel">
+        <div class="tabla-contenedor">
+          <table class="tabla">
+            <caption>Básquet: mensualidad por categoría</caption>
+            <thead>
+              <tr><th scope="col">Categoría</th><th scope="col">Turno</th><th scope="col">Clases al mes</th><th scope="col">Mensualidad</th></tr>
+            </thead>
+            <tbody>
+              <tr><td rowspan="2">Mini básquet</td><td>Mañana (sáb)</td><td>4</td><td>S/ 90</td></tr>
+              <tr><td>Tarde (mar y jue)</td><td>8</td><td>S/ 150</td></tr>
+              <tr><td rowspan="2">U13 y U15</td><td>Tarde (lun, mié, vie)</td><td>12</td><td>S/ 180</td></tr>
+              <tr><td>Noche (lun, mié, vie)</td><td>12</td><td>S/ 180</td></tr>
+              <tr><td>U17</td><td>Noche (mar, jue, sáb)</td><td>12</td><td>S/ 200</td></tr>
+            </tbody>
+            <tfoot>
+              <tr><th scope="row" colspan="3">Matrícula única (incluye camiseta de entrenamiento)</th><td>S/ 60</td></tr>
+            </tfoot>
+          </table>
+        </div>
+      </div>
+
+      <div class="panel" role="tabpanel" hidden>
+        <div class="tabla-contenedor">
+          <table class="tabla">
+            <caption>Aeróbicos y fitness</caption>
+            <thead>
+              <tr><th scope="col">Plan</th><th scope="col">Acceso</th><th scope="col">Vigencia</th><th scope="col">Precio</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Pase diario</td><td>1 clase</td><td>1 día</td><td>S/ 20</td></tr>
+              <tr><td>Paquete 10</td><td>10 clases</td><td>45 días</td><td>S/ 150</td></tr>
+              <tr><td>Mensual libre</td><td>Ilimitado</td><td>30 días</td><td>S/ 140</td></tr>
+              <tr><td>Trimestral</td><td>Ilimitado + nutrición</td><td>90 días</td><td>S/ 360</td></tr>
+            </tbody>
+            <tfoot>
+              <tr><td colspan="4">Precios con IGV incluido.</td></tr>
+            </tfoot>
+          </table>
+        </div>
+      </div>
+
+      <div class="panel" role="tabpanel" hidden>
+        <div class="tabla-contenedor">
+          <table class="tabla">
+            <caption>Natación por nivel</caption>
+            <thead>
+              <tr><th scope="col">Nivel</th><th scope="col">Edad</th><th scope="col">Frecuencia</th><th scope="col">Mensualidad</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Estimulación acuática</td><td>6 a 36 meses</td><td>2 por semana</td><td>S/ 170</td></tr>
+              <tr><td>Iniciación</td><td>4 a 12 años</td><td>2 por semana</td><td>S/ 160</td></tr>
+              <tr><td>Perfeccionamiento</td><td>8 a 17 años</td><td>3 por semana</td><td>S/ 200</td></tr>
+              <tr><td>Máster</td><td>18 a más</td><td>3 por semana</td><td>S/ 190</td></tr>
+            </tbody>
+            <tfoot>
+              <tr><td colspan="4">Gorro y lentes obligatorios. Los encuentras en la tienda.</td></tr>
+            </tfoot>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="seccion seccion--negro seccion--compacta">
+    <div class="contenedor">
+      <p class="aviso"><strong>Descuento familiar:</strong> si matriculas a dos o más miembros de la familia, cada uno paga 10 % menos.</p>
+    </div>
+  </section>
+</main>
+
+<!-- PIE DE PÁGINA -->
+<footer class="footer" role="contentinfo">
+  <div class="footer__inner">
+    <div class="footer__brand">
+      <img src="../assets/img/logo/altura-logo.svg" alt="ALTURA Sports Academy" width="124" height="26">
+      <p>Academia deportiva y tienda en Arequipa, a 2&nbsp;335&nbsp;m s.&nbsp;n.&nbsp;m.<br>Entrena más alto.</p>
+      <!-- Botones a redes sociales (enlaces externos) -->
+      <ul class="social" aria-label="Redes sociales">
+        <li><a class="social__btn social__btn--facebook" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg aria-hidden="true"><use href="../assets/img/iconos/redes.svg#facebook"></use></svg></a></li>
+        <li><a class="social__btn social__btn--instagram" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg aria-hidden="true"><use href="../assets/img/iconos/redes.svg#instagram"></use></svg></a></li>
+        <li><a class="social__btn social__btn--tiktok" href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><svg aria-hidden="true"><use href="../assets/img/iconos/redes.svg#tiktok"></use></svg></a></li>
+        <li><a class="social__btn social__btn--youtube" href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><svg aria-hidden="true"><use href="../assets/img/iconos/redes.svg#youtube"></use></svg></a></li>
+        <li><a class="social__btn social__btn--whatsapp" href="https://wa.me/51954000123" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><svg aria-hidden="true"><use href="../assets/img/iconos/redes.svg#whatsapp"></use></svg></a></li>
+      </ul>
+    </div>
+
+    <nav class="footer__nav" aria-label="Mapa del sitio">
+      <div class="footer__col">
+        <h2 class="footer__title">Academias</h2>
+        <ul>
+          <li><a href="academias.html">Todos los programas</a></li>
+          <li><a href="basquet.html">Básquet</a></li>
+          <li><a href="aerobicos.html">Aeróbicos y fitness</a></li>
+          <li><a href="natacion.html">Natación</a></li>
+          <li><a href="entrenadores.html">Entrenadores</a></li>
+          <li><a href="horarios.html">Horarios y tarifas</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h2 class="footer__title">Tienda</h2>
+        <ul>
+          <li><a href="tienda.html">Catálogo</a></li>
+          <li><a href="producto.html">Zapatilla Cumbre Pro</a></li>
+          <li><a href="tienda.html#filtros">Ofertas</a></li>
+        </ul>
+        <h2 class="footer__title">Comunidad</h2>
+        <ul>
+          <li><a href="eventos.html">Eventos y torneos</a></li>
+          <li><a href="galeria.html">Galería</a></li>
+          <li><a href="blog.html">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h2 class="footer__title">ALTURA</h2>
+        <ul>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="matricula.html">Matrícula</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+          <li><a href="reclamos.html">Libro de Reclamaciones</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h2 class="footer__title">Visítanos</h2>
+        <address class="footer__address">
+          Av. Ejército 1020, Yanahuara<br>Arequipa, Perú<br>
+          <a href="tel:+51954000123">+51 954 000 123</a><br>
+          <a href="mailto:hola@alturasports.pe">hola@alturasports.pe</a>
+        </address>
+        <p class="footer__hours">Lun a sáb · 6:00 a 22:00<br>Dom · 8:00 a 13:00</p>
+      </div>
+    </nav>
+  </div>
+
+  <div class="footer__legal">
+    <p>Copyright © 2026 ALTURA Sports Academy S.A.C. · RUC 20612345678 · Proyecto académico: empresa y datos ficticios.</p>
+    <a class="libro-badge" href="reclamos.html"><img src="../assets/img/iconos/libro-reclamaciones.svg" alt="" width="28" height="28">Libro de Reclamaciones</a>
+    <a class="to-top" href="#arriba" aria-label="Volver arriba"><span class="material-symbols-rounded" aria-hidden="true">arrow_upward</span></a>
+  </div>
+</footer>
+
+<!-- Snackbar de Material Design para confirmar acciones (formularios, carrito) -->
+<aside class="mdc-snackbar" id="snackbar">
+  <div class="mdc-snackbar__surface" role="status" aria-relevant="additions">
+    <div class="mdc-snackbar__label" aria-atomic="false"></div>
+    <div class="mdc-snackbar__actions" aria-atomic="true">
+      <button type="button" class="mdc-button mdc-snackbar__action"><span class="mdc-button__ripple"></span><span class="mdc-button__label">Cerrar</span></button>
+    </div>
+  </div>
+</aside>
+
+</body>
+</html>

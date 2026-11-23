@@ -1,0 +1,218 @@
+// =====================================================================
+// SASS · Re-tematización de Material Design (MDC Web 14)
+// El framework se enlaza por CDN; aquí se ajusta su apariencia
+// al estilo "Pro": botones en píldora, campos redondeados, tablas oscuras.
+// =====================================================================
+@use "tokens" as *;
+@use "funciones" as *;
+
+// Variables de tema que MDC lee en tiempo de ejecución
+:root {
+  --mdc-theme-primary: #{c("accion")};
+  --mdc-theme-secondary: #{c("accion")};
+  --mdc-theme-on-primary: #{c("blanco")};
+  --mdc-theme-on-secondary: #{c("blanco")};
+  --mdc-theme-surface: #{c("carbon")};
+  --mdc-theme-on-surface: #{c("texto-claro")};
+  --mdc-theme-background: #{c("negro")};
+  --mdc-theme-error: #{c("error")};
+  --mdc-typography-font-family: #{$f-texto};
+  --mdc-typography-button-font-family: #{$f-texto};
+  --mdc-typography-button-text-transform: none;
+  --mdc-typography-button-letter-spacing: -0.01em;
+}
+
+// --- Botones ---
+.mdc-button {
+  height: auto;
+  min-height: 44px;
+  padding: 0 22px;
+  border-radius: radio("pill");
+  font-size: rem(17px);
+  font-weight: 500;
+  text-transform: none;
+  letter-spacing: -0.01em;
+
+  .mdc-button__ripple {
+    border-radius: inherit;
+  }
+}
+
+.btn-pill.mdc-button--unelevated {
+  background-color: c("accion");
+  color: c("blanco");
+
+  &:hover {
+    background-color: #0077ed;
+  }
+}
+
+.btn-pill--sm.mdc-button {
+  min-height: 28px;
+  padding: 0 14px;
+  font-size: rem(12px);
+}
+
+.btn-pill--lg.mdc-button {
+  min-height: 52px;
+  padding: 0 30px;
+  font-size: rem(18px);
+}
+
+.btn-pill--claro.mdc-button {
+  background-color: c("texto-claro");
+  color: c("texto-oscuro");
+}
+
+.btn-pill--contorno.mdc-button--outlined {
+  border-color: currentColor;
+  color: c("enlace");
+
+  @include en-tema-claro {
+    color: c("accion");
+  }
+}
+
+// --- Tarjetas ---
+.mdc-card {
+  @extend %tarjeta-base;
+  background-color: c("carbon");
+  color: c("texto-claro");
+  box-shadow: none;
+
+  @include en-tema-claro {
+    background-color: c("blanco");
+    color: c("texto-oscuro");
+  }
+}
+
+// --- Campos de texto: estilo relleno con bordes redondeados ---
+.mdc-text-field--filled {
+  width: 100%;
+  border-radius: radio("md");
+  border: 1px solid c("linea");
+  background-color: c("blanco");
+  overflow: hidden;
+
+  &:not(.mdc-text-field--disabled) {
+    background-color: c("blanco");
+  }
+
+  &.mdc-text-field--focused {
+    border-color: c("accion");
+    box-shadow: 0 0 0 4px alfa(c("accion"), 0.16);
+  }
+
+  &.mdc-text-field--invalid {
+    border-color: #d70015;
+  }
+
+  .mdc-line-ripple {
+    display: none;
+  }
+
+  .mdc-floating-label {
+    color: c("gris-2");
+  }
+
+  .mdc-text-field__input {
+    color: c("texto-oscuro");
+    caret-color: c("accion");
+  }
+
+  &.mdc-text-field--focused .mdc-floating-label {
+    color: c("accion");
+  }
+}
+
+.mdc-text-field--textarea.mdc-text-field--filled {
+  border-radius: radio("md");
+}
+
+.mdc-text-field-helper-text {
+  color: c("gris-2");
+}
+
+// --- Casillas y botones de opción ---
+.mdc-checkbox,
+.mdc-radio {
+  --mdc-checkbox-selected-icon-color: #{c("accion")};
+}
+
+.mdc-form-field {
+  color: inherit;
+  font-family: $f-texto;
+  font-size: rem(15px);
+  letter-spacing: -0.01em;
+}
+
+// --- Pestañas ---
+.mdc-tab-bar {
+  border-bottom: 1px solid alfa(c("blanco"), 0.12);
+}
+
+.mdc-tab {
+  text-transform: none;
+  letter-spacing: -0.01em;
+  font-family: $f-texto;
+  font-size: rem(15px);
+
+  .mdc-tab__text-label {
+    color: c("gris-3");
+  }
+
+  &--active .mdc-tab__text-label {
+    color: c("texto-claro");
+  }
+}
+
+.mdc-tab-indicator .mdc-tab-indicator__content--underline {
+  border-color: c("brasa");
+  border-top-width: 3px;
+  border-radius: 3px;
+}
+
+// --- Tabla de datos ---
+.mdc-data-table {
+  width: 100%;
+  border-color: alfa(c("blanco"), 0.12);
+  border-radius: radio("lg");
+  background-color: c("carbon");
+
+  &__header-cell {
+    background-color: c("grafito");
+    color: c("gris");
+    font-size: rem(12px);
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  &__cell {
+    color: c("texto-claro");
+    border-top-color: alfa(c("blanco"), 0.08);
+  }
+
+  &__row:not(.mdc-data-table__row--selected):hover {
+    background-color: alfa(c("enlace"), 0.08);
+  }
+
+  &__cell--numeric {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+// --- Snackbar ---
+.mdc-snackbar__surface {
+  border-radius: radio("lg");
+  background-color: c("humo");
+}
+
+.mdc-snackbar__label {
+  color: c("texto-claro");
+  font-family: $f-texto;
+}
+
+.mdc-snackbar__action:not(:disabled) {
+  color: c("enlace");
+}

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Mochila Cumbre de 25 litros">
+  <defs>
+    <radialGradient id="sombra" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#000" stop-opacity=".28"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient>
+    <linearGradient id="k" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4a4a4e"/><stop offset="1" stop-color="#151516"/></linearGradient>
+  </defs>
+  <ellipse cx="200" cy="272" rx="110" ry="10" fill="url(#sombra)"/>
+  <path d="M170 40 C170 22 230 22 230 40" stroke="#1d1d1f" stroke-width="10" fill="none"/>
+  <rect x="112" y="44" width="176" height="224" rx="44" fill="url(#k)"/>
+  <rect x="140" y="150" width="120" height="92" rx="22" fill="#2a2a2d" stroke="#ff6a2b" stroke-width="3"/>
+  <path d="M140 162 H260" stroke="#86868b" stroke-width="3" stroke-dasharray="6 5"/>
+  <path d="M182 128 L198 100 L206 112 L212 104 L226 128 Z" fill="#ff6a2b"/>
+</svg>

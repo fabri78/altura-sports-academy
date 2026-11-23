@@ -1,0 +1,88 @@
+{
+  "fecha": "2026-11-23T18:08:32.249Z",
+  "total": 3642,
+  "filas": [
+    {
+      "punto": "g.i",
+      "nombre": "CSS externo",
+      "meta": 10,
+      "archivos": [
+        "assets/css/base.css"
+      ],
+      "lineas": 449,
+      "porcentaje": 12.3,
+      "diferencia": 2.3
+    },
+    {
+      "punto": "g.ii",
+      "nombre": "LESS",
+      "meta": 15,
+      "carpeta": "src/less",
+      "ext": ".less",
+      "archivos": [
+        "src/less/altura.less",
+        "src/less/_banners.less",
+        "src/less/_footer.less",
+        "src/less/_header.less",
+        "src/less/_mixins.less",
+        "src/less/_sidebar.less",
+        "src/less/_variables.less"
+      ],
+      "lineas": 683,
+      "porcentaje": 18.8,
+      "diferencia": 3.8
+    },
+    {
+      "punto": "g.iii",
+      "nombre": "SASS",
+      "meta": 15,
+      "carpeta": "src/scss",
+      "ext": ".scss",
+      "archivos": [
+        "src/scss/altura.scss",
+        "src/scss/_deportes.scss",
+        "src/scss/_formularios.scss",
+        "src/scss/_funciones.scss",
+        "src/scss/_mdc-tema.scss",
+        "src/scss/_tienda.scss",
+        "src/scss/_tokens.scss"
+      ],
+      "lineas": 921,
+      "porcentaje": 25.3,
+      "diferencia": 10.3
+    },
+    {
+      "punto": "h",
+      "nombre": "Animaciones, transiciones y transformaciones",
+      "meta": 20,
+      "archivos": [
+        "assets/css/framework/animaciones.css"
+      ],
+      "lineas": 546,
+      "porcentaje": 15,
+      "diferencia": -5
+    },
+    {
+      "punto": "i",
+      "nombre": "Responsive: media queries y multimedia",
+      "meta": 20,
+      "archivos": [
+        "assets/css/framework/responsive.css"
+      ],
+      "lineas": 471,
+      "porcentaje": 12.9,
+      "diferencia": -7.1
+    },
+    {
+      "punto": "j",
+      "nombre": "Responsive: Flexbox y Grid Layout",
+      "meta": 20,
+      "archivos": [
+        "assets/css/framework/layout.css"
+      ],
+      "lineas": 572,
+      "porcentaje": 15.7,
+      "diferencia": -4.3
+    }
+  ]
+}

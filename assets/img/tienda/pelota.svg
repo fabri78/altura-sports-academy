@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Pelota de básquet ALTURA Game Ball">
+  <defs>
+    <radialGradient id="sombra" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#000" stop-opacity=".28"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient>
+    <radialGradient id="b" cx="38%" cy="32%" r="70%"><stop offset="0" stop-color="#ffa36b"/><stop offset=".6" stop-color="#ff6a2b"/><stop offset="1" stop-color="#a2370c"/></radialGradient>
+  </defs>
+  <ellipse cx="200" cy="262" rx="100" ry="12" fill="url(#sombra)"/>
+  <circle cx="200" cy="145" r="108" fill="url(#b)"/>
+  <g fill="none" stroke="#2b1208" stroke-width="5" stroke-linecap="round">
+    <path d="M92 145 H308"/>
+    <path d="M200 37 V253"/>
+    <path d="M128 64 C170 110 170 180 128 226"/>
+    <path d="M272 64 C230 110 230 180 272 226"/>
+  </g>
+  <text x="200" y="128" text-anchor="middle" font-family="Arial Black, Arial, sans-serif" font-size="15" letter-spacing="3" fill="#2b1208" opacity=".6">ALTURA</text>
+</svg>

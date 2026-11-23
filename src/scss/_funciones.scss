@@ -1,0 +1,106 @@
+// =====================================================================
+// SASS · Funciones y mixins
+// Demuestra: @function, @return, @if/@else, map.get, math.div,
+// color.adjust/scale, @mixin con @content, %placeholder y @extend.
+// =====================================================================
+@use "sass:map";
+@use "sass:math";
+@use "sass:color";
+@use "tokens" as *;
+
+// Devuelve un color del mapa de tokens (error claro si no existe)
+@function c($nombre) {
+  @if not map.has-key($colores, $nombre) {
+    @error "El color '#{$nombre}' no existe en $colores.";
+  }
+  @return map.get($colores, $nombre);
+}
+
+// Convierte píxeles a rem (base 16 px)
+@function rem($px) {
+  @return math.div($px, 16px) * 1rem;
+}
+
+@function radio($clave) {
+  @return map.get($radios, $clave);
+}
+
+@function esp($n) {
+  @return map.get($espacios, $n);
+}
+
+// Color con transparencia
+@function alfa($color, $a) {
+  @return rgba($color, $a);
+}
+
+// Texto legible sobre cualquier fondo
+@function texto-para($fondo) {
+  @if color.lightness($fondo) > 60% {
+    @return c("texto-oscuro");
+  } @else {
+    @return c("texto-claro");
+  }
+}
+
+// --- Mixins ---
+@mixin superficie($fondo, $radio: "xl") {
+  background-color: $fondo;
+  color: texto-para($fondo);
+  border-radius: radio($radio);
+}
+
+@mixin hover-elevar($y: -6px, $escala: 1.015) {
+  transition: transform 0.4s $curva, box-shadow 0.4s $curva;
+  &:hover {
+    transform: translateY($y) scale($escala);
+    box-shadow: 0 24px 50px rgba(0, 0, 0, 0.28);
+  }
+}
+
+@mixin titular($tam, $peso: 700) {
+  font-family: $f-display;
+  font-size: $tam;
+  font-weight: $peso;
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+}
+
+@mixin enfoque {
+  outline: 2px solid c("accion");
+  outline-offset: 3px;
+}
+
+// Mixin con bloque de contenido: aplica estilos solo en el tema claro
+@mixin en-tema-claro {
+  .seccion--niebla &,
+  .seccion--blanco &,
+  .tema-claro & {
+    @content;
+  }
+}
+
+// --- Placeholders (se comparten con @extend) ---
+%insignia {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 10px;
+  border-radius: radio("pill");
+  font-size: rem(12px);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+%tarjeta-base {
+  position: relative;
+  overflow: hidden;
+  border-radius: radio("xl");
+}
+
+%reset-lista {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}

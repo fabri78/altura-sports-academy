@@ -1,0 +1,137 @@
+// =====================================================================
+// LESS · Pie de página y botones a redes sociales
+// =====================================================================
+
+.footer {
+  background-color: @grafito;
+  color: @gris-3;
+  font-size: 13px;
+  .divisor(top; 8%);
+
+  &__inner {
+    .contenedor();
+    padding-top: 56px;
+    padding-bottom: 32px;
+  }
+
+  &__brand {
+    p {
+      margin: 16px 0 20px;
+      line-height: 1.6;
+    }
+    img {
+      height: 28px;
+      width: auto;
+    }
+  }
+
+  &__title {
+    margin: 0 0 12px;
+    font-family: @f-texto;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0;
+    color: @texto-claro;
+  }
+
+  &__col {
+    ul {
+      margin: 0 0 24px;
+      padding: 0;
+      list-style: none;
+    }
+    li + li {
+      margin-top: 8px;
+    }
+    a {
+      color: @gris-3;
+      &:hover {
+        color: @texto-claro;
+      }
+    }
+  }
+
+  &__address {
+    line-height: 1.7;
+    a {
+      color: @enlace;
+    }
+  }
+
+  &__hours {
+    margin-top: 12px;
+    color: @gris;
+    line-height: 1.6;
+  }
+
+  &__legal {
+    .contenedor();
+    padding-top: 20px;
+    padding-bottom: 28px;
+    .divisor(top; 8%);
+    color: @gris;
+    font-size: 12px;
+  }
+}
+
+// --- Botones de redes: se generan con un bucle sobre la lista @redes ---
+.social {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    margin: 0;
+  }
+
+  &__btn {
+    .icono-circular(40px);
+    color: @texto-claro;
+    transition: background-color @t-medio ease-out, transform @t-medio ease-out, color @t-rapido;
+
+    svg {
+      fill: currentColor;
+    }
+  }
+}
+
+.generar-redes(@i: 1) when (@i <= length(@redes)) {
+  @par: extract(@redes, @i);
+  @nombre: extract(@par, 1);
+  @color: extract(@par, 2);
+  .social__btn--@{nombre}:hover,
+  .social__btn--@{nombre}:focus-visible {
+    background-color: @color;
+    color: @blanco;
+  }
+  .generar-redes(@i + 1);
+}
+.generar-redes();
+
+// --- Insignia del Libro de Reclamaciones ---
+.libro-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px 6px 8px;
+  border: 1px solid fade(@blanco, 14%);
+  border-radius: @radio-pill;
+  color: @texto-claro;
+  font-weight: 600;
+
+  &:hover {
+    border-color: @brasa;
+    text-decoration: none;
+  }
+}
+
+// --- Botón volver arriba ---
+.to-top {
+  .icono-circular(40px; @humo);
+  color: @texto-claro;
+
+  &:hover {
+    background-color: @accion;
+    text-decoration: none;
+  }
+}

@@ -1,0 +1,10 @@
+// =====================================================================
+// ALTURA Sports Academy · Hoja principal SASS (punto g.iii, meta 15 %)
+// Compilar:  npm run build:sass  ->  assets/css/altura-sass.css
+// Usa el sistema de módulos moderno (@use / @forward).
+// =====================================================================
+
+@use "mdc-tema";
+@use "deportes";
+@use "tienda";
+@use "formularios";

@@ -1,0 +1,98 @@
+<!--{"titulo":"Aeróbicos y fitness","descripcion":"Clases de step, zumba, funcional y ciclismo indoor en Arequipa. Sesiones de 50 minutos de 6:00 a 21:00.","activo":"aerobicos","clase":"tema-oscuro","palabras":"aeróbicos, step, zumba, funcional, gimnasio Arequipa"}-->
+<main id="contenido">
+  <section class="banner" aria-labelledby="titulo-pagina">
+    <div class="banner__bg"><img src="{{R}}assets/img/academias/aerobicos-clase.webp" alt="" width="1400" height="932"></div>
+    <div class="banner__content">
+      <ol class="breadcrumb" aria-label="Ruta de navegación">
+        <li><a href="{{R}}index.html">Inicio</a></li>
+        <li><a href="{{P}}academias.html">Academias</a></li>
+        <li aria-current="page">Aeróbicos</li>
+      </ol>
+      <p class="eyebrow">Aeróbicos y fitness</p>
+      <h1 class="banner__title" id="titulo-pagina">Cincuenta minutos. <span class="texto-gradiente">Cero excusas.</span></h1>
+      <p class="lead">Clases grupales con música, a tu ritmo, en un salón con piso flotante que cuida tus rodillas.</p>
+    </div>
+  </section>
+
+  <!-- Clases -->
+  <section class="seccion seccion--negro" aria-labelledby="clases-titulo">
+    <div class="contenedor">
+      <header class="seccion__head" data-reveal>
+        <p class="eyebrow">Clases</p>
+        <h2 id="clases-titulo">Elige cómo sudar.</h2>
+      </header>
+      <div class="grid-4">
+        <article class="valor" data-reveal><span class="material-symbols-rounded" aria-hidden="true">stairs</span><h3>Step</h3><p class="nota">Coreografías sobre plataforma. Quema entre 400 y 500 kcal.</p><span class="chip-deporte--aerobicos">Intensidad media</span></article>
+        <article class="valor" data-reveal data-reveal-delay="1"><span class="material-symbols-rounded" aria-hidden="true">music_note</span><h3>Zumba</h3><p class="nota">Ritmos latinos para todas las edades. La más divertida.</p><span class="chip-deporte--voley">Intensidad baja</span></article>
+        <article class="valor" data-reveal data-reveal-delay="2"><span class="material-symbols-rounded" aria-hidden="true">exercise</span><h3>Funcional</h3><p class="nota">Circuitos con kettlebells, cuerdas y peso corporal.</p><span class="chip-deporte--funcional">Intensidad alta</span></article>
+        <article class="valor" data-reveal data-reveal-delay="3"><span class="material-symbols-rounded" aria-hidden="true">directions_bike</span><h3>Ciclismo indoor</h3><p class="nota">Intervalos sobre bicicleta estática con monitor de ritmo.</p><span class="chip-deporte--natacion">Intensidad alta</span></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Audio + imagen -->
+  <section class="seccion seccion--carbon" aria-labelledby="musica-titulo">
+    <div class="contenedor split">
+      <div data-reveal="izquierda">
+        <p class="eyebrow">Escucha la clase</p>
+        <h2 id="musica-titulo">128 golpes por minuto.</h2>
+        <p class="lead">Es el ritmo clásico del step. Dale play y prueba a marcar el paso básico: arriba, arriba, abajo, abajo.</p>
+        <div class="audio-card">
+          <div class="audio-card__icono"><span class="material-symbols-rounded" aria-hidden="true">graphic_eq</span></div>
+          <div><h3>Ritmo de step ALTURA</h3><p>Pista original · 42 s · 128 BPM</p></div>
+          <audio controls preload="none">
+            <source src="{{R}}assets/audio/ritmo-aerobicos.mp3" type="audio/mpeg">
+            Tu navegador no puede reproducir audio.
+          </audio>
+        </div>
+      </div>
+      <figure class="split__media" data-reveal="escala">
+        <img src="{{R}}assets/img/academias/aerobicos-step.webp" alt="Personas entrenando en bicicletas estáticas" loading="lazy" width="1400" height="933">
+        <figcaption>Clase de ciclismo indoor del turno mañana.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Marco interno (iframe a una página propia) -->
+  <section class="seccion seccion--negro" aria-labelledby="horario-titulo">
+    <div class="contenedor">
+      <header class="seccion__head" data-reveal>
+        <p class="eyebrow">Horario de la semana</p>
+        <h2 id="horario-titulo">Encuentra tu turno.</h2>
+        <p class="lead">El horario completo se muestra aquí dentro de un marco (<code>iframe</code>) que carga la página de horarios.</p>
+      </header>
+      <iframe class="marco-interno" src="{{P}}horarios.html#semana" title="Horario semanal de aeróbicos" loading="lazy" data-reveal></iframe>
+      <p class="nota">¿No ves el marco? <a href="{{P}}horarios.html">Abre los horarios en una página aparte</a>.</p>
+    </div>
+  </section>
+
+  <!-- Planes con subgrid -->
+  <section class="seccion seccion--carbon" aria-labelledby="planes-titulo">
+    <div class="contenedor">
+      <header class="seccion__head seccion__head--centro" data-reveal>
+        <p class="eyebrow">Planes</p>
+        <h2 id="planes-titulo">Paga solo lo que usas.</h2>
+      </header>
+      <div class="planes">
+        <article class="plan" data-reveal>
+          <h3 class="plan__nombre">Pase diario</h3>
+          <p class="plan__precio">S/ 20 <small>por clase</small></p>
+          <ul class="plan__lista"><li>Una clase a elección</li><li>Casillero</li></ul>
+          <a class="mdc-button mdc-button--outlined btn-pill--contorno" href="{{P}}matricula.html" data-mdc-auto-init="MDCRipple"><span class="mdc-button__ripple"></span><span class="mdc-button__label">Elegir</span></a>
+        </article>
+        <article class="plan plan--destacado" data-reveal data-reveal-delay="1">
+          <h3 class="plan__nombre">Mensual libre <span class="plan__insignia">Popular</span></h3>
+          <p class="plan__precio">S/ 140 <small>al mes</small></p>
+          <ul class="plan__lista"><li>Clases ilimitadas</li><li>Evaluación física</li><li>10 % en la tienda</li><li>Casillero fijo</li></ul>
+          <a class="mdc-button mdc-button--unelevated btn-pill" href="{{P}}matricula.html" data-mdc-auto-init="MDCRipple"><span class="mdc-button__ripple"></span><span class="mdc-button__label">Elegir</span></a>
+        </article>
+        <article class="plan" data-reveal data-reveal-delay="2">
+          <h3 class="plan__nombre">Trimestral</h3>
+          <p class="plan__precio">S/ 360 <small>cada 3 meses</small></p>
+          <ul class="plan__lista"><li>Todo lo del mensual</li><li>Plan de nutrición</li><li>15 % en la tienda</li></ul>
+          <a class="mdc-button mdc-button--outlined btn-pill--contorno" href="{{P}}matricula.html" data-mdc-auto-init="MDCRipple"><span class="mdc-button__ripple"></span><span class="mdc-button__label">Elegir</span></a>
+        </article>
+      </div>
+    </div>
+  </section>
+</main>

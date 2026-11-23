@@ -4,7 +4,8 @@ Sitio web frontend del **Trabajo Final 04** del curso *Hojas de Estilo en Cascad
 Empresa ficticia del rubro **Deportes**: academia de básquet, aeróbicos y natación con tienda de artículos deportivos.
 
 - **Grupo:** 04
-- **Integrante:** Quispe Morales, Fabricio Oscar (U25316441)
+- **Integrantes:** Mendoza Colque, Carlos Daniel (U25317351) · Quispe Morales, Fabricio Oscar (U25316441)
+- **Plazo de desarrollo:** del 18 al 23 de noviembre de 2026
 - **Componentes CSS asignados:** LESS, SASS y Material Design CSS (MDC Web 14)
 - **Publicación:** https://USUARIO.github.io/altura-sports/
 - **Repositorio:** https://github.com/USUARIO/altura-sports

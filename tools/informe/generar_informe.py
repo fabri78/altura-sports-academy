@@ -189,10 +189,10 @@ B.append(indice("Tabla", "ÍNDICE DE TABLAS"))
 # Historial de versiones
 A(h2("HISTORIAL DE VERSIONES"))
 A(tabla("Historial de versiones del proyecto", ["Fecha", "Versión", "Elaborado por", "Descripción", "Revisado por", "Fecha de revisión"], [
-    ["23-11-2026", "1.0", "F. Quispe", "Alcance inicial: estructura, capas de estilo y 8 páginas (etiqueta v1.0).", "", ""],
-    ["23-11-2026", "2.0", "F. Quispe", "Ampliación del alcance: 18 páginas, tienda, formularios y multimedia (v2.0).", "", ""],
-    ["23-11-2026", "3.0", "F. Quispe", "Incremento: animaciones, responsive, marcos, Docker y métricas (v3.0).", "", ""],
-    ["24-11-2026", "4.0", "F. Quispe", "Entrega final: publicación en GitHub Pages e informe (v4.0).", "", ""],
+    ["19-11-2026", "1.0", "Equipo", "Alcance inicial: estructura, capas de estilo y 8 páginas (etiqueta v1.0).", "", ""],
+    ["21-11-2026", "2.0", "Equipo", "Ampliación del alcance: 18 páginas, tienda, formularios y multimedia (v2.0).", "", ""],
+    ["22-11-2026", "3.0", "Equipo", "Incremento: animaciones, responsive, marcos, prototipos en Figma y métricas (v3.0).", "", ""],
+    ["23-11-2026", "4.0", "Equipo", "Entrega final: publicación en GitHub Pages e informe (v4.0).", "", ""],
 ], [1150, 850, 1150, 3100, 1150, 1200]))
 A(p("Cada versión del documento corresponde a una etiqueta (tag) del repositorio Git, de modo que el historial del informe y el del código coinciden."))
 
@@ -273,41 +273,42 @@ A(p("Hoy la mayoría de familias busca y compara academias desde el celular. Sin
 
 A(h3("1.3 EQUIPO DE TRABAJO"))
 A(tabla("Roles y responsabilidades del equipo", ["Integrante", "Rol", "Responsabilidades"], [
-    ["Quispe Morales, Fabricio Oscar (U25316441)", "Líder del proyecto y desarrollador front-end", "Planificación, maquetación HTML, estilos CSS, LESS, SASS y Material Design, control de versiones y publicación."],
-    ["Quispe Morales, Fabricio Oscar", "Diseño UX/UI y contenido", "Dirección visual, prototipos, textos, selección de multimedia e ilustraciones."],
-    ["Quispe Morales, Fabricio Oscar", "QA y documentación", "Pruebas en navegador y dispositivos, métricas de código, informe y exposición."],
+    ["Quispe Morales, Fabricio Oscar (U25316441)", "Líder del proyecto y desarrollador front-end", "Planificación, maquetación HTML, estilos CSS, LESS, SASS y Material Design, control de versiones y publicación en GitHub Pages."],
+    ["Mendoza Colque, Carlos Daniel (U25317351)", "Diseño UX/UI, contenido y QA", "Prototipos en Figma, dirección visual, textos, selección de multimedia, pruebas en navegador y dispositivos."],
+    ["Ambos integrantes", "Documentación y exposición", "Redacción del informe, diagramas, métricas de código y preparación de la exposición."],
 ], [2600, 2300, 3700]))
 
 A(h3("1.4 RECURSOS Y PRESUPUESTO"))
 A(tabla("Recursos y presupuesto estimado del proyecto", ["Recurso", "Detalle", "Cantidad", "Costo (S/)"], [
-    ["Hardware", "Laptop de desarrollo (depreciación del periodo)", "1", "150.00"],
-    ["Software", "Visual Studio Code, Node.js, Git, navegadores", "—", "0.00 (libre)"],
+    ["Hardware", "Laptops de desarrollo (depreciación del periodo)", "2", "150.00"],
+    ["Software", "Visual Studio Code, Node.js, Git, navegadores, Figma (plan gratuito)", "—", "0.00 (libre)"],
     ["Frameworks", "LESS, SASS, MDC Web 14, Google Fonts, Material Symbols", "—", "0.00 (libre)"],
     ["Hosting", "GitHub y GitHub Pages", "1", "0.00"],
     ["Dominio (opcional)", "alturasports.pe por un año", "1", "120.00"],
     ["Servicios", "Internet y energía del periodo", "—", "60.00"],
-    ["Recurso humano", "Horas de desarrollo y documentación", "30 h × S/ 25", "750.00"],
-    ["", "**Total estimado**", "", "**1 080.00**"],
+    ["Recurso humano", "Horas de desarrollo, diseño y documentación (2 integrantes)", "60 h × S/ 25", "1 500.00"],
+    ["", "**Total estimado**", "", "**1 830.00**"],
 ], [1700, 3900, 1400, 1600]))
 
 A(h3("1.5 CRONOGRAMA DE ACTIVIDADES"))
 A(tabla("Cronograma de actividades", ["Fase", "Actividad", "Inicio", "Fin"], [
-    ["Inicio", "Análisis de lineamientos, plantilla del informe y referencia visual", "23-11-2026 08:00", "23-11-2026 10:00"],
-    ["Planificación", "Plan de desarrollo, sistema de diseño y mapa del sitio", "23-11-2026 10:00", "23-11-2026 12:00"],
-    ["Ejecución", "v1.0: estructura, capas de estilo y 8 páginas", "23-11-2026 12:00", "23-11-2026 14:00"],
-    ["Ejecución", "v2.0: 10 páginas más, tienda, formularios y multimedia", "23-11-2026 14:00", "23-11-2026 16:00"],
-    ["Ejecución", "v3.0: animaciones, responsive, marcos y ajuste de métricas", "23-11-2026 16:00", "23-11-2026 18:00"],
-    ["Supervisión y control", "Verificación de enlaces, pruebas en navegador, capturas", "23-11-2026 18:00", "23-11-2026 19:00"],
-    ["Cierre", "Informe, publicación en GitHub Pages y versión v4.0", "23-11-2026 19:00", "24-11-2026 07:00"],
-], [1700, 3700, 1600, 1600]))
+    ["Inicio", "Análisis de lineamientos, elección de la empresa y referencia visual", "18-11-2026", "18-11-2026"],
+    ["Planificación", "Plan de desarrollo, sistema de diseño, mapa del sitio y prototipos en Figma", "18-11-2026", "19-11-2026"],
+    ["Ejecución", "v1.0: estructura, capas de estilo y 8 páginas", "19-11-2026", "19-11-2026"],
+    ["Ejecución", "v2.0: 10 páginas más, tienda, formularios y multimedia", "20-11-2026", "21-11-2026"],
+    ["Ejecución", "v3.0: animaciones, responsive, marcos y ajuste de métricas", "21-11-2026", "22-11-2026"],
+    ["Supervisión y control", "Verificación de enlaces, pruebas en navegador y dispositivos, capturas", "22-11-2026", "23-11-2026"],
+    ["Cierre", "Informe, publicación en GitHub Pages y versión v4.0", "23-11-2026", "23-11-2026"],
+], [1700, 4100, 1400, 1400]))
 A(h3("1.6 CRONOGRAMA DE HITOS DEL PROYECTO"))
 A(tabla("Hitos del proyecto", ["Hito", "Entregable", "Fecha"], [
-    ["H1", "Plan de desarrollo aprobado", "23-11-2026"],
-    ["H2", "Versión v1.0 (alcance inicial)", "23-11-2026"],
-    ["H3", "Versión v2.0 (ampliación del alcance)", "23-11-2026"],
-    ["H4", "Versión v3.0 (incremento de resultados)", "23-11-2026"],
-    ["H5", "Versión v4.0 publicada e informe en PDF", "24-11-2026"],
-    ["H6", "Entrega en UTP+CLASS y exposición", "24-11-2026"],
+    ["H1", "Plan de desarrollo aprobado", "18-11-2026"],
+    ["H2", "Prototipos UX/UI en Figma", "19-11-2026"],
+    ["H3", "Versión v1.0 (alcance inicial)", "19-11-2026"],
+    ["H4", "Versión v2.0 (ampliación del alcance)", "21-11-2026"],
+    ["H5", "Versión v3.0 (incremento de resultados)", "22-11-2026"],
+    ["H6", "Versión v4.0 publicada e informe en PDF", "23-11-2026"],
+    ["H7", "Entrega en UTP+CLASS y exposición", "24-11-2026"],
 ], [900, 5700, 2000]))
 
 # Capítulo 2
@@ -337,8 +338,8 @@ A(h3("3.1.2 DESCRIPCIÓN DEL PROYECTO"))
 for t in [
     "**Para quién:** ALTURA Sports Academy, sus alumnos, padres de familia y clientes de la tienda.",
     "**Objetivo:** dar a la academia un sitio web responsivo para informar, matricular, vender y atender reclamos.",
-    "**Quiénes lo realizan:** Grupo 04 del curso Hojas de Estilo en Cascada Avanzado (Quispe Morales, Fabricio Oscar).",
-    "**Fechas:** del 23 al 24 de noviembre de 2026.",
+    "**Quiénes lo realizan:** Grupo 04 del curso Hojas de Estilo en Cascada Avanzado: Mendoza Colque, Carlos Daniel y Quispe Morales, Fabricio Oscar.",
+    "**Fechas:** del 18 al 23 de noviembre de 2026.",
 ]:
     A(vineta(t))
 A(h3("3.2 DEFINICIÓN DEL PRODUCTO"))
@@ -368,15 +369,30 @@ A(imagen(DIA / "capas.png", "Diseño del sistema: capas de estilo, compilación 
 A(tabla("Páginas del sitio", ["N.°", "Archivo", "Contenido"], [[str(i + 1), ("index.html" if k == "inicio" else f"paginas/{k}.html"), d] for i, (k, _, d) in enumerate(paginas)], [600, 2300, 5700]))
 
 A(h3("3.3.1 PROTOTIPOS UX/UI"))
-A(p("Las vistas se diseñaron con la página del iPhone 18 Pro como referencia de color y movimiento. Se tomaron los valores computados de esa página: fondos #000000 y #1D1D1F, texto #F5F5F7, enlaces #2997FF, botón principal #0071E3 con radio de 980 px, titulares de 40 px con peso 600 y transiciones de 0,2 a 0,4 s con ease-out. Se añadió un degradado de marca (#FF6A2B a #8C1D2F). Todas las vistas son de tipo Web y responsivas."))
+FIG = RAIZ / "docs" / "prototipos-figma"
+A(p("Los prototipos de alta fidelidad se diseñaron en **Figma** (archivo “ALTURA Sports Academy - Prototipos UX/UI”) antes de maquetar. El archivo tiene tres páginas: **Componentes**, **Escritorio** (17 pantallas de 1440 px) y **Móvil** (pantallas de 390 px)."))
+for t in [
+    "**Variables de color** “ALTURA / Color”: negro #000000, carbón #1D1D1F, niebla #F5F5F7, enlace #2997FF, acción #0071E3, brasa #FF6A2B, fucsia #FF2E63 y borgoña #8C1D2F, tomadas de la página del iPhone 18 Pro y del color de marca.",
+    "**Componentes reutilizables**: Botón/Principal (píldora de radio 980 px), Navegación/Escritorio, Navegación/Móvil, Pie de página/Escritorio y Campo de texto (equivalente al campo relleno de Material Design). Todas las pantallas usan instancias de estos componentes.",
+    "**Tipografía**: Inter (titulares Extra Bold de 48 a 104 px; texto de 15 a 21 px). En el sitio los titulares usan Inter Tight, de la misma familia.",
+    "**Retícula**: márgenes laterales de 130 px y contenido de 1180 px, igual al contenedor del sitio; secciones con 96 px de espacio vertical.",
+]:
+    A(vineta(t))
+A(p(f"Enlace del prototipo: https://www.figma.com/design/T1zjpSjIH1AeYEyRiOr7H1. Las imágenes muestran la parte superior de cada pantalla; el prototipo completo está en el archivo de Figma."))
 for i, (k, titulo, desc) in enumerate(paginas):
+    nombre = f"{i + 1:02d}-{k}"
+    ruta = FIG / f"{nombre}.png"
     A(h4(f"PÁGINA {i + 1:02d}. {titulo.upper()}, tipo: Web"))
-    A(imagen(CAP / f"{k}.png", f"Página web {titulo}", ancho_cm=15))
-    A(p(f"**Descripción:** {desc}"))
+    if ruta.exists():
+        A(imagen(ruta, f"Prototipo en Figma: {titulo}", ancho_cm=13.5, alto_max_cm=17))
+    else:
+        A(imagen(CAP / f"{k}.png", f"Página web {titulo}", ancho_cm=15))
+    A(p(f"**Descripción de la vista:** {desc}"))
 A(h4("VISTAS MÓVILES, tipo: Móvil"))
-A(p("En pantallas menores a 905 px el menú se convierte en un panel desplegable que funciona sin JavaScript (checkbox y label) y las rejillas pasan a una o dos columnas."))
-for k, t in [("movil-inicio", "Vista móvil del inicio"), ("movil-tienda", "Vista móvil de la tienda con filtros"), ("movil-matricula", "Vista móvil del formulario de matrícula")]:
-    A(imagen(CAP / f"{k}.jpg", t, ancho_cm=7.5, alto_max_cm=16))
+A(p("En pantallas menores a 905 px el menú se convierte en un panel desplegable (botón de tres líneas) y las rejillas pasan a una o dos columnas."))
+for k, t, alt in [("m1-inicio", "Prototipo móvil en Figma: inicio", "movil-inicio"), ("m2-tienda", "Prototipo móvil en Figma: tienda", "movil-tienda"), ("m3-matricula", "Prototipo móvil en Figma: matrícula", "movil-matricula")]:
+    ruta = FIG / f"{k}.png"
+    A(imagen(ruta if ruta.exists() else CAP / f"{alt}.jpg", t if ruta.exists() else t.replace("Prototipo móvil en Figma", "Vista móvil"), ancho_cm=7, alto_max_cm=15))
 
 A(h3("3.3.2 DOCUMENTACIÓN DEL CÓDIGO FUENTE"))
 A(h4("Organización de Paquetes y Ficheros."))
@@ -557,18 +573,22 @@ elementos[17] = re.sub(r"\[Ordenado por Apellidos\]", "", elementos[17])
 # Tabla de integrantes: fila 1 con los datos, se quitan las filas 2 y 3
 tbl = elementos[18]
 filas = re.findall(r"<w:tr\b.*?</w:tr>", tbl, re.S)
-datos = ["1", "U25316441", "QUISPE MORALES", "FABRICIO OSCAR", "U25316441@utp.edu.pe"]
-celdas = re.findall(r"<w:tc>.*?</w:tc>", filas[1], re.S)
-nuevas = []
-for c, d in zip(celdas, datos):
-    c = re.sub(r"<w:r\b.*?</w:r>", "", c, flags=re.S)
-    tam = "20" if "@" in d else "24"
-    c = c.replace("</w:p>", f'<w:r><w:rPr><w:rFonts w:ascii="Calibri" w:hAnsi="Calibri"/><w:sz w:val="{tam}"/><w:lang w:val="es-PE"/></w:rPr><w:t>{escape(d)}</w:t></w:r></w:p>', 1)
-    nuevas.append(c)
-fila1 = filas[1]
-for c, n in zip(celdas, nuevas):
-    fila1 = fila1.replace(c, n, 1)
-tbl = tbl.replace(filas[1], fila1).replace(filas[2], "").replace(filas[3], "")
+INTEGRANTES = [  # ordenados por apellidos, como pide la plantilla
+    ["1", "U25317351", "MENDOZA COLQUE", "CARLOS DANIEL", "U25317351@utp.edu.pe"],
+    ["2", "U25316441", "QUISPE MORALES", "FABRICIO OSCAR", "U25316441@utp.edu.pe"],
+]
+
+
+def llenar_fila(fila, datos):
+    for c, d in zip(re.findall(r"<w:tc>.*?</w:tc>", fila, re.S), datos):
+        n = re.sub(r"<w:r\b.*?</w:r>", "", c, flags=re.S)
+        tam = "20" if "@" in d else "24"
+        n = n.replace("</w:p>", f'<w:r><w:rPr><w:rFonts w:ascii="Calibri" w:hAnsi="Calibri"/><w:sz w:val="{tam}"/><w:lang w:val="es-PE"/></w:rPr><w:t>{escape(d)}</w:t></w:r></w:p>', 1)
+        fila = fila.replace(c, n, 1)
+    return fila
+
+
+tbl = tbl.replace(filas[1], llenar_fila(filas[1], INTEGRANTES[0])).replace(filas[2], llenar_fila(filas[2], INTEGRANTES[1])).replace(filas[3], "")
 elementos[18] = tbl
 
 # Se conserva la carátula (0-24) y el índice general (25); el resto se reemplaza

@@ -13,7 +13,7 @@
     "metricas": "node tools/metricas.mjs",
     "serve": "npx --yes http-server -p 5173 -c-1 ."
   },
-  "author": "Quispe Morales, Fabricio Oscar",
+  "author": "Grupo 04: Mendoza Colque, Carlos Daniel; Quispe Morales, Fabricio Oscar",
   "license": "MIT",
   "devDependencies": {
     "lamejs": "^1.2.1",

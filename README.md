@@ -25,7 +25,7 @@ src/less/        Fuentes LESS  -> assets/css/altura-less.css
 src/scss/        Fuentes SASS  -> assets/css/altura-sass.css
 assets/css/      base.css (CSS puro) y framework/ (layout, responsive, animaciones)
 assets/js/       main.js (interacciones mínimas e inicio de Material Design)
-assets/img/      logo, íconos SVG, fotos WebP, ilustraciones de productos
+assets/img/      logo e íconos SVG, fotos WebP (secciones y productos), avatares SVG
 assets/video/    videos MP4/WebM con subtítulos .vtt
 assets/audio/    pistas MP3 originales
 tools/           ensamblador de páginas, métricas y scripts de multimedia
@@ -59,6 +59,6 @@ Edite las páginas en `src/html/`; los `.html` de la raíz y de `paginas/` se ge
 
 ## Créditos
 
-Fotos y videos de Wikimedia Commons con licencias libres (lista en la página Galería y en
+Fotos de Wikimedia Commons con licencias libres (los videos se generaron a partir de ellas) (lista en la página Galería y en
 `docs/creditos-multimedia.json`). Logo, íconos, avatares de entrenadores y audio son originales; las fotos de productos también vienen de Wikimedia Commons.
 Proyecto académico: la empresa y sus datos son ficticios.

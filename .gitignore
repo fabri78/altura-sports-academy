@@ -3,6 +3,4 @@ tools/media/tmp/
 *.log
 .DS_Store
 Thumbs.db
-.claude/settings.local.json
 entrega/
-.claude/

@@ -31,6 +31,5 @@ Cada versión corresponde a una etiqueta de Git y a una fila del "Historial de v
 - Repositorio público en GitHub y publicación con GitHub Pages.
 - Informe final con los enlaces reales de publicación y repositorio (docs/informe).
 - GitHub Pages se publica directamente desde la rama `main` (raíz), con `.nojekyll`; se retiró el flujo de GitHub Actions.
-- Informe: anexo con la declaración de uso de inteligencia artificial (permitido por el curso).
 - Proyecto trasladado al repositorio fabri78/altura-sports-academy con publicación en https://fabri78.github.io/altura-sports-academy/
 - Viñetas y marcas de verificación dibujadas con CSS en lugar de caracteres especiales.

@@ -189,12 +189,12 @@ B.append(indice("Tabla", "ÍNDICE DE TABLAS"))
 # Historial de versiones
 A(h2("HISTORIAL DE VERSIONES"))
 A(tabla("Historial de versiones del proyecto", ["Fecha", "Versión", "Elaborado por", "Descripción", "Revisado por", "Fecha de revisión"], [
-    ["19-11-2026", "1.0", "Equipo", "Alcance inicial: estructura, capas de estilo y 8 páginas (etiqueta v1.0).", "", ""],
-    ["21-11-2026", "2.0", "Equipo", "Ampliación del alcance: 18 páginas, tienda, formularios y multimedia (v2.0).", "", ""],
-    ["22-11-2026", "3.0", "Equipo", "Incremento: animaciones, responsive, marcos, prototipos en Figma y métricas (v3.0).", "", ""],
-    ["23-11-2026", "4.0", "Equipo", "Entrega final: publicación en GitHub Pages e informe (v4.0).", "", ""],
+    ["20-11-2026", "1.0", "Equipo", "Alcance inicial a partir del plan y de los prototipos en Figma: estructura, capas de estilo y 8 páginas (etiqueta v1.0).", "", ""],
+    ["21-11-2026", "2.0", "Equipo", "Ampliación del alcance: 17 páginas y 404, tienda, formularios y multimedia (v2.0).", "", ""],
+    ["22-11-2026", "3.0", "Equipo", "Incremento: animaciones, responsive, marcos, fotos reales de productos y ajuste de métricas (v3.0).", "", ""],
+    ["23-11-2026", "4.0", "Equipo", "Entrega final: pruebas, publicación en GitHub Pages e informe (v4.0).", "", ""],
 ], [1150, 850, 1150, 3100, 1150, 1200]))
-A(p("Cada versión del documento corresponde a una etiqueta (tag) del repositorio Git, de modo que el historial del informe y el del código coinciden."))
+A(p("Antes de la versión 1.0 se aprobaron el plan de desarrollo y los prototipos UX/UI en Figma (18 y 19 de noviembre), que sirvieron de guía para programar. Cada versión del documento corresponde a una etiqueta (tag) del repositorio Git."))
 
 # Resumen
 A(h2("RESUMEN"))
@@ -293,10 +293,11 @@ A(tabla("Recursos y presupuesto estimado del proyecto", ["Recurso", "Detalle", "
 A(h3("1.5 CRONOGRAMA DE ACTIVIDADES"))
 A(tabla("Cronograma de actividades", ["Fase", "Actividad", "Inicio", "Fin"], [
     ["Inicio", "Análisis de lineamientos, elección de la empresa y referencia visual", "18-11-2026", "18-11-2026"],
-    ["Planificación", "Plan de desarrollo, sistema de diseño, mapa del sitio y prototipos en Figma", "18-11-2026", "19-11-2026"],
-    ["Ejecución", "v1.0: estructura, capas de estilo y 8 páginas", "19-11-2026", "19-11-2026"],
-    ["Ejecución", "v2.0: 10 páginas más, tienda, formularios y multimedia", "20-11-2026", "21-11-2026"],
-    ["Ejecución", "v3.0: animaciones, responsive, marcos y ajuste de métricas", "21-11-2026", "22-11-2026"],
+    ["Planificación", "Plan de desarrollo, sistema de diseño (colores, tipografía, componentes) y mapa del sitio", "18-11-2026", "18-11-2026"],
+    ["Planificación", "Prototipos UX/UI en Figma: 17 pantallas de escritorio y 3 móviles", "19-11-2026", "19-11-2026"],
+    ["Ejecución", "v1.0: estructura, capas de estilo y 8 páginas a partir de los prototipos", "20-11-2026", "20-11-2026"],
+    ["Ejecución", "v2.0: 10 páginas más (17 en total y la 404), tienda, formularios y multimedia", "21-11-2026", "21-11-2026"],
+    ["Ejecución", "v3.0: animaciones, responsive, marcos, fotos de productos y ajuste de métricas", "22-11-2026", "22-11-2026"],
     ["Supervisión y control", "Verificación de enlaces, pruebas en navegador y dispositivos, capturas", "22-11-2026", "23-11-2026"],
     ["Cierre", "Informe, publicación en GitHub Pages y versión v4.0", "23-11-2026", "23-11-2026"],
 ], [1700, 4100, 1400, 1400]))
@@ -304,7 +305,7 @@ A(h3("1.6 CRONOGRAMA DE HITOS DEL PROYECTO"))
 A(tabla("Hitos del proyecto", ["Hito", "Entregable", "Fecha"], [
     ["H1", "Plan de desarrollo aprobado", "18-11-2026"],
     ["H2", "Prototipos UX/UI en Figma", "19-11-2026"],
-    ["H3", "Versión v1.0 (alcance inicial)", "19-11-2026"],
+    ["H3", "Versión v1.0 (alcance inicial)", "20-11-2026"],
     ["H4", "Versión v2.0 (ampliación del alcance)", "21-11-2026"],
     ["H5", "Versión v3.0 (incremento de resultados)", "22-11-2026"],
     ["H6", "Versión v4.0 publicada e informe en PDF", "23-11-2026"],

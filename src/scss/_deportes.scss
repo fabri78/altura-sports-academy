@@ -122,9 +122,16 @@
     margin-top: esp(3);
     font-size: rem(14px);
 
+    // Marca de verificación dibujada con bordes (sin caracteres especiales)
     li::before {
-      content: "✓ ";
-      color: c("exito");
+      content: "";
+      display: inline-block;
+      width: 5px;
+      height: 10px;
+      margin-right: 10px;
+      border: solid c("exito");
+      border-width: 0 2px 2px 0;
+      transform: translateY(-2px) rotate(45deg);
     }
   }
 }

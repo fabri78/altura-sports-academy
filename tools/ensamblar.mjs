@@ -12,7 +12,7 @@ import { fileURLToPath } from 'node:url';
 
 const RAIZ = join(dirname(fileURLToPath(import.meta.url)), '..');
 const SRC = join(RAIZ, 'src', 'html');
-const REPO = '/altura-sports/'; // ruta base en GitHub Pages (solo para 404.html)
+const REPO = '/altura-sports-academy/'; // ruta base en GitHub Pages (solo para 404.html)
 
 const leer = (ruta) => readFileSync(join(SRC, ruta), 'utf8');
 const cabecera = leer('parciales/cabecera.html');

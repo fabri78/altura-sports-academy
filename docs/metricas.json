@@ -1,6 +1,6 @@
 {
-  "fecha": "2026-11-23T22:52:33.135Z",
-  "total": 4902,
+  "fecha": "2026-11-24T00:06:48.889Z",
+  "total": 4918,
   "filas": [
     {
       "punto": "g.i",
@@ -9,9 +9,9 @@
       "archivos": [
         "assets/css/base.css"
       ],
-      "lineas": 505,
-      "porcentaje": 10.3,
-      "diferencia": 0.3
+      "lineas": 515,
+      "porcentaje": 10.5,
+      "diferencia": 0.5
     },
     {
       "punto": "g.ii",
@@ -30,8 +30,8 @@
         "src/less/_variables.less"
       ],
       "lineas": 798,
-      "porcentaje": 16.3,
-      "diferencia": 1.3
+      "porcentaje": 16.2,
+      "diferencia": 1.2
     },
     {
       "punto": "g.iii",
@@ -48,9 +48,9 @@
         "src/scss/_tienda.scss",
         "src/scss/_tokens.scss"
       ],
-      "lineas": 800,
-      "porcentaje": 16.3,
-      "diferencia": 1.3
+      "lineas": 806,
+      "porcentaje": 16.4,
+      "diferencia": 1.4
     },
     {
       "punto": "h",
@@ -60,8 +60,8 @@
         "assets/css/framework/animaciones.css"
       ],
       "lineas": 940,
-      "porcentaje": 19.2,
-      "diferencia": -0.8
+      "porcentaje": 19.1,
+      "diferencia": -0.9
     },
     {
       "punto": "i",
@@ -82,8 +82,8 @@
         "assets/css/framework/layout.css"
       ],
       "lineas": 931,
-      "porcentaje": 19,
-      "diferencia": -1
+      "porcentaje": 18.9,
+      "diferencia": -1.1
     }
   ]
 }

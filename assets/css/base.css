@@ -465,6 +465,18 @@ marquee.marquesina b {
   color: var(--c-brasa);
 }
 
+/* Viñeta circular antes de cada aviso, dibujada solo con CSS */
+marquee.marquesina span::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-right: 10px;
+  border-radius: 50%;
+  background-color: var(--c-brasa);
+  vertical-align: middle;
+}
+
 /* ---------- 9. Pseudoelementos y selección ---------- */
 ::selection {
   background-color: rgba(255, 46, 99, 0.4);
